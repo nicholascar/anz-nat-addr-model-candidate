@@ -86,6 +86,9 @@ _Here shall be the Introduction._
 
 _Here shall be the Doamin Model._
 
+[[fig-test-image]]
+.Test Image
+image::img/test.png[]
 
 :sectnums!:
 

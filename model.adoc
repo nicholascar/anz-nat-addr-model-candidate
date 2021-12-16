@@ -1,0 +1,113 @@
+= ANZ National Address Model Candidate
+:toc:
+:table-stripes: even
+:sectnums:
+
+== Metadata
+
+[width=75%, frame=none, grid=none, cols="1,5"]
+|===
+|**IRI** | -
+|**Title** | ANZ National Address Model Candidate
+|**Description** | This Model is a candidate model for Australian & New Zealand addresses. It is an unofficial model that is made to highlight potential aspects of a real model for discussion.
+|**Created** | 2021-12-16
+|**Modified** | 2021-12-16
+|**Issued** | 0000-00-00
+|**Creator** | link:https://orcid.org/0000-0002-8742-7730[Nicholas J. Car]
+|**Publisher** | -
+|**License** | link:https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
+|**Machine-readable form** | link:https://nicholascar.com/anz-nat-addr-model-candidate/model.ttl[model.ttl]
+|===
+
+== Preamble
+
+=== Abstract
+
+This Model is a candidate model for Australian & New Zealand addresses. It is an unofficial model that is made to highlight potential aspects of a real model for discussion.
+
+=== Namespaces
+
+This model is built on a "baseline" of Semantic Web models which use a variatey of namespaces. Prefixes for this namespaces, used througout this document, are listed below.
+
+[width=75%, frame=none, grid=none]
+|===
+|Prefix | Namespace | Description
+
+| **`super`** | **`https://linked.data.gov.au/def/ga-supermodel/`** | **this model**
+|`dcterms:` | `http://purl.org/dc/terms/` | Dublin Core Terms vocabulary namespace
+|`ex:` | `http://example.com/thing` | Generic examples namespace
+|`geo:` | `http://www.opengis.net/ont/geosparql#` | OGC GeoSPARQL
+|`owl:` | `http://www.w3.org/2002/07/owl#` | Web Ontology Language ontology namespace
+|`rdfs:` | `http://www.w3.org/2000/01/rdf-schema#` | RDF Schema ontology namespace
+|`sosa:` | `http://www.w3.org/ns/sosa/` | Sensor, Observation, Sample, and Actuator ontology namespace
+|`skos:` | `http://www.w3.org/2004/02/skos/core#` | Simple Knowledge Organization System (SKOS) ontology namespace
+|`time:` | `http://www.w3.org/2006/time#` | Time Ontology in OWL namespace
+|`void:` | `http://rdfs.org/ns/void#` | Vocabulary of Interlinked Data (VoID) ontology namespace
+|`xsd:` | `http://www.w3.org/2001/XMLSchema#` | XML Schema Definitions ontology namespace
+|===
+
+=== Terms & Definitions
+
+The following terms appear in this document and, when they do, the definitions in this section apply to them.
+
+==== Knowledge Graph
+
+A Knolwedge Graph is a dataset that uses a graph data tructure - nodes and edges - with strongly-defined elements.
+
+==== Linked Data
+
+A set of technologies and conventions defined by the link:https://www.w3.org[World Wide Web Consortium] that aim to present data in both human- and machine-readable form over the Internet. 
+
+Linked Data is strongly-defined with each element having either a local definition or a link to an available definition on the Internet.
+
+Linked Data is graph-based in nature, that is it consistes of nodes and edges that can forever be linked to further conceps with defined relationships.
+
+-- https://www.w3.org/standards/semanticweb/data
+
+==== Semantic Web
+
+The link:https://www.w3.org[World Wide Web Consortium]'s vision of an Internet-based web of Linked Data. 
+
+Semantic Web is used to refer to something more than just the technologies and conventions of Linked Data; the term also encompases a specific set of interoperable data models - often called ontologies - published by the W3C, other standards bodies and some well-known companies.
+
+The 'semantic' refers to the strongly-defined nature of the elements in the Semantic Web: the meaning of Semantic Web data is as precicely defined as any data can be.
+
+-- https://www.w3.org/standards/semanticweb/
+
+=== Conventions
+
+All code snippets in this document, used to show formal and machine-readable versions of concepts, are expressed using the Turtl RDF syntax <<TTL>>.
+
+== Introduction
+
+_Here shall be the Introduction._
+
+== Domain Model
+
+_Here shall be the Doamin Model._
+
+
+:sectnums!:
+
+== Annex A: PID Policy
+
+* point 1
+* point 2
+
+== References
+
+* [[GEO]] Open Geospatial Consortium, _OGC GeoSPARQL - A Geographic Query Language for RDF Data, Version 1.1_ (2021). OGC Implementation Specification. http://www.opengis.net/doc/IS/geosparql/1.1
+
+* [[ISO19156]] International Organization for Standardization, _ISO 19156: Geographic information — Observations and measurements_ (2011)
+
+* [[OWL]] World Wide Web Consortium, _OWL 2 Web Ontology Language Document Overview (Second Edition)_, W3C Recommendation (11 December 2012). https://www.w3.org/TR/owl2-overview/
+
+* [[PROF]] World Wide Web Consortium, _The Profiles Vocabulary_, W3C Working Group Note (18 December 2019). https://www.w3.org/TR/dx-prof/
+
+* [[SDO]] W3C Schema.org Community Group, _schema.org_. Community ontology (2015). https://schema.org
+
+* [[SSN]] World Wide Web Consortium, _Semantic Sensor Network Ontology_, W3C Recommendation (19 October 2017). https://www.w3.org/TR/vocab-ssn/
+
+* [[SKOS]] World Wide Web Consortium, _SKOS Simple Knowledge Organization System Reference_, W3C Recommendation (18 August 2009). https://www.w3.org/TR/skos-reference/
+
+* [[TTL]] World Wide Web Consortium, _RDF 1.1 Turtle Terse RDF Triple Language_, W3C Recommendation (25 February 2014). https://www.w3.org/TR/turtle/

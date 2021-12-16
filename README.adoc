@@ -1,3 +1,26 @@
-# ANZ National Address Model Candidate
+= ANZ National Address Model Candidate
 
-Candidate address model
+This Model is a candidate model for Australian & New Zealand addresses. It is an unofficial model that is made to highlight potential aspects of a real model for discussion.
+
+This model's document is auto-built from the source file `model.adoc` and viewable online at:
+
+* https://nicholascar.com/anz-nat-addr-model-candidate/model.html
+
+The repository is at:
+
+* https://github.com/nicholascar/anz-nat-addr-model-candidate/
+
+== License & Rights
+
+The contents of this repository is licensed under Creative Commons 4.0 International. See the LICENSE file in the repository for details.
+
+&copy; Nicholas J. Car, 2021
+
+== Contacts
+
+Initial development of this work is being undertaken by the following, for Geoscience Australia:
+
+**Nicholas J. Car** +
+*Semantic Modeller* +
+https://kurrawong.ai[Kurrawong AI] +  
+<nick@kurrawong.net>  

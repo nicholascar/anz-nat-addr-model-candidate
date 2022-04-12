@@ -436,10 +436,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 </head>
-<body class="article">
+<body class="article toc2 toc-left">
 <div id="header">
 <h1>ANZ National Address Model Candidate</h1>
-<div id="toc" class="toc">
+<div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#_metadata">1. Metadata</a></li>
@@ -447,13 +447,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_abstract">2.1. Abstract</a></li>
 <li><a href="#_namespaces">2.2. Namespaces</a></li>
-<li><a href="#_terms_definitions">2.3. Terms &amp; Definitions</a></li>
-<li><a href="#_conventions">2.4. Conventions</a></li>
 </ul>
 </li>
 <li><a href="#_introduction">3. Introduction</a></li>
 <li><a href="#_domain_model">4. Domain Model</a></li>
-<li><a href="#_annex_a_pid_policy">Annex A: PID Policy</a></li>
+<li><a href="#_annex_x_something">Annex X: Something</a></li>
 <li><a href="#_references">References</a></li>
 </ul>
 </div>
@@ -477,6 +475,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top"><p class="tableblock">ANZ National Address Model Candidate</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Early draft</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This Model is a candidate model for Australian &amp; New Zealand addresses. It is an unofficial model that is made to highlight potential aspects of a real model for discussion.</p></td>
 </tr>
@@ -486,7 +488,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Modified</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2021-12-16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-03-12</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Issued</strong></p></td>
@@ -518,7 +520,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_abstract">2.1. Abstract</h3>
 <div class="paragraph">
-<p>This Model is a candidate model for Australian &amp; New Zealand addresses. It is an unofficial model that is made to highlight potential aspects of a real model for discussion.</p>
+<p>This Model is a candidate model for Australian &amp; New Zealand address information. It is an unofficial model that is made to highlight potential aspects of a real model for discussion.</p>
 </div>
 </div>
 <div class="sect2">
@@ -540,11 +542,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 </thead>
 <tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>super</code></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code><a href="https://linked.data.gov.au/def/ga-supermodel/" class="bare">https://linked.data.gov.au/def/ga-supermodel/</a></code></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>this model</strong></p></td>
-</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms:</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://purl.org/dc/terms/" class="bare">http://purl.org/dc/terms/</a></code></p></td>
@@ -598,54 +595,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tbody>
 </table>
 </div>
-<div class="sect2">
-<h3 id="_terms_definitions">2.3. Terms &amp; Definitions</h3>
-<div class="paragraph">
-<p>The following terms appear in this document and, when they do, the definitions in this section apply to them.</p>
-</div>
-<div class="sect3">
-<h4 id="_knowledge_graph">2.3.1. Knowledge Graph</h4>
-<div class="paragraph">
-<p>A Knolwedge Graph is a dataset that uses a graph data tructure - nodes and edges - with strongly-defined elements.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_linked_data">2.3.2. Linked Data</h4>
-<div class="paragraph">
-<p>A set of technologies and conventions defined by the <a href="https://www.w3.org">World Wide Web Consortium</a> that aim to present data in both human- and machine-readable form over the Internet.</p>
-</div>
-<div class="paragraph">
-<p>Linked Data is strongly-defined with each element having either a local definition or a link to an available definition on the Internet.</p>
-</div>
-<div class="paragraph">
-<p>Linked Data is graph-based in nature, that is it consistes of nodes and edges that can forever be linked to further conceps with defined relationships.</p>
-</div>
-<div class="paragraph">
-<p>&#8201;&#8212;&#8201;<a href="https://www.w3.org/standards/semanticweb/data" class="bare">https://www.w3.org/standards/semanticweb/data</a></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_semantic_web">2.3.3. Semantic Web</h4>
-<div class="paragraph">
-<p>The <a href="https://www.w3.org">World Wide Web Consortium</a>'s vision of an Internet-based web of Linked Data.</p>
-</div>
-<div class="paragraph">
-<p>Semantic Web is used to refer to something more than just the technologies and conventions of Linked Data; the term also encompases a specific set of interoperable data models - often called ontologies - published by the W3C, other standards bodies and some well-known companies.</p>
-</div>
-<div class="paragraph">
-<p>The 'semantic' refers to the strongly-defined nature of the elements in the Semantic Web: the meaning of Semantic Web data is as precicely defined as any data can be.</p>
-</div>
-<div class="paragraph">
-<p>&#8201;&#8212;&#8201;<a href="https://www.w3.org/standards/semanticweb/" class="bare">https://www.w3.org/standards/semanticweb/</a></p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_conventions">2.4. Conventions</h3>
-<div class="paragraph">
-<p>All code snippets in this document, used to show formal and machine-readable versions of concepts, are expressed using the Turtl RDF syntax <a href="#TTL">[TTL]</a>.</p>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -671,18 +620,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_annex_a_pid_policy">Annex A: PID Policy</h2>
+<h2 id="_annex_x_something">Annex X: Something</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>point 1</p>
-</li>
-<li>
-<p>point 2</p>
-</li>
-</ul>
-</div>
+
 </div>
 </div>
 <div class="sect1">
@@ -721,7 +661,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-12-16 04:14:05 UTC
+Last updated 2022-04-12 12:09:47 UTC
 </div>
 </div>
 </body>

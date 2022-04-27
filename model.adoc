@@ -1,39 +1,49 @@
-= ANZ National Address Model Candidate
+= ANZ National Address Model - Candidate
 :toc: left
 :table-stripes: even
+:sectids:
+:sectanchors:
 :sectnums:
 
 == Metadata
 
 [width=75%, frame=none, grid=none, cols="1,5"]
 |===
-|**IRI** | -
-|**Title** | ANZ National Address Model Candidate
-|**Status** | Early draft
-|**Description** | This Model is a candidate model for Australian & New Zealand addresses. It is an unofficial model that is made to highlight potential aspects of a real model for discussion.
+|**IRI** | `http://w3id.org/profile/anz-address`
+|**Preferred Label** | ANZ National Address Model - Candidate
+|**Definition** | This model is a Semantic Web data model used for address information.
 |**Created** | 2021-12-16
-|**Modified** | 2022-03-12
+|**Modified** | 2022-04-27
 |**Issued** | 0000-00-00
-|**Creator** | link:https://orcid.org/0000-0002-8742-7730[Nicholas J. Car]
+|**Creator** | https://orcid.org/0000-0002-8742-7730[Nicholas J. Car]
 |**Publisher** | -
-|**License** | link:https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
-|**Machine-readable form** | link:https://nicholascar.com/anz-nat-addr-model-candidate/model.ttl[model.ttl]
+|**Provenance** | This model is is based primarilty on the ISO19160-1 Addressing Part 1: Conceptual model with additional elements from a small set of well-regarded Semantic Web models such as GeoSPARQL and SKOS
+|**Status** | Early draft
+|**Version** | add:0.0.1
+|**Code Repository** | https://nicholascar.com/anz-nat-addr-model-candidate
+|**License** | https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
+|**Copyright** | _unassigned as of 2022_
 |===
 
 == Preamble
 
 === Abstract
 
-This Model is a candidate model for Australian & New Zealand address information. It is an unofficial model that is made to highlight potential aspects of a real model for discussion.
+[NOTE]
+This Model is a candidate model for Australian & New Zealand address information. It is currently an unofficial model that is not yet published as a standard.
+
+This model is a Semantic Web data model used for address information. It is based primarilty on the ISO19160-1 _Addressing Part 1: Conceptual model_ <<ISO19160-1>> with additional elements from a small set of well-regarded Semantic Web models such as GeoSPARQL <<GEO>> and SKOS <<SKOS>>.
 
 === Namespaces
 
-This model is built on a "baseline" of Semantic Web models which use a variatey of namespaces. Prefixes for this namespaces, used througout this document, are listed below.
+This model is built on a small set of well-regarded Semantic Web models which use a variatey of namespaces. Prefixes for this namespaces, used througout this document, are listed below.
 
-[width=75%, frame=none, grid=none]
+[width=100%, frame=none, grid=none, cols="1,4,5"]
 |===
 |Prefix | Namespace | Description
 
+| `*add:*` | `*http://w3id.org/profile/anz-address/*` | *Placeholder namespace for this model*
+| `asgsed3:` | `http://linked.data.gov.au/dataset/asgsed3/` | Australian Statistical Geographies Standard Dataset
 |`dcterms:` | `http://purl.org/dc/terms/` | Dublin Core Terms vocabulary namespace
 |`ex:` | `http://example.com/thing` | Generic examples namespace
 |`geo:` | `http://www.opengis.net/ont/geosparql#` | OGC GeoSPARQL
@@ -46,18 +56,138 @@ This model is built on a "baseline" of Semantic Web models which use a variatey 
 |`xsd:` | `http://www.w3.org/2001/XMLSchema#` | XML Schema Definitions ontology namespace
 |===
 
+=== Conformance
+
+This model conforms to the https://w3id.org/profile/ontpub[OntPub Profile] which is a specification for ontology publication that mandates certain structural and metadata properties for the model as a whole and model elements. Metadata elements for the model as a whole - the ontology - are given in the <<Metadata>> section above.
+
+==== Figures
+
+Figures used in this document use the following key:
+
+[[figure-key]]
+.Key of elements used in this Model's figures
+image::img/key.png[]
+
+==== Exampl Data
+Exampl Data used in this document, for instance in model element "Example" values, are https://www.w3.org/RDF/[RDF] data in the https://www.w3.org/TR/turtle/[Turtle] tyntax.
+
 
 == Introduction
 
-_Here shall be the Introduction._
+In 2021, the https://www.icsm.gov.au/[Intergovernmental Committee on Surveying and Mapping] established an https://www.icsm.gov.au/publications/addressing-2035[Addressing 2035] strategy that aimed to "provide leadership, coordination and standards for assembling, delivering and maintaining address datasets". The Strategy listed "Strategic Pillars", such as "Jurisdictional
+flexibility" - things for Strategy implementers to aim for - "Guiding Principles", "Overarching Pain Points" and other system/model/situation requirements. It did not present an address model.
 
-== Domain Model
+This model is created with alignment to the Addressing 2035 Strategy as a high priority, so it's use aims to address Pain Points identified in the Strategy.
 
-_Here shall be the Doamin Model._
+The model is mostly an based on the structures of International Addressing standard, ISO19160-1, but this model is expressed in Semantic Web form. Unlike ISO19160-1, this model also re-uses elements from other, well-known, Semantic Web models, as is the Semantic Web norm.
 
-[[fig-test-image]]
-.Test Image
-image::img/test.png[]
+This model does not model _all_ of address data managers' concerns: it leaves things like the detailed modellign os spatial information to other models or extensions to this model. Also, by reusing elements from well-known Semantic Web models, this model has many "pick-up" points that can be used to join other information on to. For example, the `Resource` indicated as an `Address Component` value, may be a locally-defined simple value type - a number or string - but it may also be a complex object defined elsewhere, such as a `Locality`.
+
+=== Model resources
+
+This document is this model's "Specification" which is its authoratitive, human-readable, definition document. This model also contains other resources with other roles:
+
+[width="50%", cols="1,1,3"]
+|===
+| Resource | Role | Notes
+
+| https://nicholascar.com/anz-nat-addr-model-candidate/model.ttl[Ontology] | _Schema_ | The technical, machine-readable, data model of this model
+| https://nicholascar.com/anz-nat-addr-model-candidate/validator.shacl.ttl[Validator] | _Validation_ | The machine-readable constraints file used to validate data claiming conformance to this model
+| https://github.com/nicholascar/anz-nat-addr-model-candidate/tree/main/example[Example files] | _Example_ | Examples of data conforming, and some not conforming, to this model
+|===
+
+== Model
+
+This model is composed of Web Ontology Language (OWL) <<OWL>> Classes and Properties. While some of the properties are restricted in their use to various classes, the Classes and Properties are actually defined individually and both are "first class model citizens", with golbal identity, that can be used in isolation as well as together. This is in contrast to Unified Modelling Language (UML) _Class Diagrams_ which treat Properties as sub-parts of particular classes.
+
+This model defines some Classes and Properties and also requires certain existing Cs & Ps for reuse. All Cs & Ps in this model, both defined and reused, are listed here with an indication of where the element is difined given in the _Is Defined By_ field.
+
+[[model-overview]]
+.An informal Model Overview diagram showing the major elements of this model
+image::img/overview.png[]
+
+[[Classes]]
+=== Classes
+
+[[Address]]
+==== Address
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `add:Address`
+| Preferred Label | Address
+| Definition | The Address class represents structured information that allows unambiguous determination of an object for the purposes of identification and location
+| Is Defined By | http://w3id.org/profile/anz-address/[ANZ National Address Model]
+| Sub-class Of | https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_class_geofeature[`geo:Feature`]
+| Provenance | Derived from <<ISO19160-1>>'s `Address` class
+| Usage note | -
+| Expected Properties | <<isAddressFor>>
+| Example 
+a| [source,turtle]
+----
+BASE <http://linked.data.gov.au/dataset/asgsed3/>
+
+ex:addre-1
+a addr:Address ;
+  addr:isAddressFor <some-external-object> ;
+  addr:hasAddressComponent 
+    [   
+      addr:hasValue 20 ;
+      addr:hasComponentType addct:StreetNumber ;
+    ] ,
+    [
+      addr:hasValue "Oxford" ;
+      addr:hasComponentType addct:StreetName ;
+    ] ,
+    [
+      addr:hasValue strt:Place ;
+      addr:hasValueText "Place" ;
+      addr:hasComponentType addct:StreetType ;      
+    ] ,
+    [
+      addr:hasValue <LGA2021/1234> ;
+      addr:hasValueText "Shorncliffe" ;
+      addr:hasComponentType addct:Locality ;
+    ] ,
+    [
+      addr:hasValue <STE2021/6> ;
+      addr:hasValueText "Queendland" ;
+      addr:hasComponentType addct:StateOrTerritory ;
+    ] ,
+    [
+      addr:hasValue <AUS2021/AUS> ;
+      addr:hasValueText "Australia" ;
+      addr:hasComponentType addct:Nation ;
+    ] ;                                      
+.
+----
+|===
+
+[[AddressableObject]]
+==== Addressable Object
+
+[[AddressComponent]]
+==== Address Component
+
+[[AddressComponentType]]
+==== Address Component Type
+
+[[Address Lifecycle Stage]]
+==== Address Lifecycle Stage
+
+[[Properties]]
+=== Properties
+
+[[isAddressFor]]
+==== is address for
+
+[[hasAddress]]
+==== has address
+
+[[hasLifecycleStage]]
+==== has lifecycle stage
 
 :sectnums!:
 
@@ -65,18 +195,22 @@ image::img/test.png[]
 
 == References
 
-* [[GEO]] Open Geospatial Consortium, _OGC GeoSPARQL - A Geographic Query Language for RDF Data, Version 1.1_ (2021). OGC Implementation Specification. http://www.opengis.net/doc/IS/geosparql/1.1
+* [[GEO]] [GEO] Open Geospatial Consortium, _OGC GeoSPARQL - A Geographic Query Language for RDF Data, Version 1.1_ (2021). OGC Implementation Specification. http://www.opengis.net/doc/IS/geosparql/1.1
 
 * [[ISO19156]] International Organization for Standardization, _ISO 19156: Geographic information — Observations and measurements_ (2011)
+
+* [[ISO19160-1]] [ISO19160-1] International Organization for Standardization, _ISO 19160-1: Addressing Part 1: Conceptual model_ (2015). https://www.iso.org/standard/61710.html
 
 * [[OWL]] World Wide Web Consortium, _OWL 2 Web Ontology Language Document Overview (Second Edition)_, W3C Recommendation (11 December 2012). https://www.w3.org/TR/owl2-overview/
 
 * [[PROF]] World Wide Web Consortium, _The Profiles Vocabulary_, W3C Working Group Note (18 December 2019). https://www.w3.org/TR/dx-prof/
 
+* [[PROV]] World Wide Web Consortium, _The Profiles Vocabulary_, W3C Working Group Note (18 December 2019). https://www.w3.org/TR/dx-prof/
+
 * [[SDO]] W3C Schema.org Community Group, _schema.org_. Community ontology (2015). https://schema.org
 
 * [[SSN]] World Wide Web Consortium, _Semantic Sensor Network Ontology_, W3C Recommendation (19 October 2017). https://www.w3.org/TR/vocab-ssn/
 
-* [[SKOS]] World Wide Web Consortium, _SKOS Simple Knowledge Organization System Reference_, W3C Recommendation (18 August 2009). https://www.w3.org/TR/skos-reference/
+* [[SKOS]] [SKOS] World Wide Web Consortium, _SKOS Simple Knowledge Organization System Reference_, W3C Recommendation (18 August 2009). https://www.w3.org/TR/skos-reference/
 
 * [[TTL]] World Wide Web Consortium, _RDF 1.1 Turtle Terse RDF Triple Language_, W3C Recommendation (25 February 2014). https://www.w3.org/TR/turtle/

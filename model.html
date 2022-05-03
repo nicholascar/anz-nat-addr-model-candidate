@@ -729,39 +729,45 @@ flexibility" - things for Strategy implementers to aim for - "Guiding Principles
 <div class="paragraph data-line-103">
 <p>This model defines some Classes and Properties and also requires certain existing Cs &amp; Ps for reuse. All Cs &amp; Ps in this model, both defined and reused, are listed here with an indication of where the element is difined given in the <em>Is Defined By</em> field.</p>
 </div>
-<div id="fig-model-overview" class="imageblock data-line-107">
+<div id="fig-overview" class="imageblock data-line-107">
 <div class="content">
 <img src="img/overview.png" alt="overview">
 </div>
 <div class="title">Figure 2. An informal Model Overview diagram showing the major elements of this model</div>
 </div>
-<div class="sect2 data-line-110">
+<div id="fig-upper-classes" class="imageblock data-line-111">
+<div class="content">
+<img src="img/upper-classes.png" alt="upper classes">
+</div>
+<div class="title">Figure 3. Mapping of the main model classes to common Semantic Web classes</div>
+</div>
+<div class="sect2 data-line-114">
 <h3 id="Classes"><a class="anchor" href="#Classes"></a>4.1. Classes</h3>
-<div class="ulist data-line-112">
+<div class="ulist data-line-116">
 <ul>
-<li class="data-line-112">
+<li class="data-line-116">
 <p><a href="#Address">Address</a></p>
 </li>
-<li class="data-line-113">
+<li class="data-line-117">
 <p><a href="#AddressableObject">Addressable Object</a></p>
 </li>
-<li class="data-line-114">
+<li class="data-line-118">
 <p><a href="#AddressComponent">Address Component</a></p>
 </li>
-<li class="data-line-115">
+<li class="data-line-119">
 <p><a href="#AddressComponentType">Address Component Type</a></p>
 </li>
-<li class="data-line-116">
+<li class="data-line-120">
 <p><a href="#AddressLifecycleStage">Address Lifecycle Stage</a></p>
 </li>
-<li class="data-line-117">
+<li class="data-line-121">
 <p><a href="#AddressLifecycleStageType">Address Lifecycle StageType</a></p>
 </li>
 </ul>
 </div>
-<div class="sect3 data-line-120">
+<div class="sect3 data-line-124">
 <h4 id="Address"><a class="anchor" href="#Address"></a>4.1.1. Address</h4>
-<table class="tableblock frame-all grid-all stripes-even stretch data-line-123">
+<table class="tableblock frame-all grid-all stripes-even stretch data-line-127">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -850,9 +856,9 @@ ex:addr-1
 </tbody>
 </table>
 </div>
-<div class="sect3 data-line-176">
+<div class="sect3 data-line-180">
 <h4 id="AddressableObject"><a class="anchor" href="#AddressableObject"></a>4.1.2. Addressable Object</h4>
-<table class="tableblock frame-all grid-all stripes-even stretch data-line-179">
+<table class="tableblock frame-all grid-all stripes-even stretch data-line-183">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -920,9 +926,9 @@ ex:addre-2 addr:isAddressFor ex:admin-area-z .</code></pre>
 </tbody>
 </table>
 </div>
-<div class="sect3 data-line-212">
+<div class="sect3 data-line-216">
 <h4 id="AddressComponent"><a class="anchor" href="#AddressComponent"></a>4.1.3. Address Component</h4>
-<table class="tableblock frame-all grid-all stripes-even stretch data-line-215">
+<table class="tableblock frame-all grid-all stripes-even stretch data-line-219">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -999,9 +1005,9 @@ ex:addre-2 addr:isAddressFor ex:admin-area-z .</code></pre>
 </tbody>
 </table>
 </div>
-<div class="sect3 data-line-258">
+<div class="sect3 data-line-262">
 <h4 id="AddressComponentType"><a class="anchor" href="#AddressComponentType"></a>4.1.4. Address Component Type</h4>
-<table class="tableblock frame-all grid-all stripes-even stretch data-line-261">
+<table class="tableblock frame-all grid-all stripes-even stretch data-line-265">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1077,15 +1083,15 @@ ex:addre-2 addr:isAddressFor ex:admin-area-z .</code></pre>
 </tbody>
 </table>
 </div>
-<div class="sect3 data-line-302">
+<div class="sect3 data-line-306">
 <h4 id="AddressLifecycleStage"><a class="anchor" href="#AddressLifecycleStage"></a>4.1.5. Address Lifecycle Stage</h4>
-<div id="fig-lifecycle-stages" class="imageblock data-line-306">
+<div id="fig-lifecycle-stages" class="imageblock data-line-310">
 <div class="content">
 <img src="img/lifecycle-stages.png" alt="lifecycle stages">
 </div>
-<div class="title">Figure 3. An example Address, <code>QLD186906</code>, with Lifecycle Stages</div>
+<div class="title">Figure 4. An example Address, <code>QLD186906</code>, with Lifecycle Stages</div>
 </div>
-<table class="tableblock frame-all grid-all stripes-even stretch data-line-309">
+<table class="tableblock frame-all grid-all stripes-even stretch data-line-313">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1170,9 +1176,9 @@ addrls:proposed
 </tbody>
 </table>
 </div>
-<div class="sect3 data-line-360">
+<div class="sect3 data-line-364">
 <h4 id="AddressLifecycleStageType"><a class="anchor" href="#AddressLifecycleStageType"></a>4.1.6. Address Lifecycle Stage Type</h4>
-<table class="tableblock frame-all grid-all stripes-even stretch data-line-363">
+<table class="tableblock frame-all grid-all stripes-even stretch data-line-367">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1238,33 +1244,33 @@ ex:addr-1
 </table>
 </div>
 </div>
-<div class="sect2 data-line-393">
+<div class="sect2 data-line-397">
 <h3 id="Properties"><a class="anchor" href="#Properties"></a>4.2. Properties</h3>
-<div class="ulist data-line-395">
+<div class="ulist data-line-399">
 <ul>
-<li class="data-line-395">
+<li class="data-line-399">
 <p><a href="#isAddressFor">is address for</a></p>
 </li>
-<li class="data-line-396">
+<li class="data-line-400">
 <p><a href="#hasAddress">has address</a></p>
 </li>
-<li class="data-line-397">
+<li class="data-line-401">
 <p><a href="#hasAddressComponent">has address component</a></p>
 </li>
-<li class="data-line-398">
+<li class="data-line-402">
 <p><a href="#hasAddressComponentType">has address component type</a></p>
 </li>
-<li class="data-line-399">
+<li class="data-line-403">
 <p><a href="#hasLifecycleStage">has lifecycle stage </a></p>
 </li>
-<li class="data-line-400">
+<li class="data-line-404">
 <p><a href="#hasLifecycleStageType">has lifecycle stage type</a></p>
 </li>
 </ul>
 </div>
-<div class="sect3 data-line-403">
+<div class="sect3 data-line-407">
 <h4 id="isAddressFor"><a class="anchor" href="#isAddressFor"></a>4.2.1. is address for</h4>
-<table class="tableblock frame-all grid-all stripes-even stretch data-line-406">
+<table class="tableblock frame-all grid-all stripes-even stretch data-line-410">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1328,9 +1334,9 @@ ex:addr-1
 </tbody>
 </table>
 </div>
-<div class="sect3 data-line-431">
+<div class="sect3 data-line-435">
 <h4 id="hasAddress"><a class="anchor" href="#hasAddress"></a>4.2.2. has address</h4>
-<table class="tableblock frame-all grid-all stripes-even stretch data-line-434">
+<table class="tableblock frame-all grid-all stripes-even stretch data-line-438">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1394,9 +1400,9 @@ ex:addr-1
 </tbody>
 </table>
 </div>
-<div class="sect3 data-line-462">
+<div class="sect3 data-line-466">
 <h4 id="hasAddressComponent"><a class="anchor" href="#hasAddressComponent"></a>4.2.3. has address component</h4>
-<table class="tableblock frame-all grid-all stripes-even stretch data-line-465">
+<table class="tableblock frame-all grid-all stripes-even stretch data-line-469">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1454,9 +1460,9 @@ ex:addr-1
 </tbody>
 </table>
 </div>
-<div class="sect3 data-line-490">
+<div class="sect3 data-line-494">
 <h4 id="hasAddressComponentType"><a class="anchor" href="#hasAddressComponentType"></a>4.2.4. has address component type</h4>
-<table class="tableblock frame-all grid-all stripes-even stretch data-line-493">
+<table class="tableblock frame-all grid-all stripes-even stretch data-line-497">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1515,9 +1521,9 @@ ex:addr-1
 </tbody>
 </table>
 </div>
-<div class="sect3 data-line-519">
+<div class="sect3 data-line-523">
 <h4 id="hasLifecycleStage"><a class="anchor" href="#hasLifecycleStage"></a>4.2.5. has lifecycle stage</h4>
-<table class="tableblock frame-all grid-all stripes-even stretch data-line-522">
+<table class="tableblock frame-all grid-all stripes-even stretch data-line-526">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1587,9 +1593,9 @@ ex:addr-1
 </tbody>
 </table>
 </div>
-<div class="sect3 data-line-559">
+<div class="sect3 data-line-563">
 <h4 id="hasLifecycleStageType"><a class="anchor" href="#hasLifecycleStageType"></a>4.2.6. has lifecycle stage type</h4>
-<table class="tableblock frame-all grid-all stripes-even stretch data-line-562">
+<table class="tableblock frame-all grid-all stripes-even stretch data-line-566">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1652,45 +1658,45 @@ ex:addr-1
 </div>
 </div>
 </div>
-<div class="sect1 data-line-590">
+<div class="sect1 data-line-594">
 <h2 id="_annex_x_something"><a class="anchor" href="#_annex_x_something"></a>Annex X: Something</h2>
 <div class="sectionbody">
 
 </div>
 </div>
-<div class="sect1 data-line-592">
+<div class="sect1 data-line-596">
 <h2 id="_references"><a class="anchor" href="#_references"></a>References</h2>
 <div class="sectionbody">
-<div class="ulist data-line-594">
+<div class="ulist data-line-598">
 <ul>
-<li class="data-line-594">
+<li class="data-line-598">
 <p><a id="GEO"></a> [GEO] Open Geospatial Consortium, <em>OGC GeoSPARQL - A Geographic Query Language for RDF Data, Version 1.1</em> (2021). OGC Implementation Specification. <a href="http://www.opengis.net/doc/IS/geosparql/1.1" class="undefined" data-href="http://www.opengis.net/doc/IS/geosparql/1.1">http://www.opengis.net/doc/IS/geosparql/1.1</a></p>
 </li>
-<li class="data-line-596">
+<li class="data-line-600">
 <p><a id="ISO19156"></a> International Organization for Standardization, <em>ISO 19156: Geographic information — Observations and measurements</em> (2011)</p>
 </li>
-<li class="data-line-598">
+<li class="data-line-602">
 <p><a id="ISO19160-1"></a> [ISO19160-1] International Organization for Standardization, <em>ISO 19160-1: Addressing Part 1: Conceptual model</em> (2015). <a href="https://www.iso.org/standard/61710.html" class="undefined" data-href="https://www.iso.org/standard/61710.html">https://www.iso.org/standard/61710.html</a></p>
 </li>
-<li class="data-line-600">
+<li class="data-line-604">
 <p><a id="OWL"></a> World Wide Web Consortium, <em>OWL 2 Web Ontology Language Document Overview (Second Edition)</em>, W3C Recommendation (11 December 2012). <a href="https://www.w3.org/TR/owl2-overview/" class="undefined" data-href="https://www.w3.org/TR/owl2-overview/">https://www.w3.org/TR/owl2-overview/</a></p>
 </li>
-<li class="data-line-602">
+<li class="data-line-606">
 <p><a id="PROF"></a> World Wide Web Consortium, <em>The Profiles Vocabulary</em>, W3C Working Group Note (18 December 2019). <a href="https://www.w3.org/TR/dx-prof/" class="undefined" data-href="https://www.w3.org/TR/dx-prof/">https://www.w3.org/TR/dx-prof/</a></p>
 </li>
-<li class="data-line-604">
+<li class="data-line-608">
 <p><a id="PROV"></a> World Wide Web Consortium, <em>The Profiles Vocabulary</em>, W3C Working Group Note (18 December 2019). <a href="https://www.w3.org/TR/dx-prof/" class="undefined" data-href="https://www.w3.org/TR/dx-prof/">https://www.w3.org/TR/dx-prof/</a></p>
 </li>
-<li class="data-line-606">
+<li class="data-line-610">
 <p><a id="SDO"></a> W3C Schema.org Community Group, <em>schema.org</em>. Community ontology (2015). <a href="https://schema.org" class="undefined" data-href="https://schema.org">https://schema.org</a></p>
 </li>
-<li class="data-line-608">
+<li class="data-line-612">
 <p><a id="SSN"></a> World Wide Web Consortium, <em>Semantic Sensor Network Ontology</em>, W3C Recommendation (19 October 2017). <a href="https://www.w3.org/TR/vocab-ssn/" class="undefined" data-href="https://www.w3.org/TR/vocab-ssn/">https://www.w3.org/TR/vocab-ssn/</a></p>
 </li>
-<li class="data-line-610">
+<li class="data-line-614">
 <p><a id="SKOS"></a> [SKOS] World Wide Web Consortium, <em>SKOS Simple Knowledge Organization System Reference</em>, W3C Recommendation (18 August 2009). <a href="https://www.w3.org/TR/skos-reference/" class="undefined" data-href="https://www.w3.org/TR/skos-reference/">https://www.w3.org/TR/skos-reference/</a></p>
 </li>
-<li class="data-line-612">
+<li class="data-line-616">
 <p><a id="TTL"></a> World Wide Web Consortium, <em>RDF 1.1 Turtle Terse RDF Triple Language</em>, W3C Recommendation (25 February 2014). <a href="https://www.w3.org/TR/turtle/" class="undefined" data-href="https://www.w3.org/TR/turtle/">https://www.w3.org/TR/turtle/</a></p>
 </li>
 </ul>
@@ -1700,7 +1706,7 @@ ex:addr-1
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-04 07:15:36 01000
+Last updated 2022-05-04 07:29:47 01000
 </div>
 </div>
 </body>

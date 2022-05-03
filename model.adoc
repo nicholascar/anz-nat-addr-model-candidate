@@ -102,9 +102,13 @@ This model is composed of Web Ontology Language (OWL) <<OWL>> Classes and Proper
 
 This model defines some Classes and Properties and also requires certain existing Cs & Ps for reuse. All Cs & Ps in this model, both defined and reused, are listed here with an indication of where the element is difined given in the _Is Defined By_ field.
 
-[[fig-model-overview]]
+[[fig-overview]]
 .An informal Model Overview diagram showing the major elements of this model
 image::img/overview.png[]
+
+[[fig-upper-classes]]
+.Mapping of the main model classes to common Semantic Web classes
+image::img/upper-classes.png[]
 
 [[Classes]]
 === Classes
@@ -188,7 +192,7 @@ Examples of types of AddressableObjects are a building, a dwelling or a land par
 | Sub-class Of | https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_class_geofeature[`geo:Feature`]
 | Provenance | Derived from <<ISO19160-1>>'s `AddressableObject` class and its associated codelist of subtypes
 | Usage note | Judgement as to what makes for a permissable AddressableObject rests with the implementer. This model's technical requirements are only that the object is a legal `geo:Feature` object, thus implementers may make Addressable Objects of almost anything.
-| Expected Properties | <<hasAddress>>
+| Expected Properties | <<hasAddress>>, http://www.opengis.net/ont/geosparql#[`geo:hasGeometry`]
 | Example 
 a| [source,turtle]
 ----

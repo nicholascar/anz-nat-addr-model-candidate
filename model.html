@@ -729,11 +729,17 @@ flexibility" - things for Strategy implementers to aim for - "Guiding Principles
 <div class="paragraph">
 <p>This model defines some Classes and Properties and also requires certain existing Cs &amp; Ps for reuse. All Cs &amp; Ps in this model, both defined and reused, are listed here with an indication of where the element is difined given in the <em>Is Defined By</em> field.</p>
 </div>
-<div id="fig-model-overview" class="imageblock">
+<div id="fig-overview" class="imageblock">
 <div class="content">
 <img src="https://nicholascar.com/anz-nat-addr-model-candidate/img/overview.png" alt="overview">
 </div>
 <div class="title">Figure 2. An informal Model Overview diagram showing the major elements of this model</div>
+</div>
+<div id="fig-upper-classes" class="imageblock">
+<div class="content">
+<img src="https://nicholascar.com/anz-nat-addr-model-candidate/img/upper-classes.png" alt="upper classes">
+</div>
+<div class="title">Figure 3. Mapping of the main model classes to common Semantic Web classes</div>
 </div>
 <div class="sect2">
 <h3 id="Classes"><a class="anchor" href="#Classes"></a>4.1. Classes</h3>
@@ -895,7 +901,7 @@ ex:addr-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#hasAddress">has address</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#hasAddress">has address</a>, <a href="http://www.opengis.net/ont/geosparql#"><code>geo:hasGeometry</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
@@ -1083,7 +1089,7 @@ ex:addre-2 addr:isAddressFor ex:admin-area-z .</code></pre>
 <div class="content">
 <img src="https://nicholascar.com/anz-nat-addr-model-candidate/img/lifecycle-stages.png" alt="lifecycle stages">
 </div>
-<div class="title">Figure 3. An example Address, <code>QLD186906</code>, with Lifecycle Stages</div>
+<div class="title">Figure 4. An example Address, <code>QLD186906</code>, with Lifecycle Stages</div>
 </div>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
@@ -1700,7 +1706,7 @@ ex:addr-1
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-03 21:16:43 UTC
+Last updated 2022-05-03 21:32:00 UTC
 </div>
 </div>
 </body>

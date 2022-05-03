@@ -1,0 +1,232 @@
+PREFIX addrct: <http://w3id.org/profile/anz-address/address-component-types/>
+PREFIX cs: <http://w3id.org/profile/anz-address/address-component-types>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX reg: <http://purl.org/linked-data/registry#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sdo: <https://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX status: <http://def.isotc211.org/iso19135/-1/2015/CoreModel/code/RE_ItemStatus/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+cs:
+    a skos:ConceptScheme ;
+    dcterms:identifier "address-component-types"^^xsd:token ;
+    dcterms:created "2022-05-04"^^xsd:date ;
+    dcterms:creator <https://orcid.org/0000-0002-8742-7730> ;
+    dcterms:modified "2022-05-04"^^xsd:date ;
+    dcterms:publisher <https://orcid.org/0000-0002-8742-7730> ;
+    dcterms:rights "Copyright 2022, Nicholas J. Car" ;
+    dcterms:provenance "Developed for the ANZ National Address Model using the table AddressComponentType from ISO19160-1 as a partial source" ;
+    skos:definition "Address Component Types are kinds of Address Components. The kind is used to validate Address Component values and to order Address Components for address printing."@en ;
+    skos:hasTopConcept
+        addrct:addressedObjectIdentifier ,
+        addrct:administrativeAreaName ,
+        addrct:countryCode ,
+        addrct:countryName ,
+        addrct:localityName ,
+        addrct:postcode ,
+        addrct:postOfficeName ,
+        addrct:thoroughfareName ;
+    skos:prefLabel "Address Component Types" ;
+.
+
+<https://orcid.org/0000-0002-8742-7730>
+    a sdo:Person ;
+    sdo:name "Nicholas J. Car" ;
+    sdo:email "nick@kurrawong.net"^^xsd:anyURI ;
+.
+
+addrct:iso19160-1-components
+    a skos:OrderedCollection ;
+    dcterms:identifier "iso19160-1-components"^^xsd:token ;
+    skos:prefLabel "ISO19160-1 Address Components" ;
+    skos:definition "The list of Address Component Types presented in the original ISO19160-1 standard's codelist"@en ;
+    skos:member
+        addrct:addressedObjectIdentifier ,
+        addrct:administrativeAreaName ,
+        addrct:countryCode ,
+        addrct:countryName ,
+        addrct:localityName ,
+        addrct:postcode ,
+        addrct:postOfficeName ,
+        addrct:thoroughfareName ;
+    dcterms:provenance "The list of Address Component Types presented in the original ISO19160-1 standard's codelist"@en ;
+.
+
+addrct:anz-additional-address-components
+    a skos:Collection ;
+    dcterms:identifier "anz-additional-address-components"^^xsd:token ;
+    skos:prefLabel "ANZ Additional Address Components" ;
+    skos:definition "The list of additional Address Component Types on top of the ISO19160-1 standard created for use in Australia and New Zealand"@en ;
+    skos:member
+        addrct:recipientName ,
+        addrct:streetNumber ,
+        addrct:poBox ,
+        addrct:traditionalPlaceName ;
+    dcterms:provenance "Created for the ANZ National Address Model - Candidate"@en ;
+.
+
+addrct:anz-components-order
+    a skos:OrderedCollection ;
+    dcterms:identifier "anz-components-order"^^xsd:token ;
+    skos:prefLabel "ANZ Components Order" ;
+    skos:definition "The list of Address Components in address printing order use in Australia and New Zealand"@en ;
+    skos:member
+        addrct:recipientName ,
+        addrct:traditionalPlaceName ,
+        addrct:administrativeAreaName ,
+        addrct:addressedObjectIdentifier ,
+        addrct:streetNumber ,
+        addrct:thoroughfareName ,
+        addrct:localityName ,
+        addrct:poBox ,
+        addrct:postcode ,
+        addrct:countryName ;
+    dcterms:provenance "Created for the ANZ National Address Model - Candidate"@en ;
+.
+
+addrct:addressedObjectIdentifier
+    a skos:Concept ;
+    dcterms:identifier "addressedObjectIdentifier"^^xsd:token ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "Identifier of the addressed object, e.g. building name or address number" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Addressed Object Identifier" ;
+    skos:topConceptOf cs: ;
+    reg:status status:stable ;
+    dcterms:provenance "Presented in the original ISO19160-1 standard's codelist"@en ;
+.
+
+addrct:administrativeAreaName
+    a skos:Concept ;
+    dcterms:identifier "administrativeAreaName"^^xsd:token ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "Name of an administrative area" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Administrative Area Name" ;
+    skos:topConceptOf cs: ;
+    reg:status status:stable ;
+    dcterms:provenance "Presented in the original ISO19160-1 standard's codelist"@en ;
+.
+
+addrct:countryCode
+    a skos:Concept ;
+    dcterms:identifier "countryCode"^^xsd:token ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "ISO 3166-1 code for the country, territory, or area of geopolitical interest" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Country Code" ;
+    skos:topConceptOf cs: ;
+    reg:status status:stable ;
+    dcterms:provenance "Presented in the original ISO19160-1 standard's codelist"@en ;
+.
+
+addrct:countryName
+    a skos:Concept ;
+    dcterms:identifier "countryName"^^xsd:token ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "Name of a country" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Country Name" ;
+    skos:topConceptOf cs: ;
+    reg:status status:stable ;
+    dcterms:provenance "Presented in the original ISO19160-1 standard's codelist"@en ;
+.
+
+addrct:localityName
+    a skos:Concept ;
+    dcterms:identifier "localityName"^^xsd:token ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "Name of a locality" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Locality Name" ;
+    skos:topConceptOf cs: ;
+    reg:status status:stable ;
+    dcterms:provenance "Presented in the original ISO19160-1 standard's codelist"@en ;
+.
+
+addrct:postcode
+    a skos:Concept ;
+    dcterms:identifier "postcode"^^xsd:token ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "Code used for the sorting of mail [SOURCE: UPU S42]" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Postcode" ;
+    skos:topConceptOf cs: ;
+    reg:status status:stable ;
+    dcterms:provenance "Presented in the original ISO19160-1 standard's codelist"@en ;
+.
+
+addrct:postOfficeName
+    a skos:Concept ;
+    dcterms:identifier "postOfficeName"^^xsd:token ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "Name of a post office" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Post Office Name" ;
+    skos:topConceptOf cs: ;
+    reg:status status:stable ;
+    dcterms:provenance "Presented in the original ISO19160-1 standard's codelist"@en ;
+.
+
+addrct:thoroughfareName
+    a skos:Concept ;
+    dcterms:identifier "thoroughfareName"^^xsd:token ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "Name of a thoroughfare" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Thoroughfare Name" ;
+    skos:altLabel "Street Name" ;
+    skos:topConceptOf cs: ;
+    reg:status status:stable ;
+    dcterms:provenance "Presented in the original ISO19160-1 standard's codelist"@en ;
+.
+
+addrct:recipientName
+    a skos:Concept ;
+    dcterms:identifier "recipientName"^^xsd:token ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "The name of the person or organisation receiving mail." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Recipient Name" ;    
+    skos:topConceptOf cs: ;
+    reg:status status:stable ;
+    dcterms:provenance "Created for the ANZ National Address Model - Candidate"@en ;
+.
+
+addrct:streetNumber
+    a skos:Concept ;
+    dcterms:identifier "streetNumber"^^xsd:token ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "The number of the building on the thoroughfare" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Street Number" ;
+    skos:topConceptOf cs: ;
+    reg:status status:stable ;
+    dcterms:provenance "Created for the ANZ National Address Model - Candidate"@en ;
+.
+
+addrct:poBox
+    a skos:Concept ;
+    dcterms:identifier "poBox"^^xsd:token ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "The number of the Post Office Box or Locked Bag" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "PO Box" ;
+    skos:topConceptOf cs: ;
+    reg:status status:stable ;
+    dcterms:provenance "Created for the ANZ National Address Model - Candidate"@en ;
+.
+
+addrct:traditionalPlaceName
+    a skos:Concept ;
+    dcterms:identifier "traditionalPlaceName"^^xsd:token ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "The name of an area given by traditional or indigenous land owners" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Traditional Place Name" ;
+    skos:topConceptOf cs: ;
+    reg:status status:stable ;
+    dcterms:provenance "Created for the ANZ National Address Model - Candidate"@en ;
+.

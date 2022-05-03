@@ -64,7 +64,7 @@ This model conforms to the https://w3id.org/profile/ontpub[OntPub Profile] which
 
 Figures used in this document use the following key:
 
-[[figure-key]]
+[[fig-figure-key]]
 .Key of elements used in this Model's figures
 image::img/key.png[]
 
@@ -102,12 +102,19 @@ This model is composed of Web Ontology Language (OWL) <<OWL>> Classes and Proper
 
 This model defines some Classes and Properties and also requires certain existing Cs & Ps for reuse. All Cs & Ps in this model, both defined and reused, are listed here with an indication of where the element is difined given in the _Is Defined By_ field.
 
-[[model-overview]]
+[[fig-model-overview]]
 .An informal Model Overview diagram showing the major elements of this model
 image::img/overview.png[]
 
 [[Classes]]
 === Classes
+
+* <<Address>>
+* <<AddressableObject, Addressable Object>>
+* <<AddressComponent, Address Component>>
+* <<AddressComponentType, Address Component Type>>
+* <<AddressLifecycleStage, Address Lifecycle Stage>>
+* <<AddressLifecycleStageType, Address Lifecycle StageType>>
 
 [[Address]]
 ==== Address
@@ -129,27 +136,27 @@ a| [source,turtle]
 ----
 BASE <http://linked.data.gov.au/dataset/asgsed3/>
 
-ex:addre-1
-a addr:Address ;
+ex:addr-1
+  a addr:Address ;
   addr:isAddressFor <some-external-object> ;
   addr:hasAddressComponent 
     [   
       addr:hasValue 20 ;
-      addr:hasComponentType addct:StreetNumber ;
+      addr:hasComponentType addrct:streetNumber ;
     ] ,
     [
       addr:hasValue "Oxford" ;
-      addr:hasComponentType addct:StreetName ;
+      addr:hasComponentType addrct:thoroughfareName ;
     ] ,
     [
       addr:hasValue strt:Place ;
       addr:hasValueText "Place" ;
-      addr:hasComponentType addct:StreetType ;      
+      addr:hasComponentType addct:StreetType ;
     ] ,
     [
       addr:hasValue <LGA2021/1234> ;
       addr:hasValueText "Shorncliffe" ;
-      addr:hasComponentType addct:Locality ;
+      addr:hasComponentType addrct:localityName ;
     ] ,
     [
       addr:hasValue <STE2021/6> ;
@@ -160,7 +167,7 @@ a addr:Address ;
       addr:hasValue <AUS2021/AUS> ;
       addr:hasValueText "Australia" ;
       addr:hasComponentType addct:Nation ;
-    ] ;                                      
+    ] ;
 .
 ----
 |===
@@ -168,26 +175,415 @@ a addr:Address ;
 [[AddressableObject]]
 ==== Addressable Object
 
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `add:AddressableObject`
+| Preferred Label | Addressable Object
+| Definition | An object that is unambiguously determined by an address.
+
+Examples of types of AddressableObjects are a building, a dwelling or a land parcel
+| Is Defined By | http://w3id.org/profile/anz-address/[ANZ National Address Model]
+| Sub-class Of | https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_class_geofeature[`geo:Feature`]
+| Provenance | Derived from <<ISO19160-1>>'s `AddressableObject` class and its associated codelist of subtypes
+| Usage note | Judgement as to what makes for a permissable AddressableObject rests with the implementer. This model's technical requirements are only that the object is a legal `geo:Feature` object, thus implementers may make Addressable Objects of almost anything.
+| Expected Properties | <<hasAddress>>
+| Example 
+a| [source,turtle]
+----
+# ex:parcel-x is inferred to be an Addressable object
+# due to the property addr:hasAddress indicated for it
+ex:parcel-x addr:hasAddress ex:addr-1 .
+
+# this object is declared to be an Addressable Object
+<http://example.com/building/y>
+  a addr:AddressableObject ;
+  rdfs:label "Building Y" ;
+.
+
+# ex:admin-area-z is inferred to be an Addressable Object
+# due to the property addr:isAddressFor indicating it
+ex:addre-2 addr:isAddressFor ex:admin-area-z .
+----
+|===
+
 [[AddressComponent]]
 ==== Address Component
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `add:AddressComponent`
+| Preferred Label | Address Component
+| Definition | A component that is a constituent part of an address
+| Is Defined By | http://w3id.org/profile/anz-address/[ANZ National Address Model]
+| Sub-class Of | http://www.w3.org/2000/01/rdf-schema#Resource[`rdfs:Resource`]
+| Provenance | Derived from <<ISO19160-1>>'s `AddressComponent` class
+| Usage note | Address Components can be literals - numbers, words etc. - or complex ojects - Localities, districtes etc. If the Address Component is a complex object, a textual representation of it must be provided when a textual rendering of all of an Addresses' component are required, for example for letter printing. 
+
+Complex objects are preferred for use over literals when the object referred to has independent identity.
+
+Ordering of Address Components, for example for letter printing, is not fixed within this model but should be implemented with a positioning preference system utilising the Address Component's `addr:hasComponentType` values which should come from a controlled vocabulary of Address Component Type values.
+| Expected Properties | <<hasValue>>, <<hasValueText>>, <<hasComponentType>>
+| Example 
+a| [source,turtle]
+----
+ex:addr-1
+  a addr:Address ;
+  addr:hasAddressComponent 
+    [
+      # a simple numerical literal - street number
+      addr:hasValue 20 ;
+      addr:hasComponentType addrct:streetNumber ;
+    ] ,
+    [
+      # a simple literal - street name
+      addr:hasValue "Oxford" ;
+      addr:hasComponentType addrct:thoroughfareName ;
+    ] ,
+    [
+      # complex object - a Locality
+      addr:hasValue <http://example.com/lga/1234> ;
+      # textual value of complex object
+      addr:hasValueText "Shorncliffe" ;
+      addr:hasComponentType addrct:localityName ;
+    ] ,
+    ... 
+----
+|===
 
 [[AddressComponentType]]
 ==== Address Component Type
 
-[[Address Lifecycle Stage]]
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `add:AddressComponentType`
+| Preferred Label | Address Component Type
+| Definition | Code that specifies the kind of address component
+| Is Defined By | http://w3id.org/profile/anz-address/[ANZ National Address Model]
+| Sub-class Of | http://www.w3.org/2004/02/skos/core#Concept[`skos:Concept`]
+| Provenance | Derived from <<ISO19160-1>>'s `AddressComponent` class
+| Usage note | An Address Component's type should be indicated with values from a controlled vocabulary - a code list. 
+
+A SKOS vocabulary of Address Component Types is suplied with this ontology.
+| Expected Properties | Standard properties for a SKOS Concept
+| Example 
+a| [source,turtle]
+----
+ex:addr-1
+  a addr:Address ;
+  addr:hasAddressComponent 
+    [
+      # "StreetNumber" type
+      addr:hasValue 20 ;
+      addr:hasComponentType addrct:streetNumber ;
+    ] ,
+    [
+      # "StreetName" type
+      addr:hasValue "Oxford" ;
+      addr:hasComponentType addrct:thoroughfareName ;
+    ] ,
+    [
+      # "Locality" type
+      addr:hasValue <http://example.com/lga/1234> ;
+      # textual value of complex object
+      addr:hasValueText "Shorncliffe" ;
+      addr:hasComponentType addrct:localityName ;
+    ] ,
+    ... 
+----
+|===
+
+[[AddressLifecycleStage]]
 ==== Address Lifecycle Stage
+
+[[fig-lifecycle-stages]]
+.An example Address, `QLD186906`, with Lifecycle Stages
+image::img/lifecycle-stages.png[]
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `add:AddressLifecycleStage`
+| Preferred Label | Address Lifecycle Stage
+| Definition | An AddressLifecycleStage represents the different lifecycle stages of an Address
+| Is Defined By | http://w3id.org/profile/anz-address/[ANZ National Address Model]
+| Sub-class Of | http://www.w3.org/2004/02/skos/core#Concept[`skos:Concept`]
+| Provenance | Derived from <<ISO19160-1>>'s `AddressComponent` class
+| Usage note | An Address Lifecycle Stage's type should be indicated with values from a controlled vocabulary - a code list. 
+
+A SKOS vocabulary of Address Lifecycle Stages is suplied with this ontology.
+
+In this model, these Lifecycle Stages are defined for use with Addresses only, not also Address Components, as per ISO19160-1.
+| Expected Properties | Standard properties for a SKOS Concept
+| Example 
+a| [source,turtle]
+----
+# An Address with two Lifecycle Stages indicated:
+# one current and one past
+ex:addr-1
+  a addr:Address ;
+  addr:hasLifeCycleStage [
+    # this Stage has ceased
+    time:hasTime [
+      time:hasBeginning [ time:inXSDDate "1982-02-10"^^xsd:date ] ;
+      time:hasEnd [ time:inXSDDate "1982-05-11"^^xsd:date ] ;      
+    ] ;
+    addr:hasLifeCycleStageType addrls:proposed ;
+  ] ,
+  [
+    # this Stage is still in effect - no hasEnd given
+    time:hasTime [
+      time:hasBeginning [ time:inXSDDate "1982-05-11"^^xsd:date ] ;        
+    ] ;
+    addr:hasLifeCycleStageType addrls:current ;
+  ] ,  
+.
+
+# The Address Lifecycle Stage 'proposed'
+# from the Address Lifecycle Stage Types vocabulary
+# indicating only some properties
+addrls:proposed
+    a skos:Concept ;
+    ...
+    skos:prefLabel "Proposed" ;
+.
+----
+|===
+
+[[AddressLifecycleStageType]]
+==== Address Lifecycle Stage Type
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `add:AddressLifecycleStageType`
+| Preferred Label | Address Lifecycle Stage Type
+| Definition | Code that specifies the kind of Address Lifecycle Stage
+| Is Defined By | http://w3id.org/profile/anz-address/[ANZ National Address Model]
+| Sub-class Of | http://www.w3.org/2004/02/skos/core#Concept[`skos:Concept`]
+| Provenance | Derived from <<ISO19160-1>>'s `AddressLifecycle` class
+| Usage note | An Address Address Lifecycle Stage's type should be indicated with values from a controlled vocabulary - a code list. 
+
+A SKOS vocabulary of Address Lifecycle Stage Types is suplied with this ontology.
+| Expected Properties | Standard properties for a SKOS Concept
+| Example 
+a| [source,turtle]
+----
+# An Address with a Lifecycle Stages indicated
+# which then indicates its type
+ex:addr-1
+  a addr:Address ;
+  addr:hasLifeCycleStage [
+    ...
+    addr:hasLifeCycleStageType addrls:proposed ;
+  ] ;
+  ...
+.
+----
+|===
 
 [[Properties]]
 === Properties
 
+* <<isAddressFor, is address for>>
+* <<hasAddress, has address>>
+* <<hasAddressComponent, has address component>>
+* <<hasAddressComponentType, has address component type>>
+* <<hasLifecycleStage, has lifecycle stage >>
+* <<hasLifecycleStageType, has lifecycle stage type>>
+
 [[isAddressFor]]
 ==== is address for
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `add:isAddressFor`
+| Preferred Label | is address for
+| Definition | Indicates an Addressable Object that an Address is allocated to
+| Is Defined By | http://w3id.org/profile/anz-address/[ANZ National Address Model]
+| Sub-property Of | http://www.w3.org/2000/01/rdf-schema#label[`rdfs:label`]
+| Inverse Of | <<hasAddress>>
+| Provenance | Derived from <<ISO19160-1>>'s object relations
+| Domain | <<Address, Address>>
+| Range | <<AddressableObject, Addressable Object>>
+| Example 
+a| [source,turtle]
+----
+# the Address ex:addr-1 is allocated to
+# some-addressable-object
+ex:addr-1
+  a addr:Address ;
+  addr:isAddressFor <some-addressable-object> ;
+.
+----
+|===
 
 [[hasAddress]]
 ==== has address
 
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `add:hasAddress`
+| Preferred Label | has address
+| Definition | Indicates an Address has been allocated for an Addressable Object
+| Is Defined By | http://w3id.org/profile/anz-address/[ANZ National Address Model]
+| Inverse Of | <<isAddressFor>>
+| Provenance | Derived from <<ISO19160-1>>'s object relations
+| Domain | <<AddressableObject, Addressable Object>>
+| Range | <<Address, Address>>
+| Example 
+a| [source,turtle]
+----
+# the addr:AddressableObject, some-addressable-object,
+# indicates an address with addr:hasAddress 
+<some-addressable-object>
+  a addr:AddressableObject ;
+  addr:hasAddress ex:addr-1 ;
+.
+
+ex:addr-1
+  a addr:Address ;
+.
+----
+|===
+
+[[hasAddressComponent]]
+==== has address component
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `add:hasAddressComponent`
+| Preferred Label | has address component
+| Definition | Indicates an Address Component for an Address
+| Is Defined By | http://w3id.org/profile/anz-address/[ANZ National Address Model]
+| Provenance | Derived from <<ISO19160-1>>'s object relations
+| Domain | <<Address, Address>>
+| Range | <<AddressComponent, Address Component>>
+| Example 
+a| [source,turtle]
+----
+# an Address has an Address Component, a street number, indicated
+ex:addr-1
+  a addr:Address ;
+  addr:hasAddressComponent [
+      addr:hasValue 20 ;
+      addr:hasComponentType addrct:streetNumber ;
+    ] ,
+...
+----
+|===
+
+[[hasAddressComponentType]]
+==== has address component type
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `add:hasAddressComponentType`
+| Preferred Label | has address component type
+| Definition | Indicates an Addresses Component's type
+| Is Defined By | http://w3id.org/profile/anz-address/[ANZ National Address Model]
+| Provenance | Derived from <<ISO19160-1>>'s object relations
+| Domain | <<AddressComponent, Address Component>>
+| Range | <<AddressComponentType, Address Component Type>>
+| Example 
+a| [source,turtle]
+----
+# an Address has an Address Component with its type,
+# street number, indicated
+ex:addr-1
+  a addr:Address ;
+  addr:hasAddressComponent [
+      addr:hasValue 20 ;
+      addr:hasComponentType addrct:streetNumber ;
+    ] ,
+...
+----
+|===
+
 [[hasLifecycleStage]]
 ==== has lifecycle stage
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `add:hasLifecycleStage`
+| Preferred Label | has lifecycle stage
+| Definition | Indicates an Addresses' Lifecycle Stage
+| Is Defined By | http://w3id.org/profile/anz-address/[ANZ National Address Model]
+| Provenance | Derived from <<ISO19160-1>>'s object relations
+| Domain | <<Address, Address>>
+| Range | <<AddressLifecycleStage, Address Lifecycle Stage>>
+| Example 
+a| [source,turtle]
+----
+# An Address with two Lifecycle Stages indicated:
+# one current and one past
+ex:addr-1
+  a addr:Address ;
+  addr:hasLifeCycleStage [
+    # this Stage has ceased
+    time:hasTime [
+      time:hasBeginning [ time:inXSDDate "1982-02-10"^^xsd:date ] ;
+      time:hasEnd [ time:inXSDDate "1982-05-11"^^xsd:date ] ;      
+    ] ;
+    addr:hasLifeCycleStageType addrls:proposed ;
+  ] ,
+  [
+    # this Stage is still in effect - no hasEnd given
+    time:hasTime [
+      time:hasBeginning [ time:inXSDDate "1982-05-11"^^xsd:date ] ;        
+    ] ;
+    addr:hasLifeCycleStageType addrls:current ;
+  ] ,  
+.
+----
+|===
+
+[[hasLifecycleStageType]]
+==== has lifecycle stage type
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `add:hasLifecycleStageType`
+| Preferred Label | has lifecycle stage type
+| Definition | Indicates an Addresses' Lifecycle Stage's type
+| Is Defined By | http://w3id.org/profile/anz-address/[ANZ National Address Model]
+| Provenance | Derived from <<ISO19160-1>>'s object relations
+| Domain | <<AddressLifecycleStage, Address Lifecycle Stage>>
+| Range | <<AddressLifecycleStageType, Address Lifecycle Stage Type>>
+| Example 
+a| [source,turtle]
+----
+# An Address with a Lifecycle Stages indicated
+# which then indicates its type
+ex:addr-1
+  a addr:Address ;
+  addr:hasLifeCycleStage [
+    ...
+    addr:hasLifeCycleStageType addrls:proposed ;
+  ] ;
+  ...
+.
+----
+|===
 
 :sectnums!:
 

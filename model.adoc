@@ -164,7 +164,7 @@ ex:addr-1
     ] ,
     [
       addr:hasValue <STE2021/6> ;
-      addr:hasValueText "Queendland" ;
+      addr:hasValueText "Queensland" ;
       addr:hasComponentType addct:StateOrTerritory ;
     ] ,
     [

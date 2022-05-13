@@ -1,5 +1,5 @@
-PREFIX : <https://linked.data.gov.au/def/AnzAddressLifecycleStage>
-PREFIX cs: <https://linked.data.gov.au/def/AnzAddressLifecycleStage/>
+PREFIX : <https://linked.data.gov.au/def/AnzAddressLifecycleStage/>
+PREFIX cs: <https://linked.data.gov.au/def/AnzAddressLifecycleStage>
 PREFIX iso: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressLifecycleStage/>
 PREFIX isocs: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressLifecycleStage>
 PREFIX dcterms: <http://purl.org/dc/terms/>

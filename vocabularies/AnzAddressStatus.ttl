@@ -1,5 +1,5 @@
-PREFIX : <https://linked.data.gov.au/def/AnzAddressStatus>
-PREFIX cs: <https://linked.data.gov.au/def/AnzAddressStatus/>
+PREFIX : <https://linked.data.gov.au/def/AnzAddressStatus/>
+PREFIX cs: <https://linked.data.gov.au/def/AnzAddressStatus>
 PREFIX isocs: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressStatus>
 PREFIX iso: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressStatus/>
 PREFIX dcterms: <http://purl.org/dc/terms/>

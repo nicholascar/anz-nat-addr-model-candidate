@@ -461,6 +461,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#Properties">4.2. Properties</a></li>
 </ul>
 </li>
+<li><a href="#_supporting_vocabularies">5. Supporting Vocabularies</a>
+<ul class="sectlevel2">
+<li><a href="#_address_component_type_vocabulary">5.1. Address Component Type Vocabulary</a></li>
+<li><a href="#_address_lifecycle_stage_type_vocabulary">5.2. Address Lifecycle Stage Type Vocabulary</a></li>
+<li><a href="#_address_role_vocabulary">5.3. Address Role Vocabulary</a></li>
+<li><a href="#_address_status_vocabulary">5.4. Address Status Vocabulary</a></li>
+</ul>
+</li>
 <li><a href="#_annex_x_something">Annex X: Something</a></li>
 <li><a href="#_references">References</a></li>
 </ul>
@@ -582,9 +590,14 @@ This Model is a candidate model for Australian &amp; New Zealand address informa
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Placeholder namespace for this model</strong></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://w3id.org/profile/anz-address/address-roles/" class="bare">http://w3id.org/profile/anz-address/address-roles/</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Placeholder for the Address Roles Vocabulary</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>asgsed3:</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://linked.data.gov.au/dataset/asgsed3/" class="bare">http://linked.data.gov.au/dataset/asgsed3/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Australian Statistical Geographies Standard Dataset</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Australian Statistical Geographies Standard Dataset, Release 3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms:</code></p></td>
@@ -600,6 +613,21 @@ This Model is a candidate model for Australian &amp; New Zealand address informa
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>geo:</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.opengis.net/ont/geosparql#" class="bare">http://www.opengis.net/ont/geosparql#</a></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">OGC GeoSPARQL</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/" class="bare">http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressComponentType</code> vocabulary namespace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov2:</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressLifecycleStage/" class="bare">http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressLifecycleStage/</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressLifecycleStage</code> vocabulary namespace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov3:</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressStatus/" class="bare">http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressStatus/</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressStatus</code> vocabulary namespace</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>owl:</code></p></td>
@@ -763,6 +791,9 @@ flexibility" - things for Strategy implementers to aim for - "Guiding Principles
 <li>
 <p><a href="#AddressLifecycleStageType">Address Lifecycle StageType</a></p>
 </li>
+<li>
+<p><a href="#AddressRole">Address Role</a></p>
+</li>
 </ul>
 </div>
 <div class="sect3">
@@ -809,7 +840,7 @@ flexibility" - things for Strategy implementers to aim for - "Guiding Principles
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#isAddressFor">is address for</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#isAddressFor">is address for</a>, <a href="#hasAddressComponent">has address component</a>, <a href="#hasAddressRole">has address role</a>, <a href="#hasLifecycleStage">has lifecycle stage</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
@@ -1243,6 +1274,69 @@ ex:addr-1
 </tbody>
 </table>
 </div>
+<div class="sect3">
+<h4 id="AddressRole"><a class="anchor" href="#AddressRole"></a>4.1.7. Address Role</h4>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add:AddressRole</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Address Role</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AddressRole represents a task for which this Address may be used</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://w3id.org/profile/anz-address/">ANZ National Address Model</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sub-class Of</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2004/02/skos/core#Concept"><code>skos:Concept</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressPosition</code> &amp; <code>AddressPositionType</code> classes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Usage note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISO19160-1 does not contain an <code>AddressRole</code> class but instead an <code>AddressPosition</code> class with positioning and role properties. This Standard make role a direct property of <code>Address</code> instead and provides for a positional qualifier (qualified against the position of the <code>AddressableObject</code>) instead to allow whole addresses to carry role tasking.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standard properties for a SKOS Concept</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle"># An Address with two roles
+ex:addr-1
+  a addr:Address ;
+  addr:hasAddressRole
+    ex:emergencyAccess ,
+    buildingAccessPoint ;
+    ...</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div class="sect2">
 <h3 id="Properties"><a class="anchor" href="#Properties"></a>4.2. Properties</h3>
@@ -1259,6 +1353,9 @@ ex:addr-1
 </li>
 <li>
 <p><a href="#hasAddressComponentType">has address component type</a></p>
+</li>
+<li>
+<p><a href="#hasAddressRole">has address role</a></p>
 </li>
 <li>
 <p><a href="#hasLifecycleStage">has lifecycle stage </a></p>
@@ -1522,7 +1619,66 @@ ex:addr-1
 </table>
 </div>
 <div class="sect3">
-<h4 id="hasLifecycleStage"><a class="anchor" href="#hasLifecycleStage"></a>4.2.5. has lifecycle stage</h4>
+<h4 id="hasAddressRole"><a class="anchor" href="#hasAddressRole"></a>4.2.5. has address role</h4>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add:hasAddressRole</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">has address component type</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates an Address Role for an Address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://w3id.org/profile/anz-address/">ANZ National Address Model</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s AddressPosition class and properties</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Address">Address</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Range</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#AddressRole">Address Role</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle"># An Address with two roles
+ex:addr-1
+  a addr:Address ;
+  addr:hasAddressRole
+    ex:emergencyAccess ,
+    buildingAccessPoint ;
+    ...</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="hasLifecycleStage"><a class="anchor" href="#hasLifecycleStage"></a>4.2.6. has lifecycle stage</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -1594,7 +1750,7 @@ ex:addr-1
 </table>
 </div>
 <div class="sect3">
-<h4 id="hasLifecycleStageType"><a class="anchor" href="#hasLifecycleStageType"></a>4.2.6. has lifecycle stage type</h4>
+<h4 id="hasLifecycleStageType"><a class="anchor" href="#hasLifecycleStageType"></a>4.2.7. has lifecycle stage type</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -1659,6 +1815,279 @@ ex:addr-1
 </div>
 </div>
 <div class="sect1">
+<h2 id="_supporting_vocabularies"><a class="anchor" href="#_supporting_vocabularies"></a>5. Supporting Vocabularies</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This model has several classes that are subclasses of the generic vocabulary/taxonomy item class <a href="http://www.w3.org/2004/02/skos/core#Concept"><code>skos:Concept</code></a>. The classes are:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="#AddressComponentType">Address Component Type</a></p>
+</li>
+<li>
+<p><a href="#AddressLifecycleStageType">Address Lifecycle Stage Type</a></p>
+</li>
+<li>
+<p><a href="#AddressRole">Address Role</a></p>
+</li>
+<li>
+<p><a href="#AddressStatus">Address Status</a></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Individuals of these classes must be instances of the particular class and must also be Concepts selected from controlled vocabularies of instances.</p>
+</div>
+<div class="paragraph">
+<p>This profile contains vocabularies for these class types derived from <a href="#ISO19160-1">[ISO19160-1]</a>. Ceoncepts in these vocabularies are from the standard plus additions specified for ANZ.</p>
+</div>
+<div class="paragraph">
+<p>Concepts from vocabularies other than those specified here may be use with this model as long as the vocabulary items are dual-classed as <code>skos:Concept</code> and the relevant model class, e.g. <code>addr:AddressComponentType</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The representations of vocabularies here do not contain full vocabulary information such as concept hierarchy. Please see the vocabularies' own documentation for full details.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_address_component_type_vocabulary"><a class="anchor" href="#_address_component_type_vocabulary"></a>5.1. Address Component Type Vocabulary</h3>
+<div class="paragraph">
+<p>This vocabulary is an extended version of <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressComponentType</code> vocabulary.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>full documentation: <a href="https://nicholascar.com/anz-nat-addr-model-candidate/AnzAddressComponentType.html">AnzAddressComponentType.html</a></p>
+</li>
+<li>
+<p>machine-readable form: <a href="https://nicholascar.com/anz-nat-addr-model-candidate/AnzAddressComponentType.ttl">AnzAddressComponentType.ttl</a></p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">IRI</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:addressedObjectIdentifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">addressed object identifier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier of the addressed object, e.g. building name or address number</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:administrativeAreaName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">administrative area name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of an administrative area</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:countryCode</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">country code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISO 3166-1 code for the country, territory or area of geopolitical interest</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:countryName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">country name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of a country</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:localityName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">locality name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of a locality</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:postOfficeName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">post office name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of a post office</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:postcode</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">postcode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Code used for the sorting of mail</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:thoroughfareName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">thoroughfare name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of a thoroughfare</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_address_lifecycle_stage_type_vocabulary"><a class="anchor" href="#_address_lifecycle_stage_type_vocabulary"></a>5.2. Address Lifecycle Stage Type Vocabulary</h3>
+<div class="paragraph">
+<p>This vocabulary is an extended version of <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressLifecycleStage</code> vocabulary.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>full documentation: <a href="https://nicholascar.com/anz-nat-addr-model-candidate/AnzAddressLifecycleStage.html">AnzAddressLifecycleStage.html</a></p>
+</li>
+<li>
+<p>machine-readable form: <a href="https://nicholascar.com/anz-nat-addr-model-candidate/AnzAddressLifecycleStage.ttl">AnzAddressLifecycleStage.ttl</a></p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">IRI</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov2:current</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">current</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The address or address component is currently in use</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov2:proposed</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">proposed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The address or address component has been proposed, i.e. the relevant authority has initiated approval procedures for the use of the address or address component</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov2:rejected</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The address or address component was proposed but rejected</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov2:reserved</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">reserved</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The address or address component has been reserved for future use</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov2:retired</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">retired</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The address or address component was in use at some stage, but not anymore</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov2:unknown</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">unknown</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The lifecycle stage of the address or address component is unknown</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_address_role_vocabulary"><a class="anchor" href="#_address_role_vocabulary"></a>5.3. Address Role Vocabulary</h3>
+<div class="paragraph">
+<p>This vocabulary is derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressPosition</code> and <code>AddressPositionType</code> classes and an example vocabulary in Annex C of <a href="#ISO19160-1">[ISO19160-1]</a> for the latter.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>full documentation: <a href="https://nicholascar.com/anz-nat-addr-model-candidate/AnzAddressPosition.html">AnzAddressPosition.html</a></p>
+</li>
+<li>
+<p>machine-readable form: <a href="https://nicholascar.com/anz-nat-addr-model-candidate/AnzAddressPosition.ttl">AnzAddressPosition.ttl</a></p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">IRI</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:buildingAccessPoint</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The address that identifies the place to access a building AddressableObject from</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:centroid</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The centrepoint of the AddressableObject&#8217;s geometry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:emergencyAccess</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The centrepoint of a Building&#8217;s geometry</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:propertyCentroid</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The centrepoint of the Property&#8217;s geometry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:serviceConnectionPoint</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_address_status_vocabulary"><a class="anchor" href="#_address_status_vocabulary"></a>5.4. Address Status Vocabulary</h3>
+<div class="paragraph">
+<p>This vocabulary is an extended version of <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressStatus</code> vocabulary.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>full documentation: <a href="https://nicholascar.com/anz-nat-addr-model-candidate/AnzAddressStatus.html">AnzAddressStatus.html</a></p>
+</li>
+<li>
+<p>machine-readable form: <a href="https://nicholascar.com/anz-nat-addr-model-candidate/AnzAddressStatus.ttl">AnzAddressStatus.ttl</a></p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">IRI</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov3:official</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">official</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An official addressing authority assigned the address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov3:unknown</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">unknown</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The status of the address is unknown</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov3:unofficial</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">unofficial</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The address was not assigned by an official addressing authority</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_annex_x_something"><a class="anchor" href="#_annex_x_something"></a>Annex X: Something</h2>
 <div class="sectionbody">
 
@@ -1706,7 +2135,7 @@ ex:addr-1
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-10 05:51:12 UTC
+Last updated 2022-05-13 10:59:50 UTC
 </div>
 </div>
 </body>

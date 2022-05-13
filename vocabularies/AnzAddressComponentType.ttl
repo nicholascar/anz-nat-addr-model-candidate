@@ -1,0 +1,138 @@
+PREFIX : <https://linked.data.gov.au/def/AnzAddressComponentType>
+PREFIX cs: <https://linked.data.gov.au/def/AnzAddressComponentType/>
+PREFIX isocs: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType>
+PREFIX iso: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX reg: <http://purl.org/linked-data/registry#>
+PREFIX schema: <https://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX status: <http://def.isotc211.org/iso19135/-1/2015/CoreModel/code/RE_ItemStatus/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+iso:addressedObjectIdentifier
+    a skos:Concept ;
+    dcterms:identifier "addressedObjectIdentifier"^^xsd:token ;
+    dcterms:provenance "Presented in the original ISO19160-1 standard's AddressComponentType codelist"@en ;
+    reg:status status:original ;
+    rdfs:isDefinedBy isocs: ;
+    skos:definition "Identifier of the addressed object, e.g. building name or address number" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "addressed object identifier"@en ;
+    skos:topConceptOf cs: ;
+.
+
+iso:administrativeAreaName
+    a skos:Concept ;
+    dcterms:identifier "administrativeAreaName"^^xsd:token ;
+    dcterms:provenance "Presented in the original ISO19160-1 standard's AddressComponentType codelist"@en ;
+    reg:status status:original ;
+    rdfs:isDefinedBy isocs: ;
+    skos:definition "Name of an administrative area" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "administrative area name"@en ;
+    skos:topConceptOf cs: ;
+.
+
+iso:countryCode
+    a skos:Concept ;
+    dcterms:identifier "countryCode"^^xsd:token ;
+    dcterms:provenance "Presented in the original ISO19160-1 standard's AddressComponentType codelist"@en ;
+    reg:status status:original ;
+    rdfs:isDefinedBy isocs: ;
+    skos:definition "ISO 3166-1 code for the country, territory or area of geopolitical interest" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "country code"@en ;
+    skos:topConceptOf cs: ;
+.
+
+iso:countryName
+    a skos:Concept ;
+    dcterms:identifier "countryName"^^xsd:token ;
+    dcterms:provenance "Presented in the original ISO19160-1 standard's AddressComponentType codelist"@en ;
+    reg:status status:original ;
+    rdfs:isDefinedBy isocs: ;
+    skos:definition "Name of a country" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "country name"@en ;
+    skos:topConceptOf cs: ;
+.
+
+iso:localityName
+    a skos:Concept ;
+    dcterms:identifier "localityName"^^xsd:token ;
+    dcterms:provenance "Presented in the original ISO19160-1 standard's AddressComponentType codelist"@en ;
+    reg:status status:original ;
+    rdfs:isDefinedBy isocs: ;
+    skos:definition "Name of a locality" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "locality name"@en ;
+    skos:topConceptOf cs: ;
+.
+
+iso:postOfficeName
+    a skos:Concept ;
+    dcterms:identifier "postOfficeName"^^xsd:token ;
+    dcterms:provenance "Presented in the original ISO19160-1 standard's AddressComponentType codelist"@en ;
+    reg:status status:original ;
+    rdfs:isDefinedBy isocs: ;
+    skos:definition "Name of a post office" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "post office name"@en ;
+    skos:topConceptOf cs: ;
+.
+
+iso:postcode
+    a skos:Concept ;
+    dcterms:identifier "postcode"^^xsd:token ;
+    dcterms:provenance "Presented in the original ISO19160-1 standard's AddressComponentType codelist"@en ;
+    reg:status status:original ;
+    rdfs:isDefinedBy isocs: ;
+    skos:definition "Code used for the sorting of mail [SOURCE: UPU S42:2006]" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "postcode"@en ;
+    skos:topConceptOf cs: ;
+.
+
+iso:thoroughfareName
+    a skos:Concept ;
+    dcterms:identifier "thoroughfareName"^^xsd:token ;
+    dcterms:provenance "Presented in the original ISO19160-1 standard's AddressComponentType codelist"@en ;
+    reg:status status:original ;
+    rdfs:isDefinedBy isocs: ;
+    skos:definition "Name of a thoroughfare" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "thoroughfare name"@en ;
+    skos:topConceptOf cs: ;
+.
+
+<https://linked.data.gov.au/def/icsm>
+    a schema:Organization ;
+    schema:description "The ANZLIC committee on Syrveying & Mapping"@en ;
+    schema:name "Intergovernmental Committee on Surveying & Mapping" ;
+    schema:url "https://www.icsm.gov.au"^^xsd:anyURI ;
+.
+
+cs:
+    a skos:ConceptScheme ;
+    dcterms:created "2022-05-11"^^xsd:date ;
+    dcterms:creator <https://linked.data.gov.au/def/icsm> ;
+    dcterms:identifier "AnzAddressComponentType"^^xsd:token ;
+    dcterms:issued "2000-01-01"^^xsd:date ;
+    dcterms:modified "2022-05-13"^^xsd:date ;
+    dcterms:provenance "Derived from the ISO19160-1 AddressComponentType codelist vocabulary"@en ;
+    dcterms:publisher <https://linked.data.gov.au/def/icsm> ;
+    prov:wasDerivedFrom <http://def.isotc211.org/iso19160/-1/2015/Address#AddressComponentType> ;
+    skos:definition "ANZ controlled vocabulary of Address Component Types"@en ;
+    skos:hasTopConcept
+        iso:addressedObjectIdentifier ,
+        iso:administrativeAreaName ,
+        iso:countryCode ,
+        iso:countryName ,
+        iso:localityName ,
+        iso:postOfficeName ,
+        iso:postcode ,
+        iso:thoroughfareName ;
+    skos:prefLabel "ANZ Address Component Type"@en ;
+.

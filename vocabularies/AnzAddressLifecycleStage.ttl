@@ -1,0 +1,111 @@
+PREFIX : <https://linked.data.gov.au/def/AnzAddressLifecycleStage>
+PREFIX cs: <https://linked.data.gov.au/def/AnzAddressLifecycleStage/>
+PREFIX iso: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressLifecycleStage/>
+PREFIX isocs: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressLifecycleStage>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX reg: <http://purl.org/linked-data/registry#>
+PREFIX schema: <https://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX status: <http://def.isotc211.org/iso19135/-1/2015/CoreModel/code/RE_ItemStatus/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+iso:current
+    a skos:Concept ;
+    dcterms:identifier "current"^^xsd:token ;
+    dcterms:provenance "Presented in the original ISO19160-1 standard's AddressLifecycleStage codelist"@en ;
+    reg:status status:original ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "The address or address component is currently in use" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "current"@en ;
+    skos:topConceptOf cs: ;
+.
+
+iso:proposed
+    a skos:Concept ;
+    dcterms:identifier "proposed"^^xsd:token ;
+    dcterms:provenance "Presented in the original ISO19160-1 standard's AddressLifecycleStage codelist"@en ;
+    reg:status status:original ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "The address or address component has been proposed, i.e. the relevant authority has initiated approval procedures for the use of the address or address component" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "proposed"@en ;
+    skos:topConceptOf cs: ;
+.
+
+iso:rejected
+    a skos:Concept ;
+    dcterms:identifier "rejected"^^xsd:token ;
+    dcterms:provenance "Presented in the original ISO19160-1 standard's AddressLifecycleStage codelist"@en ;
+    reg:status status:original ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "The address or address component was proposed but rejected" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "rejected"@en ;
+    skos:topConceptOf cs: ;
+.
+
+iso:reserved
+    a skos:Concept ;
+    dcterms:identifier "reserved"^^xsd:token ;
+    dcterms:provenance "Presented in the original ISO19160-1 standard's AddressLifecycleStage codelist"@en ;
+    reg:status status:original ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "The address or address component has been reserved for future use" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "reserved"@en ;
+    skos:topConceptOf cs: ;
+.
+
+iso:retired
+    a skos:Concept ;
+    dcterms:identifier "retired"^^xsd:token ;
+    dcterms:provenance "Presented in the original ISO19160-1 standard's AddressLifecycleStage codelist"@en ;
+    reg:status status:original ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "The address or address component was in use at some stage, but not anymore" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "retired"@en ;
+    skos:topConceptOf cs: ;
+.
+
+iso:unknown
+    a skos:Concept ;
+    dcterms:identifier "unknown"^^xsd:token ;
+    dcterms:provenance "Presented in the original ISO19160-1 standard's AddressLifecycleStage codelist"@en ;
+    reg:status status:original ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "The lifecycle stage of the address or address component is unknown" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "unknown"@en ;
+    skos:topConceptOf cs: ;
+.
+
+<https://linked.data.gov.au/def/icsm>
+    a schema:Organization ;
+    schema:description "The ANZLIC committee on Syrveying & Mapping"@en ;
+    schema:name "Intergovernmental Committee on Surveying & Mapping" ;
+    schema:url "https://www.icsm.gov.au"^^xsd:anyURI ;
+.
+
+cs:
+    a skos:ConceptScheme ;
+    dcterms:created "2022-05-11"^^xsd:date ;
+    dcterms:creator <https://linked.data.gov.au/def/icsm> ;
+    dcterms:identifier "AnzAddressLifecycleStage"^^xsd:token ;
+    dcterms:issued "2000-01-01"^^xsd:date ;
+    dcterms:modified "2022-05-13"^^xsd:date ;
+    dcterms:provenance "Derived from the ISO19160-1 AddressComponentType codelist vocabulary"@en ;
+    dcterms:publisher <https://linked.data.gov.au/def/icsm> ;
+    prov:wasDerivedFrom <http://def.isotc211.org/iso19160/-1/2015/Address#AddressLifecycleStage> ;
+    skos:definition "ANZ controlled vocabulary of Address Component Types"@en ;
+    skos:hasTopConcept
+        iso:current ,
+        iso:proposed ,
+        iso:rejected ,
+        iso:reserved ,
+        iso:retired ,
+        iso:unknown ;
+    skos:prefLabel "Address Lifecycle Stage"@en ;
+.

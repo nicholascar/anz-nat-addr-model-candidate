@@ -43,10 +43,14 @@ This model is built on a small set of well-regarded Semantic Web models which us
 |Prefix | Namespace | Description
 
 | `*add:*` | `*http://w3id.org/profile/anz-address/*` | *Placeholder namespace for this model*
-| `asgsed3:` | `http://linked.data.gov.au/dataset/asgsed3/` | Australian Statistical Geographies Standard Dataset
+| `role:` | `http://w3id.org/profile/anz-address/address-roles/` | Placeholder for the Address Roles Vocabulary
+| `asgsed3:` | `http://linked.data.gov.au/dataset/asgsed3/` | Australian Statistical Geographies Standard Dataset, Release 3
 |`dcterms:` | `http://purl.org/dc/terms/` | Dublin Core Terms vocabulary namespace
 |`ex:` | `http://example.com/thing` | Generic examples namespace
 |`geo:` | `http://www.opengis.net/ont/geosparql#` | OGC GeoSPARQL
+| `isov1:` | `http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/` | <<ISO19160-1>>'s `AddressComponentType` vocabulary namespace
+| `isov2:` | `http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressLifecycleStage/` | <<ISO19160-1>>'s `AddressLifecycleStage` vocabulary namespace
+| `isov3:` | `http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressStatus/` | <<ISO19160-1>>'s `AddressStatus` vocabulary namespace
 |`owl:` | `http://www.w3.org/2002/07/owl#` | Web Ontology Language ontology namespace
 |`rdfs:` | `http://www.w3.org/2000/01/rdf-schema#` | RDF Schema ontology namespace
 |`sosa:` | `http://www.w3.org/ns/sosa/` | Sensor, Observation, Sample, and Actuator ontology namespace
@@ -119,6 +123,7 @@ image::img/upper-classes.png[]
 * <<AddressComponentType, Address Component Type>>
 * <<AddressLifecycleStage, Address Lifecycle Stage>>
 * <<AddressLifecycleStageType, Address Lifecycle StageType>>
+* <<AddressRole, Address Role>>
 
 [[Address]]
 ==== Address
@@ -134,7 +139,7 @@ image::img/upper-classes.png[]
 | Sub-class Of | https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_class_geofeature[`geo:Feature`]
 | Provenance | Derived from <<ISO19160-1>>'s `Address` class
 | Usage note | -
-| Expected Properties | <<isAddressFor>>
+| Expected Properties | <<isAddressFor>>, <<hasAddressComponent>>, <<hasAddressRole>>, <<hasLifecycleStage>>
 | Example 
 a| [source,turtle]
 ----
@@ -393,6 +398,34 @@ ex:addr-1
 ----
 |===
 
+[[AddressRole]]
+==== Address Role
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `add:AddressRole`
+| Preferred Label | Address Role
+| Definition | AddressRole represents a task for which this Address may be used
+| Is Defined By | http://w3id.org/profile/anz-address/[ANZ National Address Model]
+| Sub-class Of | http://www.w3.org/2004/02/skos/core#Concept[`skos:Concept`]
+| Provenance | Derived from <<ISO19160-1>>'s `AddressPosition` & `AddressPositionType` classes
+| Usage note | ISO19160-1 does not contain an `AddressRole` class but instead an `AddressPosition` class with positioning and role properties. This Standard make role a direct property of `Address` instead and provides for a positional qualifier (qualified against the position of the `AddressableObject`) instead to allow whole addresses to carry role tasking.
+| Expected Properties | Standard properties for a SKOS Concept
+| Example 
+a| [source,turtle]
+----
+# An Address with two roles
+ex:addr-1
+  a addr:Address ;
+  addr:hasAddressRole 
+    ex:emergencyAccess ,
+    buildingAccessPoint ;
+    ... 
+----
+|===
+
 [[Properties]]
 === Properties
 
@@ -400,6 +433,7 @@ ex:addr-1
 * <<hasAddress, has address>>
 * <<hasAddressComponent, has address component>>
 * <<hasAddressComponentType, has address component type>>
+* <<hasAddressRole, has address role>>
 * <<hasLifecycleStage, has lifecycle stage >>
 * <<hasLifecycleStageType, has lifecycle stage type>>
 
@@ -519,6 +553,33 @@ ex:addr-1
 ----
 |===
 
+[[hasAddressRole]]
+==== has address role
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `add:hasAddressRole`
+| Preferred Label | has address component type
+| Definition | Indicates an Address Role for an Address
+| Is Defined By | http://w3id.org/profile/anz-address/[ANZ National Address Model]
+| Provenance | Derived from <<ISO19160-1>>'s AddressPosition class and properties
+| Domain | <<Address>>
+| Range | <<AddressRole, Address Role>>
+| Example 
+a| [source,turtle]
+----
+# An Address with two roles
+ex:addr-1
+  a addr:Address ;
+  addr:hasAddressRole 
+    ex:emergencyAccess ,
+    buildingAccessPoint ;
+    ... 
+----
+|===
+
 [[hasLifecycleStage]]
 ==== has lifecycle stage
 
@@ -587,6 +648,112 @@ ex:addr-1
   ...
 .
 ----
+|===
+
+== Supporting Vocabularies
+
+This model has several classes that are subclasses of the generic vocabulary/taxonomy item class http://www.w3.org/2004/02/skos/core#Concept[`skos:Concept`]. The classes are:
+
+. <<AddressComponentType, Address Component Type>>
+. <<AddressLifecycleStageType, Address Lifecycle Stage Type>>
+. <<AddressRole, Address Role>>
+. <<AddressStatus, Address Status>>
+
+Individuals of these classes must be instances of the particular class and must also be Concepts selected from controlled vocabularies of instances. 
+
+This profile contains vocabularies for these class types derived from <<ISO19160-1>>. Ceoncepts in these vocabularies are from the standard plus additions specified for ANZ.
+
+Concepts from vocabularies other than those specified here may be use with this model as long as the vocabulary items are dual-classed as `skos:Concept` and the relevant model class, e.g. `addr:AddressComponentType`.
+
+NOTE: The representations of vocabularies here do not contain full vocabulary information such as concept hierarchy. Please see the vocabularies' own documentation for full details.
+
+// AddressableObjectLifecycleStage  x
+// AddressableObjectType            x
+// AddressAliasType                 ~
+// AddressClass                     x
+// AddressComponentType             !
+// AddressComponentValueType        x
+// AddressLifecycleStage            !
+// AddressPositionType              !   role
+//    + buildingAccessPoint + buildingCentroid + emergencyAccess + propertyCentroid + serviceConnectionPoint
+// AddressStatus                    !                
+// AddressTypology                  x
+// ReferenceObjectType              x
+
+// http://115.146.86.155/vocab/...
+
+=== Address Component Type Vocabulary
+
+This vocabulary is an extended version of <<ISO19160-1>>'s `AddressComponentType` vocabulary.
+
+* full documentation: https://nicholascar.com/anz-nat-addr-model-candidate/AnzAddressComponentType.html[AnzAddressComponentType.html]
+* machine-readable form: https://nicholascar.com/anz-nat-addr-model-candidate/AnzAddressComponentType.ttl[AnzAddressComponentType.ttl]
+
+[cols="1,1,2"]
+|===
+| IRI | Label | Definition
+
+| `isov1:addressedObjectIdentifier` | addressed object identifier | Identifier of the addressed object, e.g. building name or address number
+| `isov1:administrativeAreaName` | administrative area name | Name of an administrative area
+| `isov1:countryCode` | country code | ISO 3166-1 code for the country, territory or area of geopolitical interest
+| `isov1:countryName` | country name | Name of a country
+| `isov1:localityName` | locality name | Name of a locality
+| `isov1:postOfficeName` | post office name | Name of a post office
+| `isov1:postcode` | postcode | Code used for the sorting of mail
+| `isov1:thoroughfareName` | thoroughfare name | Name of a thoroughfare
+|===
+
+=== Address Lifecycle Stage Type Vocabulary
+
+This vocabulary is an extended version of <<ISO19160-1>>'s `AddressLifecycleStage` vocabulary.
+
+* full documentation: https://nicholascar.com/anz-nat-addr-model-candidate/AnzAddressLifecycleStage.html[AnzAddressLifecycleStage.html]
+* machine-readable form: https://nicholascar.com/anz-nat-addr-model-candidate/AnzAddressLifecycleStage.ttl[AnzAddressLifecycleStage.ttl]
+
+[cols="1,1,2"]
+|===
+| IRI | Label | Definition
+
+| `isov2:current` | current | The address or address component is currently in use
+| `isov2:proposed` | proposed | The address or address component has been proposed, i.e. the relevant authority has initiated approval procedures for the use of the address or address component
+| `isov2:rejected` | rejected | The address or address component was proposed but rejected
+| `isov2:reserved` | reserved | The address or address component has been reserved for future use
+| `isov2:retired` | retired | The address or address component was in use at some stage, but not anymore
+| `isov2:unknown` | unknown | The lifecycle stage of the address or address component is unknown
+|===
+
+=== Address Role Vocabulary
+
+This vocabulary is derived from <<ISO19160-1>>'s `AddressPosition` and `AddressPositionType` classes and an example vocabulary in Annex C of <<ISO19160-1>> for the latter.
+
+* full documentation: https://nicholascar.com/anz-nat-addr-model-candidate/AnzAddressPosition.html[AnzAddressPosition.html]
+* machine-readable form: https://nicholascar.com/anz-nat-addr-model-candidate/AnzAddressPosition.ttl[AnzAddressPosition.ttl]
+
+[cols="1,1,2"]
+|===
+| IRI | Label | Definition
+
+| `role:buildingAccessPoint` | The address that identifies the place to access a building AddressableObject from
+| `role:centroid` | The centrepoint of the AddressableObject's geometry
+| `role:emergencyAccess` | The centrepoint of a Building's geometry
+| `role:propertyCentroid` | The centrepoint of the Property's geometry
+| `role:serviceConnectionPoint` | The point at which utility services are connected to an AddressableObject
+|===
+
+=== Address Status Vocabulary
+
+This vocabulary is an extended version of <<ISO19160-1>>'s `AddressStatus` vocabulary.
+
+* full documentation: https://nicholascar.com/anz-nat-addr-model-candidate/AnzAddressStatus.html[AnzAddressStatus.html]
+* machine-readable form: https://nicholascar.com/anz-nat-addr-model-candidate/AnzAddressStatus.ttl[AnzAddressStatus.ttl]
+
+[cols="1,1,2"]
+|===
+| IRI | Label | Definition
+
+| `isov3:official` | official | An official addressing authority assigned the address
+| `isov3:unknown` | unknown | The status of the address is unknown
+| `isov3:unofficial` | unofficial | The address was not assigned by an official addressing authority
 |===
 
 :sectnums!:

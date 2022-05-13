@@ -1,0 +1,73 @@
+PREFIX : <https://linked.data.gov.au/def/AnzAddressStatus>
+PREFIX cs: <https://linked.data.gov.au/def/AnzAddressStatus/>
+PREFIX isocs: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressStatus>
+PREFIX iso: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressStatus/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX reg: <http://purl.org/linked-data/registry#>
+PREFIX schema: <https://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX status: <http://def.isotc211.org/iso19135/-1/2015/CoreModel/code/RE_ItemStatus/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+iso:official
+    a skos:Concept ;
+    dcterms:identifier "official"^^xsd:token ;
+    dcterms:provenance "Presented in the original ISO19160-1 standard's AddressStatus codelist"@en ;
+    reg:status status:original ;
+    rdfs:isDefinedBy isocs: ;
+    skos:definition "An official addressing authority assigned the address" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "official"@en ;
+    skos:topConceptOf cs: ;
+.
+
+iso:unknown
+    a skos:Concept ;
+    dcterms:identifier "unknown"^^xsd:token ;
+    dcterms:provenance "Presented in the original ISO19160-1 standard's AddressStatus codelist"@en ;
+    reg:status status:original ;
+    rdfs:isDefinedBy isocs: ;
+    skos:definition "The status of the address is unknown" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "unknown"@en ;
+    skos:topConceptOf cs: ;
+.
+
+iso:unofficial
+    a skos:Concept ;
+    dcterms:identifier "unofficial"^^xsd:token ;
+    dcterms:provenance "Presented in the original ISO19160-1 standard's AddressStatus codelist"@en ;
+    reg:status status:original ;
+    rdfs:isDefinedBy isocs: ;
+    skos:definition "The address was not assigned by an official addressing authority" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "unofficial"@en ;
+    skos:topConceptOf cs: ;
+.
+
+<https://linked.data.gov.au/def/icsm>
+    a schema:Organization ;
+    schema:description "The ANZLIC committee on Syrveying & Mapping"@en ;
+    schema:name "Intergovernmental Committee on Surveying & Mapping" ;
+    schema:url "https://www.icsm.gov.au"^^xsd:anyURI ;
+.
+
+cs:
+    a skos:ConceptScheme ;
+    dcterms:created "2022-05-11"^^xsd:date ;
+    dcterms:creator <https://linked.data.gov.au/def/icsm> ;
+    dcterms:identifier "AnzAddressStatus"^^xsd:token ;
+    dcterms:issued "2000-01-01"^^xsd:date ;
+    dcterms:modified "2022-05-13"^^xsd:date ;
+    dcterms:provenance "Derived from the ISO19160-1 AddressStatus codelist vocabulary"@en ;
+    dcterms:publisher <https://linked.data.gov.au/def/icsm> ;
+    prov:wasDerivedFrom <http://def.isotc211.org/iso19160/-1/2015/Address#AddressStatus> ;
+    skos:definition "ANZ controlled vocabulary of Address Statuses"@en ;
+    skos:hasTopConcept
+        iso:official ,
+        iso:unknown ,
+        iso:unofficial ;
+    skos:prefLabel "ANZ Address Status"@en ;
+.

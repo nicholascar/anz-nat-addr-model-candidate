@@ -1907,9 +1907,9 @@ The representations of vocabularies here do not contain full vocabulary informat
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name of a country</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:localityName</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">locality name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of a locality</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:locality</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">locality</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A reference to a locality object</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:postOfficeName</code></p></td>
@@ -1925,6 +1925,11 @@ The representations of vocabularies here do not contain full vocabulary informat
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:thoroughfareName</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">thoroughfare name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name of a thoroughfare</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:thoroughfareType</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">thoroughfare type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type of a thoroughfare. Must be selected from a controlled vocabulary</p></td>
 </tr>
 </tbody>
 </table>
@@ -2022,18 +2027,33 @@ The representations of vocabularies here do not contain full vocabulary informat
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:buildingAccessPoint</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">building access point</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The address that identifies the place to access a building AddressableObject from</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:centroid</code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:centroid</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">centroid</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The centrepoint of the AddressableObject&#8217;s geometry</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:emergencyAccess</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">emergency access</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The centrepoint of a Building&#8217;s geometry</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:propertyCentroid</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">property centroid</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The centrepoint of the Property&#8217;s geometry</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:serviceConnectionPoint</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">service connection point</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The point at which utility services are connected to an AddressableObject</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:streetAddress</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">street address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A thoroughfare location</p></td>
 </tr>
 </tbody>
 </table>
@@ -2135,7 +2155,7 @@ The representations of vocabularies here do not contain full vocabulary informat
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-13 11:25:39 UTC
+Last updated 2022-05-18 02:30:59 UTC
 </div>
 </div>
 </body>

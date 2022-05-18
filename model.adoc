@@ -763,7 +763,22 @@ This vocabulary is an extended version of <<ISO19160-1>>'s `AddressStatus` vocab
 [[AnnexA]]
 == Annex A: Model Validator
 
-#TODO: A listing of the Validator's Shapes and a link to the Validator artifact#
+A validator to test data claiming conformance to this model is one of the resources within this profile.
+
+* machine-readable form: http://w3id.org/profile/anz-address/validator
+
+A summary of the validator's elements is given in <<tbl-shapes, Table 1>>.
+
+#TODO: Complete this listing of the Validator's Shapes#
+
+[id="tbl-shapes", cols="1,7"]
+.Shapes within the Validator
+|===
+| Shape ID | Description
+
+| http://w3id.org/profile/anz-address/validator/sh-01[sh01] | Address Components' types must be indicated by an IRI (of a Concept from a vocabulary)
+
+|===
 
 
 == References

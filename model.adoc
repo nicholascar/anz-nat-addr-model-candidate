@@ -689,7 +689,7 @@ This vocabulary is an extended version of <<ISO19160-1>>'s `AddressComponentType
 * full documentation: https://nicholascar.com/anz-nat-addr-model-candidate/AnzAddressComponentType.html[AnzAddressComponentType.html]
 * machine-readable form: https://nicholascar.com/anz-nat-addr-model-candidate/AnzAddressComponentType.ttl[AnzAddressComponentType.ttl]
 
-[cols="1,1,2"]
+[cols="1,1,4"]
 |===
 | IRI | Label | Definition
 
@@ -711,7 +711,7 @@ This vocabulary is an extended version of <<ISO19160-1>>'s `AddressLifecycleStag
 * full documentation: https://nicholascar.com/anz-nat-addr-model-candidate/AnzAddressLifecycleStage.html[AnzAddressLifecycleStage.html]
 * machine-readable form: https://nicholascar.com/anz-nat-addr-model-candidate/AnzAddressLifecycleStage.ttl[AnzAddressLifecycleStage.ttl]
 
-[cols="1,1,2"]
+[cols="1,1,4"]
 |===
 | IRI | Label | Definition
 
@@ -749,7 +749,7 @@ This vocabulary is an extended version of <<ISO19160-1>>'s `AddressStatus` vocab
 * full documentation: https://nicholascar.com/anz-nat-addr-model-candidate/AnzAddressStatus.html[AnzAddressStatus.html]
 * machine-readable form: https://nicholascar.com/anz-nat-addr-model-candidate/AnzAddressStatus.ttl[AnzAddressStatus.ttl]
 
-[cols="1,1,2"]
+[cols="1,1,4"]
 |===
 | IRI | Label | Definition
 
@@ -760,7 +760,11 @@ This vocabulary is an extended version of <<ISO19160-1>>'s `AddressStatus` vocab
 
 :sectnums!:
 
-== Annex X: Something
+[[AnnexA]]
+== Annex A: Model Validator
+
+#TODO: A listing of the Validator's Shapes and a link to the Validator artifact#
+
 
 == References
 

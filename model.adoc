@@ -776,8 +776,11 @@ A summary of the validator's elements is given in <<tbl-shapes, Table 1>>.
 |===
 | Shape ID | Description
 
-| http://w3id.org/profile/anz-address/validator/sh-01[sh01] | Address Components' types must be indicated by an IRI (of a Concept from a vocabulary)
+| http://w3id.org/profile/anz-address/validator/sh-01[sh01] 
+| Address Components' types must be indicated by an IRI (of a Concept from a vocabulary)
 
+| http://w3id.org/profile/anz-address/validator/sh-02[sh02] 
+| The hasValue property of an AddressComponent with addressComponentType isov1:locality must indicate an IRI (of a Concept from a vocabulary), not text
 |===
 
 

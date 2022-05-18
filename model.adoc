@@ -697,10 +697,11 @@ This vocabulary is an extended version of <<ISO19160-1>>'s `AddressComponentType
 | `isov1:administrativeAreaName` | administrative area name | Name of an administrative area
 | `isov1:countryCode` | country code | ISO 3166-1 code for the country, territory or area of geopolitical interest
 | `isov1:countryName` | country name | Name of a country
-| `isov1:localityName` | locality name | Name of a locality
+| `isov1:locality` | locality | A reference to a locality object
 | `isov1:postOfficeName` | post office name | Name of a post office
 | `isov1:postcode` | postcode | Code used for the sorting of mail
 | `isov1:thoroughfareName` | thoroughfare name | Name of a thoroughfare
+| `isov1:thoroughfareType` | thoroughfare type | Type of a thoroughfare. Must be selected from a controlled vocabulary
 |===
 
 === Address Lifecycle Stage Type Vocabulary
@@ -733,11 +734,12 @@ This vocabulary is derived from <<ISO19160-1>>'s `AddressPosition` and `AddressP
 |===
 | IRI | Label | Definition
 
-| `role:buildingAccessPoint` | The address that identifies the place to access a building AddressableObject from
-| `role:centroid` | The centrepoint of the AddressableObject's geometry
-| `role:emergencyAccess` | The centrepoint of a Building's geometry
-| `role:propertyCentroid` | The centrepoint of the Property's geometry
-| `role:serviceConnectionPoint` | The point at which utility services are connected to an AddressableObject
+| `role:buildingAccessPoint` | building access point | The address that identifies the place to access a building AddressableObject from
+| `role:centroid` | centroid | The centrepoint of the AddressableObject's geometry
+| `role:emergencyAccess` | emergency access | The centrepoint of a Building's geometry
+| `role:propertyCentroid` | property centroid | The centrepoint of the Property's geometry
+| `role:serviceConnectionPoint` | service connection point | The point at which utility services are connected to an AddressableObject
+| `role:streetAddress` | street address | A thoroughfare location
 |===
 
 === Address Status Vocabulary

@@ -73,7 +73,6 @@ addrct:anz-components-order
     skos:prefLabel "ANZ Components Order" ;
     skos:definition "The list of Address Components in address printing order use in Australia and New Zealand"@en ;
     skos:member
-        addrct:recipientName ,
         addrct:traditionalPlaceName ,
         addrct:administrativeAreaName ,
         addrct:addressedObjectIdentifier ,
@@ -94,8 +93,8 @@ addrct:addressedObjectIdentifier
     skos:inScheme cs: ;
     skos:prefLabel "Addressed Object Identifier" ;
     skos:topConceptOf cs: ;
-    reg:status status:stable ;
     dcterms:provenance "Presented in the original ISO19160-1 standard's codelist"@en ;
+    reg:status status:original ;
 .
 
 addrct:administrativeAreaName
@@ -106,8 +105,8 @@ addrct:administrativeAreaName
     skos:inScheme cs: ;
     skos:prefLabel "Administrative Area Name" ;
     skos:topConceptOf cs: ;
-    reg:status status:stable ;
     dcterms:provenance "Presented in the original ISO19160-1 standard's codelist"@en ;
+    reg:status status:original ;
 .
 
 addrct:countryCode
@@ -118,8 +117,8 @@ addrct:countryCode
     skos:inScheme cs: ;
     skos:prefLabel "Country Code" ;
     skos:topConceptOf cs: ;
-    reg:status status:stable ;
     dcterms:provenance "Presented in the original ISO19160-1 standard's codelist"@en ;
+    reg:status status:original ;
 .
 
 addrct:countryName
@@ -130,7 +129,6 @@ addrct:countryName
     skos:inScheme cs: ;
     skos:prefLabel "Country Name" ;
     skos:topConceptOf cs: ;
-    reg:status status:stable ;
     dcterms:provenance "Presented in the original ISO19160-1 standard's codelist"@en ;
 .
 
@@ -142,8 +140,8 @@ addrct:localityName
     skos:inScheme cs: ;
     skos:prefLabel "Locality Name" ;
     skos:topConceptOf cs: ;
-    reg:status status:stable ;
     dcterms:provenance "Presented in the original ISO19160-1 standard's codelist"@en ;
+    reg:status status:original ;
 .
 
 addrct:postcode
@@ -154,8 +152,8 @@ addrct:postcode
     skos:inScheme cs: ;
     skos:prefLabel "Postcode" ;
     skos:topConceptOf cs: ;
-    reg:status status:stable ;
     dcterms:provenance "Presented in the original ISO19160-1 standard's codelist"@en ;
+    reg:status status:original ;
 .
 
 addrct:postOfficeName
@@ -166,8 +164,8 @@ addrct:postOfficeName
     skos:inScheme cs: ;
     skos:prefLabel "Post Office Name" ;
     skos:topConceptOf cs: ;
-    reg:status status:stable ;
     dcterms:provenance "Presented in the original ISO19160-1 standard's codelist"@en ;
+    reg:status status:original ;
 .
 
 addrct:thoroughfareName
@@ -179,20 +177,8 @@ addrct:thoroughfareName
     skos:prefLabel "Thoroughfare Name" ;
     skos:altLabel "Street Name" ;
     skos:topConceptOf cs: ;
-    reg:status status:stable ;
     dcterms:provenance "Presented in the original ISO19160-1 standard's codelist"@en ;
-.
-
-addrct:recipientName
-    a skos:Concept ;
-    dcterms:identifier "recipientName"^^xsd:token ;
-    rdfs:isDefinedBy cs: ;
-    skos:definition "The name of the person or organisation receiving mail." ;
-    skos:inScheme cs: ;
-    skos:prefLabel "Recipient Name" ;    
-    skos:topConceptOf cs: ;
-    reg:status status:stable ;
-    dcterms:provenance "Created for the ANZ National Address Model - Candidate"@en ;
+    reg:status status:original ;
 .
 
 addrct:streetNumber
@@ -203,8 +189,8 @@ addrct:streetNumber
     skos:inScheme cs: ;
     skos:prefLabel "Street Number" ;
     skos:topConceptOf cs: ;
-    reg:status status:stable ;
     dcterms:provenance "Created for the ANZ National Address Model - Candidate"@en ;
+    reg:status status:addition ;
 .
 
 addrct:poBox
@@ -215,8 +201,8 @@ addrct:poBox
     skos:inScheme cs: ;
     skos:prefLabel "PO Box" ;
     skos:topConceptOf cs: ;
-    reg:status status:stable ;
     dcterms:provenance "Created for the ANZ National Address Model - Candidate"@en ;
+    reg:status status:addition ;
 .
 
 addrct:traditionalPlaceName
@@ -227,6 +213,210 @@ addrct:traditionalPlaceName
     skos:inScheme cs: ;
     skos:prefLabel "Traditional Place Name" ;
     skos:topConceptOf cs: ;
-    reg:status status:stable ;
     dcterms:provenance "Created for the ANZ National Address Model - Candidate"@en ;
+    reg:status status:addition ;
+.
+
+addrct:lotNumberPrefix
+    a skos:Concept ;
+    dcterms:identifier "lotNumberPrefix"^^xsd:token ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "lot number prefix" ;
+    skos:topConceptOf cs: ;
+    dcterms:provenance "Created for the ANZ National Address Model - Candidate, taken from the G-NAF data model"@en ;
+    reg:status status:addition ;
+.
+
+addrct:lotNumber
+    a skos:Concept ;
+    dcterms:identifier "lotNumber"^^xsd:token ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "lot number" ;
+    skos:topConceptOf cs: ;
+    dcterms:provenance "Created for the ANZ National Address Model - Candidate, taken from the G-NAF data model"@en ;
+    reg:status status:addition ;
+.
+
+addrct:lotNumberSuffix
+    a skos:Concept ;
+    dcterms:identifier "lotNumberSuffix"^^xsd:token ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "lot number suffix" ;
+    skos:topConceptOf cs: ;
+    dcterms:provenance "Created for the ANZ National Address Model - Candidate, taken from the G-NAF data model"@en ;
+    reg:status status:addition ;
+.
+
+addrct:flatNumberPrefix
+    a skos:Concept ;
+    dcterms:identifier "flatNumberPrefix"^^xsd:token ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "flat number prefix" ;
+    skos:topConceptOf cs: ;
+    dcterms:provenance "Created for the ANZ National Address Model - Candidate, taken from the G-NAF data model"@en ;
+    reg:status status:addition ;
+.
+
+addrct:flatNumber
+    a skos:Concept ;
+    dcterms:identifier "flatNumber"^^xsd:token ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "flat number" ;
+    skos:topConceptOf cs: ;
+    dcterms:provenance "Created for the ANZ National Address Model - Candidate, taken from the G-NAF data model"@en ;
+    reg:status status:addition ;
+.
+
+addrct:flatNumberSuffix
+    a skos:Concept ;
+    dcterms:identifier "flatNumberSuffix"^^xsd:token ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "flat number suffix" ;
+    skos:topConceptOf cs: ;
+    dcterms:provenance "Created for the ANZ National Address Model - Candidate, taken from the G-NAF data model"@en ;
+    reg:status status:addition ;
+.
+
+addrct:levelNumberPrefix
+    a skos:Concept ;
+    dcterms:identifier "levelNumberPrefix"^^xsd:token ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "level number prefix" ;
+    skos:topConceptOf cs: ;
+    dcterms:provenance "Created for the ANZ National Address Model - Candidate, taken from the G-NAF data model"@en ;
+    reg:status status:addition ;
+.
+
+addrct:levelNumber
+    a skos:Concept ;
+    dcterms:identifier "levelNumber"^^xsd:token ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "level number" ;
+    skos:topConceptOf cs: ;
+    dcterms:provenance "Created for the ANZ National Address Model - Candidate, taken from the G-NAF data model"@en ;
+    reg:status status:addition ;
+.
+
+addrct:levelNumberSuffix
+    a skos:Concept ;
+    dcterms:identifier "levelNumberSuffix"^^xsd:token ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "level number suffix" ;
+    skos:topConceptOf cs: ;
+    dcterms:provenance "Created for the ANZ National Address Model - Candidate, taken from the G-NAF data model"@en ;
+    reg:status status:addition ;
+.
+
+addrct:numberFirstPrefix
+    a skos:Concept ;
+    dcterms:identifier "numberFirstPrefix"^^xsd:token ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "number first prefix" ;
+    skos:topConceptOf cs: ;
+    dcterms:provenance "Created for the ANZ National Address Model - Candidate, taken from the G-NAF data model"@en ;
+    reg:status status:addition ;
+.
+
+addrct:numberFirst
+    a skos:Concept ;
+    dcterms:identifier "numberFirst"^^xsd:token ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "number first" ;
+    skos:topConceptOf cs: ;
+    dcterms:provenance "Created for the ANZ National Address Model - Candidate, taken from the G-NAF data model"@en ;
+    reg:status status:addition ;
+.
+
+addrct:numberFirstSuffix
+    a skos:Concept ;
+    dcterms:identifier "numberFirstSuffix"^^xsd:token ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "number first suffix" ;
+    skos:topConceptOf cs: ;
+    dcterms:provenance "Created for the ANZ National Address Model - Candidate, taken from the G-NAF data model"@en ;
+    reg:status status:addition ;
+.
+
+addrct:numberLastPrefix
+    a skos:Concept ;
+    dcterms:identifier "numberLastPrefix"^^xsd:token ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "number last prefix" ;
+    skos:topConceptOf cs: ;
+    dcterms:provenance "Created for the ANZ National Address Model - Candidate, taken from the G-NAF data model"@en ;
+    reg:status status:addition ;
+.
+
+addrct:numberLast
+    a skos:Concept ;
+    dcterms:identifier "numberLast"^^xsd:token ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "number last" ;
+    skos:topConceptOf cs: ;
+    dcterms:provenance "Created for the ANZ National Address Model - Candidate, taken from the G-NAF data model"@en ;
+    reg:status status:addition ;
+.
+
+addrct:numberLastSuffix
+    a skos:Concept ;
+    dcterms:identifier "numberLastSuffix"^^xsd:token ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "number last suffix" ;
+    skos:topConceptOf cs: ;
+    dcterms:provenance "Created for the ANZ National Address Model - Candidate, taken from the G-NAF data model"@en ;
+    reg:status status:addition ;
+.
+
+addrct:streetLocality
+    a skos:Concept ;
+    dcterms:identifier "streetLocality"^^xsd:token ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "street locality" ;
+    skos:topConceptOf cs: ;
+    dcterms:provenance "Created for the ANZ National Address Model - Candidate, taken from the G-NAF data model"@en ;
+    reg:status status:addition ;
+.
+
+addrct:locality
+    a skos:Concept ;
+    dcterms:identifier "locality"^^xsd:token ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "locality" ;
+    skos:topConceptOf cs: ;
+    dcterms:provenance "Created for the ANZ National Address Model - Candidate, taken from the G-NAF data model"@en ;
+    reg:status status:addition ;
 .

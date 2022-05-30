@@ -689,9 +689,9 @@ This Model is a candidate model for Australian &amp; New Zealand address informa
 </div>
 </div>
 <div class="sect3">
-<h4 id="_exampl_data"><a class="anchor" href="#_exampl_data"></a>2.3.2. Exampl Data</h4>
+<h4 id="_example_data"><a class="anchor" href="#_example_data"></a>2.3.2. Example Data</h4>
 <div class="paragraph">
-<p>Exampl Data used in this document, for instance in model element "Example" values, are <a href="https://www.w3.org/RDF/">RDF</a> data in the <a href="https://www.w3.org/TR/turtle/">Turtle</a> tyntax.</p>
+<p>Example Data used in this document, for instance in model element "Example" values, are <a href="https://www.w3.org/RDF/">RDF</a> data in the <a href="https://www.w3.org/TR/turtle/">Turtle</a> tyntax.</p>
 </div>
 </div>
 </div>
@@ -1858,7 +1858,7 @@ The representations of vocabularies here do not contain full vocabulary informat
 <div class="sect2">
 <h3 id="_address_component_type_vocabulary"><a class="anchor" href="#_address_component_type_vocabulary"></a>5.1. Address Component Type Vocabulary</h3>
 <div class="paragraph">
-<p>This vocabulary is an extended version of <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressComponentType</code> vocabulary.</p>
+<p>This vocabulary is an extended version of <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressComponentType</code> vocabulary. The original 9 concepts from the standard are included however only two of them - <code>locality</code> &amp; <code>postcode</code> - are suggested for use. 19 additional concepts are taken from address elements in the G-NAF, such as <code>numberFirstSuffix</code>. Additional concepts are added as needed to cater for futher ANZ addressing needs, such as <code>traditionalPlaceName</code> to cater for First Nations place naming.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1872,15 +1872,19 @@ The representations of vocabularies here do not contain full vocabulary informat
 </div>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 66.6668%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 44.4444%;">
+<col style="width: 11.1111%;">
+<col style="width: 22.2223%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">IRI</th>
 <th class="tableblock halign-left valign-top">Label</th>
 <th class="tableblock halign-left valign-top">Definition</th>
+<th class="tableblock halign-left valign-top">Status</th>
+<th class="tableblock halign-left valign-top">Notes</th>
 </tr>
 </thead>
 <tbody>
@@ -1888,46 +1892,207 @@ The representations of vocabularies here do not contain full vocabulary informat
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:addressedObjectIdentifier</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">addressed object identifier</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier of the addressed object, e.g. building name or address number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Do not use: handles by <code>Address</code>/<code>AddressableObject</code> relation</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:administrativeAreaName</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">administrative area name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name of an administrative area</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Do not use: handled by object references, not text name</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:countryCode</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">country code</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ISO 3166-1 code for the country, territory or area of geopolitical interest</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A for Aust. addresses</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:countryName</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">country name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name of a country</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A for Aust. addresses</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:locality</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">locality</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A reference to a locality object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used in G-NAF</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:postOfficeName</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">post office name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name of a post office</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Do not use</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:postcode</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">postcode</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Code used for the sorting of mail</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used in G-NAF</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:thoroughfareName</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">thoroughfare name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name of a thoroughfare</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Do not use, use <code>isov1:streetLocality</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:thoroughfareType</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">thoroughfare type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type of a thoroughfare. Must be selected from a controlled vocabulary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Do not use, use <code>isov1:streetLocality</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="5"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:buildingName</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ANZ addition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used in G-NAF</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:lotNumberPrefix</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ANZ addition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used in G-NAF</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:lotNumber</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The reference number allocated to a property for subdivision administration purposes prior to road numbering</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ANZ addition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used in G-NAF</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:lotNumberSuffix</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ANZ addition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used in G-NAF</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:flatTypeCode</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ANZ addition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used in G-NAF</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:flatNumberPrefix</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ANZ addition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used in G-NAF</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:flatNumber</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ANZ addition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used in G-NAF</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:flatNumberSuffix</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ANZ addition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used in G-NAF</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:levelTypeCode</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ANZ addition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used in G-NAF</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:levelNumberPrefix</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ANZ addition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used in G-NAF</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:levelNumber</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ANZ addition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used in G-NAF</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:levelNumberSuffix</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ANZ addition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used in G-NAF</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:numberFirstPrefix</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ANZ addition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used in G-NAF</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:numberFirst</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The identifier number of the address in the road or thoroughfare, or the start number for a ranged address</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ANZ addition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used in G-NAF</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:numberFirstSuffix</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ANZ addition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used in G-NAF</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:numberLastPrefix</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ANZ addition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used in G-NAF</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:numberLast</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Identifies the last number for a ranged address in the road or thoroughfare</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ANZ addition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used in G-NAF</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:numberLastSuffix</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ANZ addition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used in G-NAF</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:streetLocality</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ANZ addition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used in G-NAF</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:traditionalPlaceName</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ANZ Addition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Introduced to cater for expected demand</p></td>
 </tr>
 </tbody>
 </table>
@@ -2024,14 +2189,19 @@ The representations of vocabularies here do not contain full vocabulary informat
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:buildingAccessPoint</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">building access point</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The address that identifies the place to access a building AddressableObject from</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:centroid</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">centroid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The centrepoint of the AddressableObject&#8217;s geometry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The address that identifies the place to access a building AddressableObject from</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:buildingCentroid</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">building centroid</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:emergencyAccess</code></p></td>
@@ -2039,19 +2209,29 @@ The representations of vocabularies here do not contain full vocabulary informat
 <td class="tableblock halign-left valign-top"><p class="tableblock">The centrepoint of a Building&#8217;s geometry</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:propertyCentroid</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">property centroid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The centrepoint of the Property&#8217;s geometry</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The centrepoint of the Property&#8217;s geometry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:serviceConnectionPoint</code></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">service connection point</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The point at which utility services are connected to an AddressableObject</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:streetAddress</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">street address</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A thoroughfare location</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:centroid</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">centroid</p></td>
 </tr>
 </tbody>
 </table>
@@ -2191,7 +2371,7 @@ The representations of vocabularies here do not contain full vocabulary informat
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-29 11:17:36 UTC
+Last updated 2022-05-30 12:10:47 UTC
 </div>
 </div>
 </body>

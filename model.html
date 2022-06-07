@@ -801,6 +801,9 @@ flexibility" - things for Strategy implementers to aim for - "Guiding Principles
 <li>
 <p><a href="#Geocode">Geocode</a></p>
 </li>
+<li>
+<p><a href="#GeocodeType">Geocode Type</a></p>
+</li>
 </ul>
 </div>
 <div class="sect3">
@@ -1385,7 +1388,69 @@ ex:addr-1
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle"># An Address with a geocode and a role
+<pre class="highlight"><code class="language-turtle" data-lang="turtle"># An Address with a Geocode and a role
+ex:addr-1
+  a addr:Address ;
+    addr:hasGeocode [
+      a addr:Geocode ;
+      dcterms:type geocodeType:DF ;  # Driveway Frontage
+      geo:hasGeometry "POINT (152.01 -35.03)"^^geo:wktLiteral ;
+    ] ;
+    addre:hasRole addr:buildingAccessPoint ;
+    ...</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="GeocodeType"><a class="anchor" href="#GeocodeType"></a>4.1.9. Geocode Type</h4>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addr:GeocodeType</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geocode Type</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The type of Geocode, typically determined by creation method</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/profile/anz-address">ANZ National Address Model</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sub-class Of</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2004/02/skos/core#Concept"><code>skos:Concept</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from the G-NAF&#8217;s Geocode Type codelist</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standard properties for a SKOS Concept</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle"># An Address with a Geocode with its type given (geocodeType:DF)
 ex:addr-1
   a addr:Address ;
     addr:hasGeocode [
@@ -1794,7 +1859,7 @@ ex:addr-1
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle"># An Address with a geocode and a role
+<pre class="highlight"><code class="language-turtle" data-lang="turtle"># An Address with a Geocode and a role
 ex:addr-1
   a addr:Address ;
     addr:hasGeocode [
@@ -2505,7 +2570,7 @@ The representations of vocabularies here do not contain full vocabulary informat
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-06-07 21:39:59 UTC
+Last updated 2022-06-07 22:35:35 UTC
 </div>
 </div>
 </body>

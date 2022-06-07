@@ -375,7 +375,7 @@ addr:hasLifecycleStageType
     rdfs:domain addr:hasLifecycleStage ;
     rdfs:range addr:hasLifecycleStageType ;
     dcterms:provenance "Derived from ISO19160-1's object relations"@en ;
-    skos:definition "Indicates an Addresses Lifecycle Stage's type"@en ;
+    skos:definition "Indicates an Addresses' Lifecycle Stage's type"@en ;
     skos:example """# An Address with a Lifecycle Stages indicated
 # which then indicates its type
 ex:addr-1
@@ -387,3 +387,23 @@ ex:addr-1
   ...""" ;
     skos:prefLabel "has lifecycle stage type"@en ;
 .
+
+addr:hasGeocode
+    a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/profile/anz-address> ;
+    rdfs:domain addr:Address ;
+    rdfs:range geo:AddressGeocode ;
+    dcterms:provenance "Derived from the G-NAF's expression of Address position"@en ;
+    skos:definition "Indicates a refined, that is a very accurate or specific, geometry, usually a point, for an Address qualified by the Geocode Type - how it was generated."@en ;
+    skos:scopeNote "This property, along with hasRole, allows multiple Addresses with different locations to be allocated to Addressable Objects and for those addresses to be used for different purposes. The location indicated by this property should be within/on/next to the location of the Addressable Object this Address is for, within some acceptable tolerance."@en ;
+    skos:example """# An Address with a geocode and a role
+    ex:addr-1
+  a addr:Address ;
+    addr:hasGeocode [
+      dcterms:type geocodeType:DF ;  # Driveway Frontage
+      geo:hasGeometry "POINT (152.01 -35.03)"^^geo:wktLiteral ; 
+    ] ;
+    addre:hasRole addr:buildingAccessPoint ;
+    ...""" ;
+    skos:prefLabel "has geocode"@en ;
+.    

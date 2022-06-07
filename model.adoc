@@ -125,6 +125,7 @@ image::img/upper-classes.png[]
 * <<AddressLifecycleStage, Address Lifecycle Stage>>
 * <<AddressLifecycleStageType, Address Lifecycle StageType>>
 * <<AddressRole, Address Role>>
+* <<Geocode>>
 
 [[Address]]
 ==== Address
@@ -139,7 +140,6 @@ image::img/upper-classes.png[]
 | Is Defined By | https://w3id.org/profile/anz-address[ANZ National Address Model]
 | Sub-class Of | https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_class_geofeature[`geo:Feature`]
 | Provenance | Derived from <<ISO19160-1>>'s `Address` class
-| Usage note | -
 | Expected Properties | <<isAddressFor>>, <<hasAddressComponent>>, <<hasAddressRole>>, <<hasLifecycleStage>>
 | Example 
 a| [source,turtle]
@@ -195,7 +195,7 @@ Examples of types of AddressableObjects are a building, a dwelling or a land par
 | Is Defined By | https://w3id.org/profile/anz-address[ANZ National Address Model]
 | Sub-class Of | https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_class_geofeature[`geo:Feature`]
 | Provenance | Derived from <<ISO19160-1>>'s `AddressableObject` class and its associated codelist of subtypes
-| Usage note | Judgement as to what makes for a permissable AddressableObject rests with the implementer. This model's technical requirements are only that the object is a legal `geo:Feature` object, thus implementers may make Addressable Objects of almost anything.
+| Scope note | Judgement as to what makes for a permissable AddressableObject rests with the implementer. This model's technical requirements are only that the object is a legal `geo:Feature` object, thus implementers may make Addressable Objects of almost anything.
 | Expected Properties | <<hasAddress>>, http://www.opengis.net/ont/geosparql#[`geo:hasGeometry`]
 | Example 
 a| [source,turtle]
@@ -229,7 +229,7 @@ ex:addre-2 addr:isAddressFor ex:admin-area-z .
 | Is Defined By | https://w3id.org/profile/anz-address[ANZ National Address Model]
 | Sub-class Of | http://www.w3.org/2000/01/rdf-schema#Resource[`rdfs:Resource`]
 | Provenance | Derived from <<ISO19160-1>>'s `AddressComponent` class
-| Usage note | Address Components can be literals - numbers, words etc. - or complex ojects - Localities, districtes etc. If the Address Component is a complex object, a textual representation of it must be provided when a textual rendering of all of an Addresses' component are required, for example for letter printing. 
+| Scope note | Address Components can be literals - numbers, words etc. - or complex ojects - Localities, districtes etc. If the Address Component is a complex object, a textual representation of it must be provided when a textual rendering of all of an Addresses' component are required, for example for letter printing. 
 
 Complex objects are preferred for use over literals when the object referred to has independent identity.
 
@@ -275,7 +275,7 @@ ex:addr-1
 | Is Defined By | https://w3id.org/profile/anz-address[ANZ National Address Model]
 | Sub-class Of | http://www.w3.org/2004/02/skos/core#Concept[`skos:Concept`]
 | Provenance | Derived from <<ISO19160-1>>'s `AddressComponent` class
-| Usage note | An Address Component's type should be indicated with values from a controlled vocabulary - a code list. 
+| Scope note | An Address Component's type should be indicated with values from a controlled vocabulary - a code list. 
 
 A SKOS vocabulary of Address Component Types is suplied with this ontology.
 | Expected Properties | Standard properties for a SKOS Concept
@@ -322,7 +322,7 @@ image::img/lifecycle-stages.png[]
 | Definition | Represents the different lifecycle stages of an Address
 | Is Defined By | https://w3id.org/profile/anz-address[ANZ National Address Model]
 | Provenance | Derived from <<ISO19160-1>>'s `AddressLifecycle` class
-| Usage note | An Address Lifecycle Stage's type should be indicated with values from a controlled vocabulary - a code list. 
+| Scope note | An Address Lifecycle Stage's type should be indicated with values from a controlled vocabulary - a code list. 
 
 A SKOS vocabulary of Address Lifecycle Stages is suplied with this ontology.
 
@@ -376,7 +376,7 @@ addrls:proposed
 | Is Defined By | https://w3id.org/profile/anz-address[ANZ National Address Model]
 | Sub-class Of | http://www.w3.org/2004/02/skos/core#Concept[`skos:Concept`]
 | Provenance | Derived from <<ISO19160-1>>'s `AddressLifecycle` class
-| Usage note | An Address Address Lifecycle Stage's type should be indicated with values from a controlled vocabulary - a code list. 
+| Scope note | An Address Address Lifecycle Stage's type should be indicated with values from a controlled vocabulary - a code list. 
 
 A SKOS vocabulary of Address Lifecycle Stage Types is suplied with this ontology.
 | Expected Properties | Standard properties for a SKOS Concept
@@ -409,7 +409,7 @@ ex:addr-1
 | Is Defined By | https://w3id.org/profile/anz-address[ANZ National Address Model]
 | Sub-class Of | http://www.w3.org/2004/02/skos/core#Concept[`skos:Concept`]
 | Provenance | Derived from <<ISO19160-1>>'s `AddressPosition` & `AddressPositionType` classes
-| Usage note | ISO19160-1 does not contain an `AddressRole` class but instead an `AddressPosition` class with positioning and role properties. This Standard make role a direct property of `Address` instead and provides for a positional qualifier (qualified against the position of the `AddressableObject`) instead to allow whole addresses to carry role tasking.
+| Scope note | ISO19160-1 does not contain an `AddressRole` class but instead an `AddressPosition` class with positioning and role properties. This Standard make role a direct property of `Address` instead and provides for a positional qualifier (qualified against the position of the `AddressableObject`) instead to allow whole addresses to carry role tasking.
 | Expected Properties | Standard properties for a SKOS Concept
 | Example 
 a| [source,turtle]
@@ -424,6 +424,39 @@ ex:addr-1
 ----
 |===
 
+[[Geocode]]
+==== Geocode
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `addr:Geocode`
+| Preferred Label | Geocode
+| Definition | A Feature used to position other Features and to carry typing or provenance of that position
+| Is Defined By | https://w3id.org/profile/anz-address[ANZ National Address Model]
+| Sub-class Of | http://www.opengis.net/ont/geosparql#[`geo:Feature`]
+| Provenance | Derived from the G-NAF's expression of Address position
+| Scope note | Indicating a Geocode for an Address with the property hasGeocode is a direct method of locating the Address. Addresses either may or must also be located by ference to an Addressable Object which has a Geometry, depending on business rules.
+| Expected Properties | `dcterms:type` - to indicate a type, as per the https://linked.data.gov.au/dataset/gnaf/code/geocodeType[Geocode Type] vocabulary 
+
+`geo:hasGeometry` - to indicate the position of the Geocode. A GeoSPARQL `Geometry`.
+| Example 
+a| [source,turtle]
+----
+# An Address with a geocode and a role
+ex:addr-1
+  a addr:Address ;
+    addr:hasGeocode [
+      a addr:Geocode ;
+      dcterms:type geocodeType:DF ;  # Driveway Frontage
+      geo:hasGeometry "POINT (152.01 -35.03)"^^geo:wktLiteral ; 
+    ] ;
+    addre:hasRole addr:buildingAccessPoint ;
+    ...
+----
+|===
+
 [[Properties]]
 === Properties
 
@@ -432,6 +465,7 @@ ex:addr-1
 * <<hasAddressComponent, has address component>>
 * <<hasAddressComponentType, has address component type>>
 * <<hasAddressRole, has address role>>
+* <<hasGeocode, has geocode>>
 * <<hasLifecycleStage, has lifecycle stage >>
 * <<hasLifecycleStageType, has lifecycle stage type>>
 
@@ -575,6 +609,36 @@ ex:addr-1
     ex:emergencyAccess ,
     buildingAccessPoint ;
     ... 
+----
+|===
+
+[[hasGeocode]]
+==== has geocode
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `addr:hasGeocode`
+| Preferred Label | has geocode
+| Definition | Indicates a refined, that is a very accurate or specific, geometry, usually a point, for an Address qualified by the Geocode Type - how it was generated.
+| Is Defined By | https://w3id.org/profile/anz-address[ANZ National Address Model]
+| Provenance | Derived from the G-NAF's expression of Address position
+| Scope Note | This property, along with hasRole, allows multiple Addresses with different locations to be allocated to Addressable Objects and for those addresses to be used for different purposes. The location indicated by this property should be within/on/next to the location of the Addressable Object this Address is for, within some acceptable tolerance.
+| Domain | <<Address>>
+| Range | <<Geocode>>
+| Example 
+a| [source,turtle]
+----
+# An Address with a geocode and a role
+ex:addr-1
+  a addr:Address ;
+    addr:hasGeocode [
+      dcterms:type geocodeType:DF ;  # Driveway Frontage
+      geo:hasGeometry "POINT (152.01 -35.03)"^^geo:wktLiteral ; 
+    ] ;
+    addre:hasRole addr:buildingAccessPoint ;
+    ...
 ----
 |===
 

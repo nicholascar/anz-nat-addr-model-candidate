@@ -798,6 +798,9 @@ flexibility" - things for Strategy implementers to aim for - "Guiding Principles
 <li>
 <p><a href="#AddressRole">Address Role</a></p>
 </li>
+<li>
+<p><a href="#Geocode">Geocode</a></p>
+</li>
 </ul>
 </div>
 <div class="sect3">
@@ -837,10 +840,6 @@ flexibility" - things for Strategy implementers to aim for - "Guiding Principles
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>Address</code> class</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Usage note</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
@@ -929,7 +928,7 @@ flexibility" - things for Strategy implementers to aim for - "Guiding Principles
 <td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressableObject</code> class and its associated codelist of subtypes</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Usage note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Judgement as to what makes for a permissable AddressableObject rests with the implementer. This model&#8217;s technical requirements are only that the object is a legal <code>geo:Feature</code> object, thus implementers may make Addressable Objects of almost anything.</p></td>
 </tr>
 <tr>
@@ -998,7 +997,7 @@ ex:addre-2 addr:isAddressFor ex:admin-area-z .</code></pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressComponent</code> class</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Usage note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Address Components can be literals - numbers, words etc. - or complex ojects - Localities, districtes etc. If the Address Component is a complex object, a textual representation of it must be provided when a textual rendering of all of an Addresses' component are required, for example for letter printing.</p>
 <p class="tableblock">Complex objects are preferred for use over literals when the object referred to has independent identity.</p>
 <p class="tableblock">Ordering of Address Components, for example for letter printing, is not fixed within this model but should be implemented with a positioning preference system utilising the Address Component&#8217;s <code>addr:hasComponentType</code> values which should come from a controlled vocabulary of Address Component Type values.</p></td>
@@ -1077,7 +1076,7 @@ ex:addre-2 addr:isAddressFor ex:admin-area-z .</code></pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressComponent</code> class</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Usage note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">An Address Component&#8217;s type should be indicated with values from a controlled vocabulary - a code list.</p>
 <p class="tableblock">A SKOS vocabulary of Address Component Types is suplied with this ontology.</p></td>
 </tr>
@@ -1157,7 +1156,7 @@ ex:addre-2 addr:isAddressFor ex:admin-area-z .</code></pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressLifecycle</code> class</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Usage note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">An Address Lifecycle Stage&#8217;s type should be indicated with values from a controlled vocabulary - a code list.</p>
 <p class="tableblock">A SKOS vocabulary of Address Lifecycle Stages is suplied with this ontology.</p>
 <p class="tableblock">In this model, these Lifecycle Stages are defined for use with Addresses only, not also Address Components, as per ISO19160-1.</p></td>
@@ -1244,7 +1243,7 @@ addrls:proposed
 <td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressLifecycle</code> class</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Usage note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">An Address Address Lifecycle Stage&#8217;s type should be indicated with values from a controlled vocabulary - a code list.</p>
 <p class="tableblock">A SKOS vocabulary of Address Lifecycle Stage Types is suplied with this ontology.</p></td>
 </tr>
@@ -1311,7 +1310,7 @@ ex:addr-1
 <td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressPosition</code> &amp; <code>AddressPositionType</code> classes</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Usage note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ISO19160-1 does not contain an <code>AddressRole</code> class but instead an <code>AddressPosition</code> class with positioning and role properties. This Standard make role a direct property of <code>Address</code> instead and provides for a positional qualifier (qualified against the position of the <code>AddressableObject</code>) instead to allow whole addresses to carry role tasking.</p></td>
 </tr>
 <tr>
@@ -1328,6 +1327,73 @@ ex:addr-1
   addr:hasAddressRole
     ex:emergencyAccess ,
     buildingAccessPoint ;
+    ...</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="Geocode"><a class="anchor" href="#Geocode"></a>4.1.8. Geocode</h4>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addr:Geocode</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geocode</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A Feature used to position other Features and to carry typing or provenance of that position</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/profile/anz-address">ANZ National Address Model</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sub-class Of</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/ont/geosparql#"><code>geo:Feature</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from the G-NAF&#8217;s expression of Address position</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicating a Geocode for an Address with the property hasGeocode is a direct method of locating the Address. Addresses either may or must also be located by ference to an Addressable Object which has a Geometry, depending on business rules.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms:type</code> - to indicate a type, as per the <a href="https://linked.data.gov.au/dataset/gnaf/code/geocodeType">Geocode Type</a> vocabulary</p>
+<p class="tableblock"><code>geo:hasGeometry</code> - to indicate the position of the Geocode. A GeoSPARQL <code>Geometry</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle"># An Address with a geocode and a role
+ex:addr-1
+  a addr:Address ;
+    addr:hasGeocode [
+      a addr:Geocode ;
+      dcterms:type geocodeType:DF ;  # Driveway Frontage
+      geo:hasGeometry "POINT (152.01 -35.03)"^^geo:wktLiteral ;
+    ] ;
+    addre:hasRole addr:buildingAccessPoint ;
     ...</code></pre>
 </div>
 </div></div></td>
@@ -1354,6 +1420,9 @@ ex:addr-1
 </li>
 <li>
 <p><a href="#hasAddressRole">has address role</a></p>
+</li>
+<li>
+<p><a href="#hasGeocode">has geocode</a></p>
 </li>
 <li>
 <p><a href="#hasLifecycleStage">has lifecycle stage </a></p>
@@ -1676,7 +1745,72 @@ ex:addr-1
 </table>
 </div>
 <div class="sect3">
-<h4 id="hasLifecycleStage"><a class="anchor" href="#hasLifecycleStage"></a>4.2.6. has lifecycle stage</h4>
+<h4 id="hasGeocode"><a class="anchor" href="#hasGeocode"></a>4.2.6. has geocode</h4>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addr:hasGeocode</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">has geocode</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates a refined, that is a very accurate or specific, geometry, usually a point, for an Address qualified by the Geocode Type - how it was generated.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/profile/anz-address">ANZ National Address Model</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from the G-NAF&#8217;s expression of Address position</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope Note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This property, along with hasRole, allows multiple Addresses with different locations to be allocated to Addressable Objects and for those addresses to be used for different purposes. The location indicated by this property should be within/on/next to the location of the Addressable Object this Address is for, within some acceptable tolerance.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Address">Address</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Range</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Geocode">Geocode</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle"># An Address with a geocode and a role
+ex:addr-1
+  a addr:Address ;
+    addr:hasGeocode [
+      dcterms:type geocodeType:DF ;  # Driveway Frontage
+      geo:hasGeometry "POINT (152.01 -35.03)"^^geo:wktLiteral ;
+    ] ;
+    addre:hasRole addr:buildingAccessPoint ;
+    ...</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="hasLifecycleStage"><a class="anchor" href="#hasLifecycleStage"></a>4.2.7. has lifecycle stage</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -1748,7 +1882,7 @@ ex:addr-1
 </table>
 </div>
 <div class="sect3">
-<h4 id="hasLifecycleStageType"><a class="anchor" href="#hasLifecycleStageType"></a>4.2.7. has lifecycle stage type</h4>
+<h4 id="hasLifecycleStageType"><a class="anchor" href="#hasLifecycleStageType"></a>4.2.8. has lifecycle stage type</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -2371,7 +2505,7 @@ The representations of vocabularies here do not contain full vocabulary informat
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-30 12:10:47 UTC
+Last updated 2022-06-07 21:39:59 UTC
 </div>
 </div>
 </body>

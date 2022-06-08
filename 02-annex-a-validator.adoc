@@ -1,0 +1,22 @@
+[[AnnexA]]
+== Annex A: Model Validator
+
+A validator to test data claiming conformance to this model is one of the resources within this profile.
+
+* machine-readable form: https://w3id.org/profile/anz-address/validator
+
+A summary of the validator's elements is given in <<tbl-shapes, Table 1>>.
+
+#TODO: Complete this listing of the Validator's Shapes#
+
+[id="tbl-shapes", cols="1,7"]
+.Shapes within the Validator
+|===
+| Shape ID | Description
+
+| https://w3id.org/profile/anz-address/validator/sh-01[sh01]
+| Address Components' types must be indicated by an IRI (of a Concept from a vocabulary)
+
+| https://w3id.org/profile/anz-address/validator/sh-02[sh02]
+| The hasValue property of an AddressComponent with addressComponentType isov1:locality must indicate an IRI (of a Concept from a vocabulary), not text
+|===

@@ -463,14 +463,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_supporting_vocabularies">5. Supporting Vocabularies</a>
 <ul class="sectlevel2">
-<li><a href="#_address_component_type_vocabulary">5.1. Address Component Type Vocabulary</a></li>
-<li><a href="#_address_lifecycle_stage_type_vocabulary">5.2. Address Lifecycle Stage Type Vocabulary</a></li>
-<li><a href="#_address_role_vocabulary">5.3. Address Role Vocabulary</a></li>
-<li><a href="#_address_status_vocabulary">5.4. Address Status Vocabulary</a></li>
+<li><a href="#_address_component_types_vocabulary">5.1. Address Component Types Vocabulary</a></li>
+<li><a href="#_address_lifecycle_stage_types_vocabulary">5.2. Address Lifecycle Stage Types Vocabulary</a></li>
+<li><a href="#_address_role_types_vocabulary">5.3. Address Role Types Vocabulary</a></li>
+<li><a href="#_address_status_types_vocabulary">5.4. Address Status Types Vocabulary</a></li>
 </ul>
 </li>
 <li><a href="#AnnexA">Annex A: Model Validator</a></li>
-<li><a href="#_references">References</a></li>
+<li><a href="#_bibliography">Bibliography</a></li>
 </ul>
 </div>
 </div>
@@ -595,7 +595,7 @@ This Model is a candidate model for Australian &amp; New Zealand address informa
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://w3id.org/profile/anz-address/address-roles/" class="bare">https://w3id.org/profile/anz-address/address-roles/</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://w3id.org/profile/anz-address/addressRoleTypes/" class="bare">https://w3id.org/profile/anz-address/addressRoleTypes/</a></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Placeholder for the Address Roles Vocabulary</p></td>
 </tr>
 <tr>
@@ -2020,16 +2020,16 @@ ex:addr-1
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><a href="#AddressComponentType">Address Component Type</a></p>
+<p><a href="#AddressComponentTypes">Address Component Types</a></p>
 </li>
 <li>
-<p><a href="#AddressLifecycleStageType">Address Lifecycle Stage Type</a></p>
+<p><a href="#AddressLifecycleStageTypes">Address Lifecycle Stage Types</a></p>
 </li>
 <li>
-<p><a href="#AddressRole">Address Role</a></p>
+<p><a href="#AddressRoleTypes">Address Role Type</a></p>
 </li>
 <li>
-<p><a href="#AddressStatus">Address Status</a></p>
+<p><a href="#AddressStatusTypes">Address Status Types</a></p>
 </li>
 </ol>
 </div>
@@ -2055,7 +2055,7 @@ The representations of vocabularies here do not contain full vocabulary informat
 </table>
 </div>
 <div class="sect2">
-<h3 id="_address_component_type_vocabulary"><a class="anchor" href="#_address_component_type_vocabulary"></a>5.1. Address Component Type Vocabulary</h3>
+<h3 id="_address_component_types_vocabulary"><a class="anchor" href="#_address_component_types_vocabulary"></a>5.1. Address Component Types Vocabulary</h3>
 <div class="paragraph">
 <p>This vocabulary is an extended version of <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressComponentType</code> vocabulary. The original 9 concepts from the standard are included however only two of them - <code>locality</code> &amp; <code>postcode</code> - are suggested for use. 19 additional concepts are taken from address elements in the G-NAF, such as <code>numberFirstSuffix</code>. Additional concepts are added as needed to cater for futher ANZ addressing needs, such as <code>traditionalPlaceName</code> to cater for First Nations place naming.</p>
 </div>
@@ -2297,7 +2297,7 @@ The representations of vocabularies here do not contain full vocabulary informat
 </table>
 </div>
 <div class="sect2">
-<h3 id="_address_lifecycle_stage_type_vocabulary"><a class="anchor" href="#_address_lifecycle_stage_type_vocabulary"></a>5.2. Address Lifecycle Stage Type Vocabulary</h3>
+<h3 id="_address_lifecycle_stage_types_vocabulary"><a class="anchor" href="#_address_lifecycle_stage_types_vocabulary"></a>5.2. Address Lifecycle Stage Types Vocabulary</h3>
 <div class="paragraph">
 <p>This vocabulary is an extended version of <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressLifecycleStage</code> vocabulary.</p>
 </div>
@@ -2313,15 +2313,17 @@ The representations of vocabularies here do not contain full vocabulary informat
 </div>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 66.6668%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1428%;">
+<col style="width: 14.2858%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">IRI</th>
 <th class="tableblock halign-left valign-top">Label</th>
 <th class="tableblock halign-left valign-top">Definition</th>
+<th class="tableblock halign-left valign-top">Status</th>
 </tr>
 </thead>
 <tbody>
@@ -2329,37 +2331,43 @@ The representations of vocabularies here do not contain full vocabulary informat
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov2:current</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">current</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The address or address component is currently in use</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov2:proposed</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">proposed</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The address or address component has been proposed, i.e. the relevant authority has initiated approval procedures for the use of the address or address component</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov2:rejected</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The address or address component was proposed but rejected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov2:reserved</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">reserved</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The address or address component has been reserved for future use</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov2:retired</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">retired</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The address or address component was in use at some stage, but not anymore</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov2:unknown</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">unknown</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The lifecycle stage of the address or address component is unknown</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_address_role_vocabulary"><a class="anchor" href="#_address_role_vocabulary"></a>5.3. Address Role Vocabulary</h3>
+<h3 id="_address_role_types_vocabulary"><a class="anchor" href="#_address_role_types_vocabulary"></a>5.3. Address Role Types Vocabulary</h3>
 <div class="paragraph">
 <p>This vocabulary is derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressPosition</code> and <code>AddressPositionType</code> classes and an example vocabulary in Annex C of <a href="#ISO19160-1">[ISO19160-1]</a> for the latter.</p>
 </div>
@@ -2375,29 +2383,28 @@ The representations of vocabularies here do not contain full vocabulary informat
 </div>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 50%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 20%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">IRI</th>
 <th class="tableblock halign-left valign-top">Label</th>
 <th class="tableblock halign-left valign-top">Definition</th>
+<th class="tableblock halign-left valign-top">Status</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:buildingAccessPoint</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">building access point</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The address that identifies the place to access a building AddressableObject from</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:buildingCentroid</code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:buildingCentroid</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">building centroid</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
@@ -2406,18 +2413,16 @@ The representations of vocabularies here do not contain full vocabulary informat
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:emergencyAccess</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">emergency access</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The centrepoint of a Building&#8217;s geometry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:propertyCentroid</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">property centroid</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The centrepoint of the Property&#8217;s geometry</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:serviceConnectionPoint</code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:serviceConnectionPoint</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">service connection point</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The point at which utility services are connected to an AddressableObject</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
@@ -2426,17 +2431,19 @@ The representations of vocabularies here do not contain full vocabulary informat
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:streetAddress</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">street address</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A thoroughfare location</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:centroid</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">centroid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The centrepoint of the AddressableObject&#8217;s geometry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">addition</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_address_status_vocabulary"><a class="anchor" href="#_address_status_vocabulary"></a>5.4. Address Status Vocabulary</h3>
+<h3 id="_address_status_types_vocabulary"><a class="anchor" href="#_address_status_types_vocabulary"></a>5.4. Address Status Types Vocabulary</h3>
 <div class="paragraph">
 <p>This vocabulary is an extended version of <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressStatus</code> vocabulary.</p>
 </div>
@@ -2452,15 +2459,17 @@ The representations of vocabularies here do not contain full vocabulary informat
 </div>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 66.6668%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1428%;">
+<col style="width: 14.2858%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">IRI</th>
 <th class="tableblock halign-left valign-top">Label</th>
 <th class="tableblock halign-left valign-top">Definition</th>
+<th class="tableblock halign-left valign-top">Status</th>
 </tr>
 </thead>
 <tbody>
@@ -2468,16 +2477,19 @@ The representations of vocabularies here do not contain full vocabulary informat
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov3:official</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">official</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">An official addressing authority assigned the address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov3:unknown</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">unknown</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The status of the address is unknown</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov3:unofficial</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">unofficial</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The address was not assigned by an official addressing authority</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">original</p></td>
 </tr>
 </tbody>
 </table>
@@ -2529,7 +2541,7 @@ The representations of vocabularies here do not contain full vocabulary informat
 </div>
 </div>
 <div class="sect1">
-<h2 id="_references"><a class="anchor" href="#_references"></a>References</h2>
+<h2 id="_bibliography"><a class="anchor" href="#_bibliography"></a>Bibliography</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -2570,7 +2582,7 @@ The representations of vocabularies here do not contain full vocabulary informat
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-06-07 22:35:35 UTC
+Last updated 2022-06-08 05:28:52 UTC
 </div>
 </div>
 </body>

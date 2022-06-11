@@ -441,7 +441,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h1>ANZ National Address Model - Candidate</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
+<ul class="sectlevel3">
+<li><a href="#_a_semantic_web_data_model_used_for_address_information"><em>A Semantic Web data model used for address information</em></a></li>
 <li><a href="#_metadata">1. Metadata</a></li>
 <li><a href="#_preamble">2. Preamble</a>
 <ul class="sectlevel2">
@@ -469,12 +470,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_address_status_types_vocabulary">5.4. Address Status Types Vocabulary</a></li>
 </ul>
 </li>
-<li><a href="#AnnexA">Annex A: Model Validator</a></li>
+<li><a href="#AnnexA">Annex A: Validator</a></li>
+<li><a href="#_annex_b_examples">Annex B: Examples</a></li>
+<li><a href="#_annex_c_demo_implementations">Annex C: Demo Implementations</a></li>
 <li><a href="#_bibliography">Bibliography</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
+<div class="sect3">
+<h4 id="_a_semantic_web_data_model_used_for_address_information"><a class="anchor" href="#_a_semantic_web_data_model_used_for_address_information"></a><em>A Semantic Web data model used for address information</em></h4>
+
+</div>
 <div class="sect1">
 <h2 id="_metadata"><a class="anchor" href="#_metadata"></a>1. Metadata</h2>
 <div class="sectionbody">
@@ -502,7 +509,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Modified</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2022-04-27</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-06-11</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Issued</strong></p></td>
@@ -566,7 +573,7 @@ This Model is a candidate model for Australian &amp; New Zealand address informa
 </table>
 </div>
 <div class="paragraph">
-<p>It was originally was made for the Queensland Department of Resources, Spatial Information unit to assist with future Address database design. It is informed by the ICSM&#8217;s Addressing 2035: Addressing Reform and Innovation for Australia and New Zealand, published in late 2021 and is based primarilty on the ISO19160-1 <em>Addressing Part 1: Conceptual model</em> <a href="#ISO19160-1">[ISO19160-1]</a> with additional elements from a small set of well-regarded Semantic Web models such as GeoSPARQL <a href="#GEO">[GEO]</a> and SKOS <a href="#SKOS">[SKOS]</a>. It is also informed by the relational databalse model used for the <a href="https://data.gov.au/data/dataset/d4631917-14d7-4c49-830c-555ad63adf9d">G-NAF, Australia&#8217;s Geocoded National Address File</a>, and CSIRO work in 2018 to characterise the GNAF in Sematic Web form, the ontlogy for which is online at <a href="https://linked.data.gov.au/def/gnaf" class="bare">https://linked.data.gov.au/def/gnaf</a>.</p>
+<p>This model is a Semantic Web data model used for address information. It caters specifically for Australian &amp; New Zealand&#8217;s address modelling needs. It was originally was made for the Queensland Department of Resources, Spatial Information unit, to assist with future Address database design. It is informed by the ICSM&#8217;s Addressing 2035: Addressing Reform and Innovation for Australia and New Zealand, published in late 2021 and is based primarilty on the ISO19160-1 <em>Addressing Part 1: Conceptual model</em> <a href="#ISO19160-1">[ISO19160-1]</a> with additional elements from a small set of well-regarded Semantic Web models such as GeoSPARQL <a href="#GEO">[GEO]</a> and SKOS <a href="#SKOS">[SKOS]</a>. It is also informed by the relational databalse model used for the <a href="https://data.gov.au/data/dataset/d4631917-14d7-4c49-830c-555ad63adf9d">G-NAF, Australia&#8217;s Geocoded National Address File</a>, and CSIRO work in 2018 to characterise the GNAF in Sematic Web form, the ontlogy for which is online at <a href="https://linked.data.gov.au/def/gnaf" class="bare">https://linked.data.gov.au/def/gnaf</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -691,7 +698,7 @@ This Model is a candidate model for Australian &amp; New Zealand address informa
 <div class="sect3">
 <h4 id="_example_data"><a class="anchor" href="#_example_data"></a>2.3.2. Example Data</h4>
 <div class="paragraph">
-<p>Example Data used in this document, for instance in model element "Example" values, are <a href="https://www.w3.org/RDF/">RDF</a> data in the <a href="https://www.w3.org/TR/turtle/">Turtle</a> tyntax.</p>
+<p>Example Data used in this document, for instance in model element "Example" values, are <a href="https://www.w3.org/RDF/">RDF</a> data in the <a href="https://www.w3.org/TR/turtle/">Turtle</a> syntax.</p>
 </div>
 </div>
 </div>
@@ -718,11 +725,11 @@ flexibility" - things for Strategy implementers to aim for - "Guiding Principles
 <div class="paragraph">
 <p>This document is this model&#8217;s "Specification" which is its authoratitive, human-readable, definition document. This model also contains other resources with other roles:</p>
 </div>
-<table class="tableblock frame-all grid-all stripes-even" style="width: 50%;">
+<table class="tableblock frame-all grid-all stripes-even" style="width: 75%;">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 60%;">
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
 </colgroup>
 <thead>
 <tr>
@@ -735,17 +742,27 @@ flexibility" - things for Strategy implementers to aim for - "Guiding Principles
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://nicholascar.com/anz-nat-addr-model-candidate/model.ttl">Ontology</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>Schema</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical, machine-readable, data model of this model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The technical, machine-readable, version of this model</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://nicholascar.com/anz-nat-addr-model-candidate/validator.shacl.ttl">Validator</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_supporting_vocabularies">Supporting Vocabularies</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Vocabulary</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The codelist vocabularies developed for this model and links to others  defined elsewhere but used by this model</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#AnnexA">Annex A: Validator</a> &amp; <a href="https://nicholascar.com/anz-nat-addr-model-candidate/validator.shacl.ttl">Validator</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>Validation</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The machine-readable constraints file used to validate data claiming conformance to this model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The machine-readable validator file used to validate data claiming conformance to this model</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/nicholascar/anz-nat-addr-model-candidate/tree/main/example">Example files</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_annex_b_examples">Annex B: Examples</a> &amp; <a href="https://github.com/nicholascar/anz-nat-addr-model-candidate/tree/main/example">Example data files</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>Example</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Examples of data conforming, and some not conforming, to this model</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_annex_c_demo_implementations">Annex C: Demo Implementations</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Example</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Demonstration implementations of this model in various database forms</p></td>
 </tr>
 </tbody>
 </table>
@@ -2431,7 +2448,7 @@ The representations of vocabularies here do not contain full vocabulary informat
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:streetAddress</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">street address</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A thoroughfare location</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">addition</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>role:centroid</code></p></td>
@@ -2497,7 +2514,7 @@ The representations of vocabularies here do not contain full vocabulary informat
 </div>
 </div>
 <div class="sect1">
-<h2 id="AnnexA"><a class="anchor" href="#AnnexA"></a>Annex A: Model Validator</h2>
+<h2 id="AnnexA"><a class="anchor" href="#AnnexA"></a>Annex A: Validator</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>A validator to test data claiming conformance to this model is one of the resources within this profile.</p>
@@ -2538,6 +2555,18 @@ The representations of vocabularies here do not contain full vocabulary informat
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_annex_b_examples"><a class="anchor" href="#_annex_b_examples"></a>Annex B: Examples</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_annex_c_demo_implementations"><a class="anchor" href="#_annex_c_demo_implementations"></a>Annex C: Demo Implementations</h2>
+<div class="sectionbody">
+
 </div>
 </div>
 <div class="sect1">
@@ -2582,7 +2611,7 @@ The representations of vocabularies here do not contain full vocabulary informat
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-06-08 05:28:52 UTC
+Last updated 2022-06-11 23:41:37 UTC
 </div>
 </div>
 </body>

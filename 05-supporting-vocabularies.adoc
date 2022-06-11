@@ -108,7 +108,7 @@ This vocabulary is derived from <<ISO19160-1>>'s `AddressPosition` and `AddressP
 | `role:emergencyAccess` | emergency access | The centrepoint of a Building's geometry | original
 | `role:propertyCentroid` | property centroid | The centrepoint of the Property's geometry | original
 | `role:serviceConnectionPoint` | service connection point | The point at which utility services are connected to an AddressableObject | original
-| `role:streetAddress` | street address | A thoroughfare location |
+| `role:streetAddress` | street address | A thoroughfare location | addition
 | `role:centroid` | centroid | The centrepoint of the AddressableObject's geometry | addition
 
 |===

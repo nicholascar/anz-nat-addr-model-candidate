@@ -1,0 +1,32 @@
+= ANZ National Address Model - Candidate
+:toc: left
+:table-stripes: even
+:sectids:
+:sectanchors:
+:sectnums:
+
+:sectnums!:
+
+==== _A Semantic Web data model used for address information_
+
+:sectnums:
+
+include::01-metadata.adoc[]
+
+include::02-preamble.adoc[]
+
+include::03-introduction.adoc[]
+
+include::04-model.adoc[]
+
+include::05-supporting-vocabularies.adoc[]
+
+:sectnums!:
+
+include::51-annex-a-validator.adoc[]
+
+include::52-annex-b-extended-examples.adoc[]
+
+include::53-annex-c-demo-implementations.adoc[]
+
+include::99-bibliography.adoc[]

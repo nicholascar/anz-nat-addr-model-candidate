@@ -1,5 +1,5 @@
 [[AnnexA]]
-== Annex A: Model Validator
+== Annex A: Validator
 
 A validator to test data claiming conformance to this model is one of the resources within this profile.
 

@@ -1,0 +1,118 @@
+# 6. National Park
+# · Giraween NP - PYRAMIDS RD GIRRAWEEN QLD (GIRRAWEEN NATIONAL PARK)
+# · Place name
+# · Related internal place names
+# · Can be across multiple parcels -
+# · Addresses for access points and visitor centre
+# · Associated geocodes for addresses
+
+# Giraween NP - PYRAMIDS RD GIRRAWEEN QLD (GIRRAWEEN NATIONAL PARK)
+# ADDRESS_DETAIL_PID|DATE_CREATED|DATE_LAST_MODIFIED|DATE_RETIRED|BUILDING_NAME|LOT_NUMBER_PREFIX|LOT_NUMBER|LOT_NUMBER_SUFFIX|FLAT_TYPE_CODE|FLAT_NUMBER_PREFIX|FLAT_NUMBER|FLAT_NUMBER_SUFFIX|LEVEL_TYPE_CODE|LEVEL_NUMBER_PREFIX|LEVEL_NUMBER|LEVEL_NUMBER_SUFFIX|NUMBER_FIRST_PREFIX|NUMBER_FIRST|NUMBER_FIRST_SUFFIX|NUMBER_LAST_PREFIX|NUMBER_LAST|NUMBER_LAST_SUFFIX|STREET_LOCALITY_PID|LOCATION_DESCRIPTION|LOCALITY_PID|ALIAS_PRINCIPAL|POSTCODE|PRIVATE_STREET|LEGAL_PARCEL_ID|CONFIDENCE|ADDRESS_SITE_PID|LEVEL_GEOCODED_CODE|PROPERTY_PID|GNAF_PROPERTY_PID|PRIMARY_SECONDARY
+# GAQLD157959170|2004-05-09|2021-08-13||GIRRAWEEN NATIONAL PARK|||||||||||||1486|||||QLD2213217||loc44125fbb0fed|P|4382|||1|157942023|6|||
+# GAQLD160693079|2004-06-22|2021-08-13||GIRRAWEEN NATIONAL PARK|||||||||||||1689|||||QLD2213217||loc44125fbb0fed|P|4382|||1|160662496|6|||
+# GAQLD719444059|2017-07-27|2021-08-13||GIRRAWEEN NATIONAL PARK||29||||||||||||||||QLD2213217||loc44125fbb0fed|P|4382||29/NPW638|0|714829076|7||3413491|
+# 7415168|2021-08-10||GAQLD157959170|STL|151.95179638|-28.82625239
+# 7527608|2021-08-10||GAQLD160693079|STL|151.95179638|-28.82625239
+# 3008899433|2021-02-04||GAQLD719444059|PC|151.95137227|-28.85355218
+
+PREFIX addr: <https://w3id.org/profile/anz-address/>
+PREFIX cad: <https://w3id.org/profile/cad/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX ex: <http://example.com/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX isov1: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/>
+PREFIX pn: <http://linked.data.gov.au/def/placenames/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sdo: <https://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+<https://linked.data.gov.au/dataset/gnaf/address/GAQLD158836591>
+    a addr:Address ;
+    addr:isAddressFor <https://linked.data.gov.au/dataset/gnaf/addressSite/157942023> ;
+    addr:hasAddressComponent
+        # no relevant street number
+        [
+            addr:hasComponentType isov1:propertyName ;
+            addr:hasTextValue "Girraween National Park" ;
+            addr:hasValue "Girraween National Park"
+        ] ,
+        [
+            addr:hasComponentType isov1:streetLocality ;
+            addr:hasTextValue "Pyramids Road" ;
+            addr:hasValue <https://linked.data.gov.au/dataset/gnaf/streetLocality/QLD2213217>
+        ] ,
+        [
+            addr:hasComponentType isov1:locality ;
+            addr:hasTextValue "Girraween" ;
+            addr:hasValue <https://linked.data.gov.au/dataset/gnaf/locality/loc44125fbb0fed>
+        ] ,
+        [
+            addr:hasComponentType isov1:administrativeArea ;
+            addr:hasTextValue "Queensland" ;
+            addr:hasValue <https://linked.data.gov.au/dataset/asgs/STE/3>
+        ] ,
+        [
+            addr:hasComponentType isov1:postcode ;
+            addr:hasTextValue "4382" ;
+            addr:hasValue 4382
+        ] ;
+    addr:hasGeocode
+        [
+            dcterms:type <https://linked.data.gov.au/dataset/gnaf/code/geocodeType/DF> ; # Property Access Point
+            geo:asWKT "POINT(151.95179638 -28.82625239)"^^geo:wktLiteral ;
+        ] ,
+        [
+            dcterms:type <https://linked.data.gov.au/dataset/gnaf/code/geocodeType/PC> ;  # Property Centroid
+            geo:asWKT "POINT(151.95137227 -28.85355218)"^^geo:wktLiteral ;
+        ] ;
+.
+
+
+<https://linked.data.gov.au/dataset/gnaf/addressSite/157942023>
+    a pn:Place ;
+    pn:hasPlaceName <https://linked.data.gov.au/dataset/gnaf/address/GAQLD158836591> ;
+    geo:sfContains <http://example.com/subplace-1> ;
+    # or
+    dcterms:hasPart <http://example.com/subplace-1> ;
+.
+
+<https://linked.data.gov.au/dataset/gnaf/address/GAQLD158836591>
+    a pn:PlaceName ;
+    pn:name "Girraween National Park" ;
+    dcterms:provenance "Named and bounded by the Minister for Natural Resources 15 December 2000. Regazetted by the Minister for Minister for Natural Resources, Mines and Energy and Minister for Trade on the 21 August 2009 due to the council amalgamations under the Local Government Reform Implementation Act 2007."@en ;
+    pn:status pn:gazetted ;
+    dcterms:type <https://linked.data.gov.au/def/placenames-categories/ADMINISTRATIVE-AREA> ;
+    pn:placeNameOf <https://linked.data.gov.au/dataset/gnaf/addressSite/157942023> ;
+    pn:wasNamedBy <https://linked.data.gov.au/org/qld> ;
+    pn:hasPronunciation "/gɪrɑwiːn/"^^<http://example.com/MacquariePronunciation> ;
+.
+
+<https://linked.data.gov.au/org/qld>
+    a pn:PlaceNamingAuthority , sdo:Organization ;
+    sdo:name "Government of Queensland" ;
+    sdo:url "https://www.qld.gov.au"^^xsd:anyURI ;
+.
+
+<http://example.com/subplace-1>
+    a pn:Place ;
+    geo:sfWithin <https://linked.data.gov.au/dataset/gnaf/addressSite/157942023> ;
+    # or
+    dcterms:isPartOf <https://linked.data.gov.au/dataset/gnaf/addressSite/157942023> ;
+    pn:hasPlaceName <http://example.com/subplace-1-placename> ;
+    geo:hasGeometry [
+        a geo:Geometry ;
+        geo:asWKT "POLYGON ((151.9472012 -28.8134666, 151.9455275 -28.8162679, 151.9430067 -28.8223536, 151.9439186 -28.8234533, 151.9458927 -28.8220622, 151.9556985 -28.8176591, 151.9587025 -28.8130905, 151.9559989 -28.8090858, 151.952115 -28.8090858, 151.9472012 -28.8134666))"^^geo:wktLiteral ;
+    ] ;
+.
+
+<http://example.com/subplace-1-placename>
+    a pn:PlaceName ;
+    pn:name "The Pyramids" ;
+    dcterms:provenance "Named by Queensland Place Names Board 1 January 1967."@en ;
+    pn:status pn:gazetted ;
+    dcterms:type <https://linked.data.gov.au/def/placenames-categories/ADMINISTRATIVE-AREA> ;
+    pn:placeNameOf <http://example.com/subplace-1> ;
+    pn:wasNamedBy <https://linked.data.gov.au/org/qld> ;
+    pn:hasPronunciation "/gɪrɑwiːn/"^^<http://example.com/MacquariePronunciation> ;
+.

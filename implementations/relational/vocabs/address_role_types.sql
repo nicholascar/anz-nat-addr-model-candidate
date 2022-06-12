@@ -6,10 +6,10 @@ CREATE TABLE addresses_roles_types
     label TEXT
 );
 
-INSERT INTO addresses_roles_types (pid, label) VALUES ('buildingAccessPoint', 'building access point');
-INSERT INTO addresses_roles_types (pid, label) VALUES ('buildingCentroid', 'building centroid');
-INSERT INTO addresses_roles_types (pid, label) VALUES ('emergencyAccess', 'emergency access');
-INSERT INTO addresses_roles_types (pid, label) VALUES ('propertyCentroid', 'property centroid');
-INSERT INTO addresses_roles_types (pid, label) VALUES ('serviceConnectionPoint', 'service connection point');
-INSERT INTO addresses_roles_types (pid, label) VALUES ('streetAddress', 'street address');
-INSERT INTO addresses_roles_types (pid, label) VALUES ('centroid', 'centroid');
+INSERT INTO addresses_roles_types (pid, label) VALUES ('role:buildingAccessPoint', 'building access point');
+INSERT INTO addresses_roles_types (pid, label) VALUES ('role:buildingCentroid', 'building centroid');
+INSERT INTO addresses_roles_types (pid, label) VALUES ('role:emergencyAccess', 'emergency access');
+INSERT INTO addresses_roles_types (pid, label) VALUES ('role:propertyCentroid', 'property centroid');
+INSERT INTO addresses_roles_types (pid, label) VALUES ('role:serviceConnectionPoint', 'service connection point');
+INSERT INTO addresses_roles_types (pid, label) VALUES ('role:streetAddress', 'street address');
+INSERT INTO addresses_roles_types (pid, label) VALUES ('role:centroid', 'centroid');

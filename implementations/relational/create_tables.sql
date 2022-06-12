@@ -174,6 +174,6 @@ DROP TABLE IF EXISTS pids_prefixes;
 
 CREATE TABLE pids_prefixes
 (
-    table_name TEXT,
-    iri_stem   TEXT
+    prefix TEXT,
+    iri   TEXT
 );

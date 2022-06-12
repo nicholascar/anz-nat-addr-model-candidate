@@ -25,7 +25,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     a addr:Address ;
     addr:hasAddressComponent
         [
-            addr:hasComponentType isov1:complexName ;
+            addr:hasComponentType isov1:propertyName ;
             addr:hasTextValue "Halcyon Waters" ;
             addr:hasValue "Halcyon Waters"
         ] ;
@@ -41,7 +41,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     a addr:Address ;
     addr:hasAddressComponent
         [
-            addr:hasComponentType isov1:complexName ;
+            addr:hasComponentType isov1:propertyName ;
             addr:hasTextValue "Halcyon Waters" ;
             addr:hasValue "Halcyon Waters"
         ] ;
@@ -58,7 +58,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     a addr:Address ;
     addr:hasAddressComponent
         [
-            addr:hasComponentType isov1:complexName ;
+            addr:hasComponentType isov1:propertyName ;
             addr:hasTextValue "The Village" ;
             addr:hasValue "The Village"
         ] ;

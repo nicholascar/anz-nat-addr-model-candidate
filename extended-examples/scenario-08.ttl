@@ -29,7 +29,7 @@ PREFIX isov1: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComp
     addr:isAddressFor <https://example.com/parcel/23456789> ;
     addr:hasAddressComponent
         [
-            addr:hasComponentType isov1:complexName ;
+            addr:hasComponentType isov1:propertyName ;
             addr:hasTextValue "Double Island" ;
             addr:hasValue "Double Island"
         ] ,

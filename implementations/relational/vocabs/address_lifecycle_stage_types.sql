@@ -6,9 +6,9 @@ CREATE TABLE addresses_lifecycle_stages_types
     label TEXT
 );
 
-INSERT INTO addresses_lifecycle_stages_types (pid, label) VALUES ('current', 'current');
-INSERT INTO addresses_lifecycle_stages_types (pid, label) VALUES ('proposed', 'proposed');
-INSERT INTO addresses_lifecycle_stages_types (pid, label) VALUES ('rejected', 'rejected');
-INSERT INTO addresses_lifecycle_stages_types (pid, label) VALUES ('reserved', 'reserved');
-INSERT INTO addresses_lifecycle_stages_types (pid, label) VALUES ('retired', 'retired');
-INSERT INTO addresses_lifecycle_stages_types (pid, label) VALUES ('unknown', 'unknown');
+INSERT INTO addresses_lifecycle_stages_types (pid, label) VALUES ('isov2:current', 'current');
+INSERT INTO addresses_lifecycle_stages_types (pid, label) VALUES ('isov2:proposed', 'proposed');
+INSERT INTO addresses_lifecycle_stages_types (pid, label) VALUES ('isov2:rejected', 'rejected');
+INSERT INTO addresses_lifecycle_stages_types (pid, label) VALUES ('isov2:reserved', 'reserved');
+INSERT INTO addresses_lifecycle_stages_types (pid, label) VALUES ('isov2:retired', 'retired');
+INSERT INTO addresses_lifecycle_stages_types (pid, label) VALUES ('isov2:unknown', 'unknown');

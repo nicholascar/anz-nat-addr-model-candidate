@@ -16,7 +16,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     a addr:Address ;
     addr:hasAddressComponent
         [
-            addr:hasComponentType isov1:complexName ;
+            addr:hasComponentType isov1:propertyName ;
             addr:hasTextValue "Greenbank Gardens" ;
             addr:hasValue "Greenbank Gardens"
         ] ;
@@ -29,7 +29,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     a addr:Address ;
     addr:hasAddressComponent
         [
-            addr:hasComponentType isov1:complexName ;
+            addr:hasComponentType isov1:propertyName ;
             addr:hasTextValue "Greenbank Gardens" ;
             addr:hasValue "Greenbank Gardens"
         ] ,

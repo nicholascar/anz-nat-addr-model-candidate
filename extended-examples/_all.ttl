@@ -4,8 +4,8 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX ex: <http://example.com/>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX geocodeType: <https://linked.data.gov.au/dataset/gnaf/code/geocodeType/>
-PREFIX isov1: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/>
-PREFIX pn: <http://linked.data.gov.au/def/placenames/>
+PREFIX isov1: <https://w3id.org/profile/anz-address/AddressComponentType/>
+PREFIX pn: <https://linked.data.gov.au/def/placenames/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sdo: <https://schema.org/>
@@ -81,7 +81,7 @@ ex:40augustus
     a addr:Address ;
     addr:hasAddressComponent
         [
-            addr:hasComponentType isov1:complexName ;
+            addr:hasComponentType isov1:propertyName ;
             addr:hasTextValue "Greenbank Gardens" ;
             addr:hasValue "Greenbank Gardens"
         ] ,
@@ -291,7 +291,7 @@ ex:subplace-1-placename
     a addr:Address ;
     addr:hasAddressComponent
         [
-            addr:hasComponentType isov1:complexName ;
+            addr:hasComponentType isov1:propertyName ;
             addr:hasTextValue "Double Island" ;
             addr:hasValue "Double Island"
         ] ,
@@ -435,7 +435,7 @@ ex:subplace-1-placename
 <https://linked.data.gov.au/dataset/gnaf/address/GAQLD161294216>
     a addr:Address ;
     addr:hasAddressComponent [
-            addr:hasComponentType isov1:complexName ;
+            addr:hasComponentType isov1:propertyName ;
             addr:hasTextValue "The Village" ;
             addr:hasValue "The Village"
         ] ;
@@ -449,7 +449,7 @@ ex:subplace-1-placename
 <https://linked.data.gov.au/dataset/gnaf/address/GAQLD162432045>
     a addr:Address ;
     addr:hasAddressComponent [
-            addr:hasComponentType isov1:complexName ;
+            addr:hasComponentType isov1:propertyName ;
             addr:hasTextValue "Halcyon Waters" ;
             addr:hasValue "Halcyon Waters"
         ] ;
@@ -463,7 +463,7 @@ ex:subplace-1-placename
 <https://linked.data.gov.au/dataset/gnaf/address/GAQLD162469253>
     a addr:Address ;
     addr:hasAddressComponent [
-            addr:hasComponentType isov1:complexName ;
+            addr:hasComponentType isov1:propertyName ;
             addr:hasTextValue "Halcyon Waters" ;
             addr:hasValue "Halcyon Waters"
         ] ;
@@ -477,7 +477,7 @@ ex:subplace-1-placename
 <https://linked.data.gov.au/dataset/gnaf/address/GAQLD162713140>
     a addr:Address ;
     addr:hasAddressComponent [
-            addr:hasComponentType isov1:complexName ;
+            addr:hasComponentType isov1:propertyName ;
             addr:hasTextValue "Greenbank Gardens" ;
             addr:hasValue "Greenbank Gardens"
         ] ;

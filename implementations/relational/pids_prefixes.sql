@@ -6,6 +6,9 @@ CREATE TABLE pids_prefixes
     iri_stem   TEXT
 );
 
+INSERT INTO pids_prefixes (table_name, iri_stem) VALUES ('addresses', 'https://linked.data.gov.au/dataset/gnaf/address/');
+INSERT INTO pids_prefixes (table_name, iri_stem) VALUES ('localities', 'https://linked.data.gov.au/dataset/gnaf/locality/');
+INSERT INTO pids_prefixes (table_name, iri_stem) VALUES ('street_localities', 'https://linked.data.gov.au/dataset/gnaf/streetLocality/');
 INSERT INTO pids_prefixes (table_name, iri_stem) VALUES ('address_alias_types', 'https://linked.data.gov.au/dataset/gnaf/code/addressAliasType/');
 INSERT INTO pids_prefixes (table_name, iri_stem) VALUES ('address_component_types', 'http://def.isotc211.org/iso19160/-1/2015/Address/code/ddressComponentType/');
 INSERT INTO pids_prefixes (table_name, iri_stem) VALUES ('address_lifecycle_stage_types', 'http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressLifecycleStage/');
@@ -16,5 +19,3 @@ INSERT INTO pids_prefixes (table_name, iri_stem) VALUES ('geocode_types', 'https
 INSERT INTO pids_prefixes (table_name, iri_stem) VALUES ('level_types', 'https://linked.data.gov.au/dataset/gnaf/code/levelType/');
 INSERT INTO pids_prefixes (table_name, iri_stem) VALUES ('street_suffix_types', 'https://linked.data.gov.au/dataset/gnaf/code/streetSuffix/');
 INSERT INTO pids_prefixes (table_name, iri_stem) VALUES ('street_types', 'https://linked.data.gov.au/dataset/gnaf/code/streetType/');
-
-INSERT INTO pids_prefixes (table_name, iri_stem) VALUES ('addresses', 'https://linked.data.gov.au/dataset/gnaf/address/');

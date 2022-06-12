@@ -16,7 +16,7 @@ This model is built on a small set of well-regarded Semantic Web models which us
 |Prefix | Namespace | Description
 
 | `*addr:*` | `*https://w3id.org/profile/anz-address/*` | *Placeholder namespace for this model*
-| `role:` | `https://w3id.org/profile/anz-address/addressRoleTypes/` | Placeholder for the Address Roles Vocabulary
+| `role:` | `https://w3id.org/profile/anz-address/addressRoleType/` | Placeholder for the Address Roles Vocabulary
 | `asgsed3:` | `http://linked.data.gov.au/dataset/asgsed3/` | Australian Statistical Geographies Standard Dataset, Release 3
 | `dcterms:` | `http://purl.org/dc/terms/` | Dublin Core Terms vocabulary namespace
 | `ex:` | `http://example.com/thing` | Generic examples namespace

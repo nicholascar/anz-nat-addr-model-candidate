@@ -71,6 +71,7 @@ This vocabulary is an extended version of <<ISO19160-1>>'s `AddressComponentType
 | `isov1:numberLastSuffix` |  |  | ANZ addition | Used in G-NAF
 | `isov1:streetLocality` |  |  | ANZ addition | Used in G-NAF
 | `isov1:traditionalPlaceName` |  |  | ANZ Addition | Introduced to cater for expected demand
+| `isov1:propertyName` |  |  | ANZ Addition | Introduced to cater for complex addresses (gated communities) and rural properties
 |===
 
 === Address Lifecycle Stage Types Vocabulary
@@ -110,7 +111,8 @@ This vocabulary is derived from <<ISO19160-1>>'s `AddressPosition` and `AddressP
 | `role:serviceConnectionPoint` | service connection point | The point at which utility services are connected to an AddressableObject | original
 | `role:streetAddress` | street address | A thoroughfare location | addition
 | `role:centroid` | centroid | The centrepoint of the AddressableObject's geometry | addition
-
+4+|
+| `role:siteOffice` | site office | The administrative management location of a property
 |===
 
 === Address Status Types Vocabulary

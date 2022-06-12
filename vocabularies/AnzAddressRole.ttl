@@ -1,5 +1,5 @@
-PREFIX : <https://linked.data.gov.au/def/AnzAddressRole/>
-PREFIX cs: <https://linked.data.gov.au/def/AnzAddressRole>
+PREFIX : <https://w3id.org/profile/anz-address/AddressRole/>
+PREFIX cs: <https://w3id.org/profile/anz-address/AddressRole>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>

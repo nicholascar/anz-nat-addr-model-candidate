@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS addresses (
 	pid TEXT PRIMARY KEY,
    	created TEXT NOT NULL,
 	modified TEXT,
-	other TEXT
+	is_address_for TEXT
 );
 
 DROP TABLE IF EXISTS addresses_aliases;
@@ -21,13 +21,11 @@ CREATE TABLE IF NOT EXISTS addresses_aliases (
 DROP TABLE IF EXISTS addressable_objects;
 
 CREATE TABLE IF NOT EXISTS addressable_objects (
-	objectid INTEGER PRIMARY KEY,
-    source_guid TEXT,
-	source TEXT,
-	description TEXT,
-	geometry TEXT,
-	type TEXT,
-	FOREIGN KEY (type) REFERENCES geocodes_types (pid)
+	pid TEXT PRIMARY KEY,
+    other_id TEXT,
+	geocode TEXT,
+	geocode_type TEXT,
+	FOREIGN KEY (geocode_type) REFERENCES geocodes_types (pid)
 );
 
 DROP TABLE IF EXISTS addresses_components;

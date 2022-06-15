@@ -804,22 +804,13 @@ flexibility" - things for Strategy implementers to aim for - "Guiding Principles
 <p><a href="#AddressComponent">Address Component</a></p>
 </li>
 <li>
-<p><a href="#AddressComponentType">Address Component Type</a></p>
-</li>
-<li>
 <p><a href="#AddressLifecycleStage">Address Lifecycle Stage</a></p>
-</li>
-<li>
-<p><a href="#AddressLifecycleStageType">Address Lifecycle StageType</a></p>
 </li>
 <li>
 <p><a href="#AddressRole">Address Role</a></p>
 </li>
 <li>
 <p><a href="#Geocode">Geocode</a></p>
-</li>
-<li>
-<p><a href="#GeocodeType">Geocode Type</a></p>
 </li>
 </ul>
 </div>
@@ -1199,14 +1190,14 @@ ex:addr-1
       time:hasBeginning [ time:inXSDDate "1982-02-10"^^xsd:date ] ;
       time:hasEnd [ time:inXSDDate "1982-05-11"^^xsd:date ] ;
     ] ;
-    addr:hasLifeCycleStageType addrls:proposed ;
+    dcterms:type addrls:proposed ;
   ] ,
   [
     # this Stage is still in effect - no hasEnd given
     time:hasTime [
       time:hasBeginning [ time:inXSDDate "1982-05-11"^^xsd:date ] ;
     ] ;
-    addr:hasLifeCycleStageType addrls:current ;
+    dcterms:type addrls:current ;
   ] ,
 .
 
@@ -1281,7 +1272,7 @@ ex:addr-1
   a addr:Address ;
   addr:hasLifeCycleStage [
     ...
-    addr:hasLifeCycleStageType addrls:proposed ;
+    dcterms:type addrls:proposed ;
   ] ;
   ...
 .</code></pre>
@@ -1498,9 +1489,6 @@ ex:addr-1
 <p><a href="#hasAddressComponent">has address component</a></p>
 </li>
 <li>
-<p><a href="#hasAddressComponentType">has address component type</a></p>
-</li>
-<li>
 <p><a href="#hasAddressRole">has address role</a></p>
 </li>
 <li>
@@ -1508,9 +1496,6 @@ ex:addr-1
 </li>
 <li>
 <p><a href="#hasLifecycleStage">has lifecycle stage </a></p>
-</li>
-<li>
-<p><a href="#hasLifecycleStageType">has lifecycle stage type</a></p>
 </li>
 </ul>
 </div>
@@ -1947,77 +1932,15 @@ ex:addr-1
       time:hasBeginning [ time:inXSDDate "1982-02-10"^^xsd:date ] ;
       time:hasEnd [ time:inXSDDate "1982-05-11"^^xsd:date ] ;
     ] ;
-    addr:hasLifeCycleStageType addrls:proposed ;
+    dcterms:type addrls:proposed ;
   ] ,
   [
     # this Stage is still in effect - no hasEnd given
     time:hasTime [
       time:hasBeginning [ time:inXSDDate "1982-05-11"^^xsd:date ] ;
     ] ;
-    addr:hasLifeCycleStageType addrls:current ;
+    dcterms:type addrls:current ;
   ] ,
-.</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="hasLifecycleStageType"><a class="anchor" href="#hasLifecycleStageType"></a>4.2.8. has lifecycle stage type</h4>
-<table class="tableblock frame-all grid-all stripes-even stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addr:hasLifecycleStageType</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">has lifecycle stage type</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates an Addresses Lifecycle Stage&#8217;s type</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/profile/anz-address">ANZ National Address Model</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s object relations</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#AddressLifecycleStage">Address Lifecycle Stage</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Range</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#AddressLifecycleStageType">Address Lifecycle Stage Type</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle"># An Address with a Lifecycle Stages indicated
-# which then indicates its type
-ex:addr-1
-  a addr:Address ;
-  addr:hasLifeCycleStage [
-    ...
-    addr:hasLifeCycleStageType addrls:proposed ;
-  ] ;
-  ...
 .</code></pre>
 </div>
 </div></div></td>
@@ -2621,7 +2544,7 @@ The representations of vocabularies here do not contain full vocabulary informat
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-06-15 04:09:25 UTC
+Last updated 2022-06-15 05:59:59 UTC
 </div>
 </div>
 </body>

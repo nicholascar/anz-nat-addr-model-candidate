@@ -22,8 +22,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sdo:copyrightNotice "(c) Nicholas J. Car, 2022" ;
     sdo:creator <https://orcid.org/0000-0002-8742-7730> ;
     sdo:dateCreated "2021-12-16"^^xsd:date ;
-    sdo:dateIssued "2022-05-11"^^xsd:date ;
-    sdo:dateModified "2022-04-27"^^xsd:date ;
+    sdo:dateIssued "2000-00-00"^^xsd:date ;
+    sdo:dateModified "2022-05-15"^^xsd:date ;
     sdo:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
     sdo:publisher <https://orcid.org/0000-0002-8742-7730> ;
 .
@@ -45,31 +45,31 @@ addr:Address
   addr:hasAddressComponent 
     [   
       addr:hasValue 20 ;
-      addr:hasComponentType addrct:streetNumber ;
+      dcterms:type addrct:streetNumber ;
     ] ,
     [
       addr:hasValue "Oxford" ;
-      addr:hasComponentType addrct:thoroughfareName ;
+      dcterms:type addrct:thoroughfareName ;
     ] ,
     [
       addr:hasValue strt:Place ;
       addr:hasValueText "Place" ;
-      addr:hasComponentType addct:StreetType ;
+      dcterms:type addct:StreetType ;
     ] ,
     [
       addr:hasValue <LGA2021/1234> ;
       addr:hasValueText "Shorncliffe" ;
-      addr:hasComponentType addrct:localityName ;
+      dcterms:type addrct:localityName ;
     ] ,
     [
       addr:hasValue <STE2021/6> ;
       addr:hasValueText "Queensland" ;
-      addr:hasComponentType addct:StateOrTerritory ;
+      dcterms:type addct:StateOrTerritory ;
     ] ,
     [
       addr:hasValue <AUS2021/AUS> ;
       addr:hasValueText "Australia" ;
-      addr:hasComponentType addct:Nation ;
+      dcterms:type addct:Nation ;
     ] ;
 ."""@en ;
     skos:prefLabel "Address"@en ;
@@ -112,19 +112,19 @@ addr:AddressComponent
     [
       # a simple numerical literal - street number
       addr:hasValue 20 ;
-      addr:hasComponentType addrct:streetNumber ;
+      dcterms:type addrct:streetNumber ;
     ] ,
     [
       # a simple literal - street name
       addr:hasValue "Oxford" ;
-      addr:hasComponentType addrct:thoroughfareName ;
+      dcterms:type addrct:thoroughfareName ;
     ] ,
     [
       # complex object - a Locality
       addr:hasValue <http://example.com/lga/1234> ;
       # textual value of complex object
       addr:hasValueText "Shorncliffe" ;
-      addr:hasComponentType addrct:localityName ;
+      dcterms:type addrct:localityName ;
     ] ,
     ..."""@en ;
     skos:prefLabel "Address Component"@en ;
@@ -132,7 +132,7 @@ addr:AddressComponent
 
 Complex objects are preferred for use over literals when the object referred to has independent identity.
 
-Ordering of Address Components, for example for letter printing, is not fixed within this model but should be implemented with a positioning preference system utilising the Address Component's `addr:hasComponentType` values which should come from a controlled vocabulary of Address Component Type values."""@en ;
+Ordering of Address Components, for example for letter printing, is not fixed within this model but should be implemented with a positioning preference system utilising the Address Component's `dcterms:type` values which should come from a controlled vocabulary of Address Component Type values."""@en ;
 .
 
 addr:AddressComponentType
@@ -147,19 +147,19 @@ addr:AddressComponentType
     [
       # "StreetNumber" type
       addr:hasValue 20 ;
-      addr:hasComponentType addrct:streetNumber ;
+      dcterms:type addrct:streetNumber ;
     ] ,
     [
       # "StreetName" type
       addr:hasValue "Oxford" ;
-      addr:hasComponentType addrct:thoroughfareName ;
+      dcterms:type addrct:thoroughfareName ;
     ] ,
     [
       # "Locality" type
       addr:hasValue <http://example.com/lga/1234> ;
       # textual value of complex object
       addr:hasValueText "Shorncliffe" ;
-      addr:hasComponentType addrct:localityName ;
+      dcterms:type addrct:localityName ;
     ] ,
     ...""" ;
     skos:prefLabel "Address Component Type"@en ;
@@ -296,7 +296,7 @@ ex:addr-1
   a addr:Address ;
   addr:hasAddressComponent [
       addr:hasValue 20 ;
-      addr:hasComponentType addrct:streetNumber ;
+      dcterms:type addrct:streetNumber ;
     ] ,
 ...""" ;
     skos:prefLabel "has address component"@en ;
@@ -315,7 +315,7 @@ ex:addr-1
   a addr:Address ;
   addr:hasAddressComponent [
       addr:hasValue 20 ;
-      addr:hasComponentType addrct:streetNumber ;
+      dcterms:type addrct:streetNumber ;
     ] ,
 ...""" ;
     skos:prefLabel "has address component type"@en ;
@@ -355,36 +355,17 @@ ex:addr-1
       time:hasBeginning [ time:inXSDDate "1982-02-10"^^xsd:date ] ;
       time:hasEnd [ time:inXSDDate "1982-05-11"^^xsd:date ] ;
     ] ;
-    addr:hasLifeCycleStageType addrls:proposed ;
+    dcterms:type addrls:proposed ;
   ] ,
   [
     # this Stage is still in effect - no hasEnd given
     time:hasTime [
       time:hasBeginning [ time:inXSDDate "1982-05-11"^^xsd:date ] ;
     ] ;
-    addr:hasLifeCycleStageType addrls:current ;
+    dcterms:type addrls:current ;
   ] ,  
 .""" ;
     skos:prefLabel "has lifecycle stage"@en ;
-.
-
-addr:hasLifecycleStageType
-    a owl:ObjectProperty ;
-    rdfs:isDefinedBy <https://w3id.org/profile/anz-address> ;
-    rdfs:domain addr:hasLifecycleStage ;
-    rdfs:range addr:hasLifecycleStageType ;
-    dcterms:provenance "Derived from ISO19160-1's object relations"@en ;
-    skos:definition "Indicates an Addresses' Lifecycle Stage's type"@en ;
-    skos:example """# An Address with a Lifecycle Stages indicated
-# which then indicates its type
-ex:addr-1
-  a addr:Address ;
-  addr:hasLifeCycleStage [
-    ...
-    addr:hasLifeCycleStageType addrls:proposed ;
-  ] ;
-  ...""" ;
-    skos:prefLabel "has lifecycle stage type"@en ;
 .
 
 addr:hasGeocode

@@ -1,0 +1,59 @@
+PREFIX : <https://w3id.org/profile/anz-address/validator/>
+PREFIX addr: <https://w3id.org/profile/anz-address/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX isov1: <https://w3id.org/profile/anz-address/AddressComponentType/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX sdo: <https://schema.org/>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+addr:validator-qld
+    a owl:Ontology ;
+    dcterms:provenance "This model validator was made for the Queensland Department of Resources, Spatial Information unit to assist with future Address database design."@en ;
+    owl:versionIRI addr:0.0.1 ;
+    owl:versionInfo "0.0.1" ;
+    skos:definition "A SHACL validator for ANZ Address Model resources that checks for elements required by Queensland."@en ;
+    skos:prefLabel "ANZ National Address Model Queensland Validator"@en ;
+    sdo:codeRespository "https://github.com/nicholascar/anz-nat-addr-model-candidate/"^^xsd:anyURI ;
+    sdo:copyrightHolder <https://orcid.org/0000-0002-8742-7730> ;
+    sdo:copyrightNotice "(c) Nicholas J. Car, 2022" ;
+    sdo:creator <https://orcid.org/0000-0002-8742-7730> ;
+    sdo:dateCreated "2022-05-10"^^xsd:date ;
+    sdo:dateIssued "2000-00-00"^^xsd:date ;
+    sdo:dateModified "2022-05-15"^^xsd:date ;
+    sdo:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    sdo:publisher <https://orcid.org/0000-0002-8742-7730> ;
+.
+
+<https://orcid.org/0000-0002-8742-7730>
+    a sdo:Person ;
+    sdo:email "nick@kurrawong.net"^^xsd:anyURI ;
+    sdo:name "Nicholas J. Car"@en ;
+.
+
+:address-components
+    a sh:NodeShape ;
+    sh:targetClass addr:Address ;
+    skos:prefLabel "Address Mandatory Properties" ;
+    sh:property [
+        sh:path addr:hasAddressComponent ;
+        sh:minCount 2;
+    ] ;
+    # sh:ask
+    #     """
+    #     PREFIX addr: <https://w3id.org/profile/anz-address/>
+    #     ASK
+    #     WHERE {
+    #       ?a addr:hasAddressComponent ?ac .
+    #       ?ac dcterms:type isov1:postcode .
+    #       ?ac addr:hasValue ?pc .
+    #
+    #       FILTER ( datatype(?pc) = xsd:integer )
+    #
+    #     }
+    #     """ ;
+.
+

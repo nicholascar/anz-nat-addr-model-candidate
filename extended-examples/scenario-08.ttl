@@ -30,22 +30,22 @@ a:GAQLD155231408
     addr:isAddressFor <https://example.com/parcel/23456789> ;
     addr:hasAddressComponent
         [
-            addr:hasComponentType isov1:propertyName ;
+            dcterms:type isov1:propertyName ;
             addr:hasTextValue "Double Island" ;
             addr:hasValue "Double Island"
         ] ,
         [
-            addr:hasComponentType isov1:locality ;
+            dcterms:type isov1:locality ;
             addr:hasTextValue "Ellis Beach" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/locality/loc9e0bb59f8df8>
         ] ,
         [
-            addr:hasComponentType isov1:administrativeArea ;
+            dcterms:type isov1:administrativeArea ;
             addr:hasTextValue "Queensland" ;
             addr:hasValue <https://linked.data.gov.au/dataset/asgs/STE/3>
         ] ,
         [
-            addr:hasComponentType isov1:postcode ;
+            dcterms:type isov1:postcode ;
             addr:hasTextValue "4879" ;
             addr:hasValue 4879
         ] ;

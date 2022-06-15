@@ -34,7 +34,7 @@ a:GAQLD159419299 addr:hasAlias a:GAQLD157309481 .
 a:GAQLD157309481
     addr:hasAddressComponent
         [
-            addr:hasComponentType isov1:propertyName ;
+            dcterms:type isov1:propertyName ;
             addr:hasTextValue "Waterford Heights" ;
             addr:hasValue "Waterford Heights"
         ] ;
@@ -68,7 +68,7 @@ a:GAQLD162861329
 a:GAQLD162861329
     addr:hasAddressComponent
         [
-            addr:hasComponentType isov1:buildingName ;
+            dcterms:type isov1:buildingName ;
             addr:hasTextValue "Springlands Park" ;
             addr:hasValue "Springlands Park"
         ] ;
@@ -77,7 +77,7 @@ a:GAQLD162861329
 a:GAQLD720871566
     addr:hasAddressComponent
         [
-            addr:hasComponentType isov1:buildingName ;
+            dcterms:type isov1:buildingName ;
             addr:hasTextValue "Springlands Park" ;
             addr:hasValue "Springlands Park"
         ] ;

@@ -18,7 +18,7 @@ a:GAQLD162713140
     a addr:Address ;
     addr:hasAddressComponent
         [
-            addr:hasComponentType isov1:propertyName ;
+            dcterms:type isov1:propertyName ;
             addr:hasTextValue "Greenbank Gardens" ;
             addr:hasValue "Greenbank Gardens"
         ] ;
@@ -31,12 +31,12 @@ a:GAQLD163023823
     a addr:Address ;
     addr:hasAddressComponent
         [
-            addr:hasComponentType isov1:propertyName ;
+            dcterms:type isov1:propertyName ;
             addr:hasTextValue "Greenbank Gardens" ;
             addr:hasValue "Greenbank Gardens"
         ] ,
         [
-            addr:hasComponentType isov1:flatNumber ;
+            dcterms:type isov1:flatNumber ;
             addr:hasTextValue "139" ;
             addr:hasValue 139
         ] ;

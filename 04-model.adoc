@@ -18,12 +18,9 @@ image::img/upper-classes.png[]
 * <<Address>>
 * <<AddressableObject, Addressable Object>>
 * <<AddressComponent, Address Component>>
-* <<AddressComponentType, Address Component Type>>
 * <<AddressLifecycleStage, Address Lifecycle Stage>>
-* <<AddressLifecycleStageType, Address Lifecycle StageType>>
 * <<AddressRole, Address Role>>
 * <<Geocode>>
-* <<GeocodeType, Geocode Type>>
 
 [[Address]]
 ==== Address
@@ -239,14 +236,14 @@ ex:addr-1
       time:hasBeginning [ time:inXSDDate "1982-02-10"^^xsd:date ] ;
       time:hasEnd [ time:inXSDDate "1982-05-11"^^xsd:date ] ;
     ] ;
-    addr:hasLifeCycleStageType addrls:proposed ;
+    dcterms:type addrls:proposed ;
   ] ,
   [
     # this Stage is still in effect - no hasEnd given
     time:hasTime [
       time:hasBeginning [ time:inXSDDate "1982-05-11"^^xsd:date ] ;
     ] ;
-    addr:hasLifeCycleStageType addrls:current ;
+    dcterms:type addrls:current ;
   ] ,  
 .
 
@@ -287,7 +284,7 @@ ex:addr-1
   a addr:Address ;
   addr:hasLifeCycleStage [
     ...
-    addr:hasLifeCycleStageType addrls:proposed ;
+    dcterms:type addrls:proposed ;
   ] ;
   ...
 .
@@ -391,11 +388,9 @@ ex:addr-1
 * <<isAddressFor, is address for>>
 * <<hasAddress, has address>>
 * <<hasAddressComponent, has address component>>
-* <<hasAddressComponentType, has address component type>>
 * <<hasAddressRole, has address role>>
 * <<hasGeocode, has geocode>>
 * <<hasLifecycleStage, has lifecycle stage >>
-* <<hasLifecycleStageType, has lifecycle stage type>>
 
 [[isAddressFor]]
 ==== is address for
@@ -597,45 +592,15 @@ ex:addr-1
       time:hasBeginning [ time:inXSDDate "1982-02-10"^^xsd:date ] ;
       time:hasEnd [ time:inXSDDate "1982-05-11"^^xsd:date ] ;
     ] ;
-    addr:hasLifeCycleStageType addrls:proposed ;
+    dcterms:type addrls:proposed ;
   ] ,
   [
     # this Stage is still in effect - no hasEnd given
     time:hasTime [
       time:hasBeginning [ time:inXSDDate "1982-05-11"^^xsd:date ] ;
     ] ;
-    addr:hasLifeCycleStageType addrls:current ;
+    dcterms:type addrls:current ;
   ] ,  
-.
-----
-|===
-
-[[hasLifecycleStageType]]
-==== has lifecycle stage type
-
-[cols="2,6"]
-|===
-| Property | Value
-
-| IRI | `addr:hasLifecycleStageType`
-| Preferred Label | has lifecycle stage type
-| Definition | Indicates an Addresses Lifecycle Stage's type
-| Is Defined By | https://w3id.org/profile/anz-address[ANZ National Address Model]
-| Provenance | Derived from <<ISO19160-1>>'s object relations
-| Domain | <<AddressLifecycleStage, Address Lifecycle Stage>>
-| Range | <<AddressLifecycleStageType, Address Lifecycle Stage Type>>
-| Example 
-a| [source,turtle]
-----
-# An Address with a Lifecycle Stages indicated
-# which then indicates its type
-ex:addr-1
-  a addr:Address ;
-  addr:hasLifeCycleStage [
-    ...
-    addr:hasLifeCycleStageType addrls:proposed ;
-  ] ;
-  ...
 .
 ----
 |===

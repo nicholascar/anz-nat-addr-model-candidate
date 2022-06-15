@@ -1,0 +1,126 @@
+PREFIX : <https://w3id.org/profile/anz-address/validator/>
+PREFIX addr: <https://w3id.org/profile/anz-address/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX sdo: <https://schema.org/>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+addr:validator
+    a owl:Ontology ;
+    dcterms:provenance "This model validator was made for the Queensland Department of Resources, Spatial Information unit to assist with future Address database design."@en ;
+    owl:versionIRI addr:0.0.1 ;
+    owl:versionInfo "0.0.1" ;
+    skos:definition "This validator is a Shapes Constraint Language (SHACL) reesource that can be used to check the conformance of RDF data to the ANZ National Address Model (<https://w3id.org/profile/anz-address>)."@en ;
+    skos:prefLabel "ANZ National Address Model Validator"@en ;
+    sdo:codeRespository "https://github.com/nicholascar/anz-nat-addr-model-candidate/"^^xsd:anyURI ;
+    sdo:copyrightHolder <https://orcid.org/0000-0002-8742-7730> ;
+    sdo:copyrightNotice "(c) Nicholas J. Car, 2022" ;
+    sdo:creator <https://orcid.org/0000-0002-8742-7730> ;
+    sdo:dateCreated "2022-05-10"^^xsd:date ;
+    sdo:dateIssued "2000-00-00"^^xsd:date ;
+    sdo:dateModified "2022-05-15"^^xsd:date ;
+    sdo:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    sdo:publisher <https://orcid.org/0000-0002-8742-7730> ;
+.
+
+<https://orcid.org/0000-0002-8742-7730>
+    a sdo:Person ;
+    sdo:email "nick@kurrawong.net"^^xsd:anyURI ;
+    sdo:name "Nicholas J. Car"@en ;
+.
+
+:soft-type
+    a sh:PropertyShape ;
+    skos:prefLabel "type" ;
+    sh:maxCount 1 ;
+    sh:message "The object MUST indicate exactly one type that is an IRI with the property dcterms:type" ;
+    sh:minCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:path dcterms:type ;
+.
+
+:address-mandatory-properties
+    a sh:NodeShape ;
+    sh:targetClass addr:Address ;
+    skos:prefLabel "Address Mandatory Properties" ;
+    sh:property 
+        [
+            skos:prefLabel "is address for" ;
+            sh:maxCount 1 ;
+            sh:message "An addr:Address MUST indicate exactly one addr:AddressableObject that is an IRI with the property addr:isAddressFor." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path addr:isAddressFor
+        ] ,
+        [
+            skos:prefLabel "has address component" ;
+            sh:message "An addr:Address must indicate at least one addr:AddressComponent that is an IRI with the property addr:hasAddressComponent." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path addr:hasAddressComponent
+        ] ,
+        [
+            skos:prefLabel "has geocode" ;
+            sh:message "An addr:Address must indicate at least one addr:Geocode that is an IRI with the property addr:hasGeocode." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path addr:hasAddressComponent
+        ] ;
+.
+
+:address-component-properties
+    a sh:NodeShape ;
+    sh:targetObjectsOf addr:hasAddressComponent ;
+    skos:prefLabel "Address Component Mandatory Properties" ;
+    sh:property
+        :soft-type ,
+        [
+            skos:prefLabel "has value" ;
+            sh:maxCount 1 ;
+            sh:message "An addr:AddressComponent MUST indicate exactly one value that is a resource with the property addr:hasValue" ;
+            sh:minCount 1 ;
+            sh:path addr:hasValue ;
+        ] ,
+        [
+            skos:prefLabel "has text value" ;
+            sh:maxCount 1 ;
+            sh:message "An addr:AddressComponent MUST indicate exactly one text value that is an xsd:string with the property addr:hasTextValue" ;
+            sh:minCount 1 ;
+            sh:datatype xsd:string ;
+            sh:path addr:hasTextValue ;
+        ] ;
+.
+
+:address-geocode-properties
+    a sh:NodeShape ;
+    sh:targetObjectsOf addr:hasGeocode ;
+    skos:prefLabel "Address Geocode Mandatory Properties" ;
+    sh:property
+        :soft-type ,
+        [
+            skos:prefLabel "has geometry" ;
+            sh:maxCount 1 ;
+            sh:message "An addr:Geocode MUST indicate exactly one geometry resource with the property geo:hasGeometry" ;
+            sh:minCount 1 ;
+            sh:path geo:hasGeometry ;
+        ] ;
+.
+
+:address-lifecycle-stage-properties
+    a sh:NodeShape ;
+    sh:targetObjectsOf addr:hasLifecycleStage ;
+    skos:prefLabel "Address Lifecycle Stage Mandatory Properties" ;
+    sh:property
+        :soft-type ,
+        [
+            skos:prefLabel "has time" ;
+            sh:maxCount 1 ;
+            sh:message "An addr:AddressLifecycleStage MUST indicate exactly one temporal resources with the property time:hasTime" ;
+            sh:minCount 1 ;
+            sh:path time:hasTime ;
+        ] ;
+.

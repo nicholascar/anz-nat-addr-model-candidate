@@ -35,27 +35,27 @@ a:GAQLD158836591
     addr:hasAddressComponent
         # no relevant street number
         [
-            addr:hasComponentType isov1:propertyName ;
+            dcterms:type isov1:propertyName ;
             addr:hasTextValue "Girraween National Park" ;
             addr:hasValue "Girraween National Park"
         ] ,
         [
-            addr:hasComponentType isov1:streetLocality ;
+            dcterms:type isov1:streetLocality ;
             addr:hasTextValue "Pyramids Road" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/streetLocality/QLD2213217>
         ] ,
         [
-            addr:hasComponentType isov1:locality ;
+            dcterms:type isov1:locality ;
             addr:hasTextValue "Girraween" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/locality/loc44125fbb0fed>
         ] ,
         [
-            addr:hasComponentType isov1:administrativeArea ;
+            dcterms:type isov1:administrativeArea ;
             addr:hasTextValue "Queensland" ;
             addr:hasValue <https://linked.data.gov.au/dataset/asgs/STE/3>
         ] ,
         [
-            addr:hasComponentType isov1:postcode ;
+            dcterms:type isov1:postcode ;
             addr:hasTextValue "4382" ;
             addr:hasValue 4382
         ] ;

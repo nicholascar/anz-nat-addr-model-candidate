@@ -37,7 +37,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 addr:Address
     a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/profile/anz-address> ;
-    rdfs:subClassOf geo:Feature ;
     dcterms:provenance "Derived from ISO19160-1's Address class"@en ;
     skos:definition """The Address class represents structured information that allows unambiguous determination of an object for the purposes of identification and location"""@en ;
     skos:example """ex:addr-1

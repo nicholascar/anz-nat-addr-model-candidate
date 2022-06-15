@@ -11,6 +11,7 @@
 # >1 address
 # Multiple geocodes
 
+PREFIX a: <https://linked.data.gov.au/dataset/gnaf/address/>
 PREFIX addr: <https://w3id.org/profile/anz-address/>
 PREFIX cad: <https://w3id.org/profile/cad/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -20,7 +21,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 
 # 22 Sugarloaf Road Westwood
-<https://linked.data.gov.au/dataset/gnaf/address/GAQLD158836591>
+a:GAQLD158836591
     a addr:Address ;
     addr:isAddressFor <https://example.com/property/5ed9d572-f965-48e2-b06a-a8011ff12345> ;
     addr:hasAddressComponent

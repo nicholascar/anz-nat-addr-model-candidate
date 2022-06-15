@@ -4,6 +4,7 @@
 # · 1 address
 # EXAMPLE - 1 Allonga Street (462C92812, 490C92815, 491C92812)
 
+PREFIX a: <https://linked.data.gov.au/dataset/gnaf/address/>
 PREFIX addr: <https://w3id.org/profile/anz-address/>
 PREFIX cad: <https://w3id.org/profile/cad/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -13,7 +14,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 # in the address database
-<https://linked.data.gov.au/dataset/gnaf/address/GAQLD157826156>
+a:GAQLD157826156
     a addr:Address ;
     addr:hasGeocode [
             dcterms:type <https://linked.data.gov.au/dataset/gnaf/code/geocodeType/PC> ;  # Property Centroid

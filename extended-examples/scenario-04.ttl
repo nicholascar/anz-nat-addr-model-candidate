@@ -10,7 +10,7 @@
 #   7. 274 Roghan Road, Taigum – The Village at Taigum
 # · Ungated should be addressed to internal road network (See universities, shopping centre, hospitals).
 
-
+PREFIX a: <https://linked.data.gov.au/dataset/gnaf/address/>
 PREFIX addr: <https://w3id.org/profile/anz-address/>
 PREFIX cad: <https://w3id.org/profile/cad/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -21,7 +21,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 # current
 # 1/1 Halcyon Way, Hope Island QLD 4212
-<https://linked.data.gov.au/dataset/gnaf/address/GAQLD162432045>
+a:GAQLD162432045
     a addr:Address ;
     addr:hasAddressComponent
         [
@@ -33,11 +33,11 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         dcterms:type <https://linked.data.gov.au/dataset/gnaf/code/geocodeType/PC> ;  # Property Centroid
         geo:asWKT "POINT(153.36514432 -27.88185699)"^^geo:wktLiteral
     ] ;
-    addr:hasSecondary <https://linked.data.gov.au/dataset/gnaf/address/GAQLD162469253> ;
+    addr:hasSecondary a:GAQLD162469253 ;
 .
 
 # 90/1 Halcyon Way, Hope Island QLD 4212
-<https://linked.data.gov.au/dataset/gnaf/address/GAQLD162469253>
+a:GAQLD162469253
     a addr:Address ;
     addr:hasAddressComponent
         [
@@ -49,12 +49,12 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         dcterms:type <https://linked.data.gov.au/dataset/gnaf/code/geocodeType/BC> ;  # Building Centroid
         geo:asWKT "POINT(153.365127 -27.883232)"^^geo:wktLiteral
     ] ;
-    addr:hasPrimary <https://linked.data.gov.au/dataset/gnaf/address/GAQLD162432045> ;
+    addr:hasPrimary a:GAQLD162432045 ;
 .
 
 
 # 274 Roghan Road, Taigum
-<https://linked.data.gov.au/dataset/gnaf/address/GAQLD161294216>
+a:GAQLD161294216
     a addr:Address ;
     addr:hasAddressComponent
         [
@@ -70,11 +70,11 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         dcterms:type <https://linked.data.gov.au/dataset/gnaf/code/geocodeType/PAP> ;  # Property Access Point
         geo:asWKT "POINT(153.045546 -27.341745)"^^geo:wktLiteral ;  # this is better
     ] ;
-    addr:hasSecondary <https://linked.data.gov.au/dataset/gnaf/address/GAQLD720181124> ;
+    addr:hasSecondary a:GAQLD720181124 ;
 .
 
 # 311/274 Roghan Road, Taigum
-<https://linked.data.gov.au/dataset/gnaf/address/GAQLD720181124>
+a:GAQLD720181124
     a addr:Address ;
     addr:hasAddressComponent
         [
@@ -90,5 +90,5 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         dcterms:type <https://linked.data.gov.au/dataset/gnaf/code/geocodeType/BC> ;  # Building Centroid
         geo:asWKT "POINT(153.04287072 -27.34346988)"^^geo:wktLiteral ;  # this is useful, specific building
     ] ;
-    addr:hasPrimary <https://linked.data.gov.au/dataset/gnaf/address/GAQLD161294216> ;
+    addr:hasPrimary a:GAQLD161294216 ;
 .

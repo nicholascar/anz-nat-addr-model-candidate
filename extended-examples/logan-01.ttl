@@ -5,6 +5,8 @@
 # 57RP38148 and 57RP38148- Separate addressed lots by LGA but only one addressable object
 # 38 & 40 Augustus Street Kingston – owner has 40 on mailbox
 
+PREFIX a: <https://linked.data.gov.au/dataset/gnaf/address/>
+PREFIX as: <https://linked.data.gov.au/dataset/gnaf/addressSite/>
 PREFIX addr: <https://w3id.org/profile/anz-address/>
 PREFIX cad: <https://w3id.org/profile/cad/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -14,7 +16,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 # 714 Stockleigh Road Stockleigh QLD
-<https://linked.data.gov.au/dataset/gnaf/address/GAQLD155864743>
+a:GAQLD155864743
     a addr:Address ;
     addr:isAddressFor <https://example.com/property/5ed9d572-f965-48e2-b06a-a8011ffdabcd> ;
 .
@@ -28,15 +30,15 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 .
 
 # 38 - 40 Augustus Street Kingston
-<https://linked.data.gov.au/dataset/gnaf/address/GAQLD156735947>
+a:GAQLD156735947
     a addr:Address ;
     addr:isAddressFor <https://example.com/property/5ed9d572-f965-48e2-b06a-a8011ffd5378> ;
 .
 
 # 38 Augustus Street Kingston
-<https://linked.data.gov.au/dataset/gnaf/address/GAQLD158172597>
+a:GAQLD158172597
     a addr:Address ;
-    addr:isAddressFor <https://linked.data.gov.au/dataset/gnaf/addressSite/158154046> ;
+    addr:isAddressFor as:158154046 ;
 .
 
 # 40 Augustus Street Kingston
@@ -48,6 +50,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 <https://example.com/property/5ed9d572-f965-48e2-b06a-a8011ffd5378>
     a cad:Property ;
     rdfs:member
-        <https://linked.data.gov.au/dataset/gnaf/addressSite/156719338> ,
-        <https://linked.data.gov.au/dataset/gnaf/addressSite/158154046> ;
+        as:156719338 ,
+        as:158154046 ;
 .

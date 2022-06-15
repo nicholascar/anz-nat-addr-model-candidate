@@ -6,6 +6,7 @@
 #  ii. Water name: Double Island
 #  iii. Locality name: Ellis Beach
 
+PREFIX a: <https://linked.data.gov.au/dataset/gnaf/address/>
 PREFIX addr: <https://w3id.org/profile/anz-address/>
 PREFIX cad: <https://w3id.org/profile/cad/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -24,7 +25,7 @@ PREFIX isov1: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComp
 # Use complexName for whole Island
 # Since the Geocode is absolute, AS4189 methods used to generate the Address
 # (seemingly not followed here - no number) are irrelevant
-<https://linked.data.gov.au/dataset/gnaf/address/GAQLD155231408>
+a:GAQLD155231408
     a addr:Address ;
     addr:isAddressFor <https://example.com/parcel/23456789> ;
     addr:hasAddressComponent

@@ -1,4 +1,6 @@
 # Logan 4 - Complex Site
+
+PREFIX a: <https://linked.data.gov.au/dataset/gnaf/address/>
 PREFIX addr: <https://w3id.org/profile/anz-address/>
 PREFIX cad: <https://w3id.org/profile/cad/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -12,7 +14,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # Greenbank Gardens, 3651 Mount Lindesay Hwy, Park Ridge QLD 4125
 
 # primary: it has a Complex Name and is the primary, so it's the overall address
-<https://linked.data.gov.au/dataset/gnaf/address/GAQLD162713140>
+a:GAQLD162713140
     a addr:Address ;
     addr:hasAddressComponent
         [
@@ -25,7 +27,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 # secondary: it has a Complex Name and is a secondary, so it's one of many
 # discernible by its geocode; need not have the same street details as the primary
-<https://linked.data.gov.au/dataset/gnaf/address/GAQLD163023823>
+a:GAQLD163023823
     a addr:Address ;
     addr:hasAddressComponent
         [
@@ -38,7 +40,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
             addr:hasTextValue "139" ;
             addr:hasValue 139
         ] ;
-    addr:hasPrimary <https://linked.data.gov.au/dataset/gnaf/address/GAQLD162713140> ;
+    addr:hasPrimary a:GAQLD162713140 ;
     # addr:isAddressFor ... the individual element within the complex
 .
 
@@ -61,31 +63,31 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 # 2-40 Ingenia Lifestyle Chambers Pines, Koplick Road Chambers Flat
 # 1SP309598 – units to base road address (alternative address 609-667 CHAMBERS FLAT RD CHAMBERS FLAT)
-<https://linked.data.gov.au/dataset/gnaf/address/GAQLD159419153>
+a:GAQLD159419153
     a addr:Address ;
     addr:isAliasOf
         [
             # 609-667 CHAMBERS FLAT RD CHAMBERS FLAT
             dcterms:type <https://linked.data.gov.au/dataset/gnaf/code/addressAliasType/SYN> ;
-            rdf:value <https://linked.data.gov.au/dataset/gnaf/address/GAQLD720735932> ;
+            rdf:value a:GAQLD720735932 ;
         ] ;
-    addr:hasSecondary <https://linked.data.gov.au/dataset/gnaf/address/GAQLD720868711> ;
+    addr:hasSecondary a:GAQLD720868711 ;
 .
 
 # 296/2-40 Ingenia Lifestyle Chambers Pines, Koplick Road Chambers Flat
-<https://linked.data.gov.au/dataset/gnaf/address/GAQLD720868711>
+a:GAQLD720868711
     a addr:Address ;
-    addr:hasPrimary <https://linked.data.gov.au/dataset/gnaf/address/GAQLD159419153> ;
+    addr:hasPrimary a:GAQLD159419153 ;
 
 .
 
 # 609-667 CHAMBERS FLAT RD CHAMBERS FLAT
-<https://linked.data.gov.au/dataset/gnaf/address/GAQLD720735932>
+a:GAQLD720735932
     a addr:Address ;
     addr:hasAlias
         [
             # 2-40 Ingenia Lifestyle Chambers Pines, Koplick Road Chambers Flat
             dcterms:type <https://linked.data.gov.au/dataset/gnaf/code/addressAliasType/SYN> ;
-            rdf:value <https://linked.data.gov.au/dataset/gnaf/address/GAQLD159419153> ;
+            rdf:value a:GAQLD159419153 ;
         ] ;
 .

@@ -44,7 +44,7 @@ PREFIX isov1: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComp
         [
             dcterms:type isov1:administrativeArea ;
             addr:hasValueText "Queensland" ;
-            addr:hasValue <https://linked.data.gov.au/dataset/asgs/STE/3>
+            addr:hasValue <https://linked.data.gov.au/dataset/asgsed3/STE/3>
         ] ,
         [
             dcterms:type isov1:postcode ;

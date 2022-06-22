@@ -35,7 +35,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         [
             dcterms:type isov1:administrativeArea ;
             addr:hasValueText "Queensland" ;
-            addr:hasValue <https://linked.data.gov.au/dataset/asgs/STE/3>
+            addr:hasValue <https://linked.data.gov.au/dataset/asgsed3/STE/3>
         ] ,
         [
             dcterms:type isov1:postcode ;
@@ -80,7 +80,7 @@ a:GAQLD161268186
         [
             dcterms:type isov1:administrativeArea ;
             addr:hasValueText "Queensland" ;
-            addr:hasValue <https://linked.data.gov.au/dataset/asgs/STE/3>
+            addr:hasValue <https://linked.data.gov.au/dataset/asgsed3/STE/3>
         ] ,
         [
             dcterms:type isov1:postcode ;

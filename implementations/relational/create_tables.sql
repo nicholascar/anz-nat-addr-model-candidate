@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS addresses_components (
 	id TEXT PRIMARY KEY,
 	address_pid TEXT,
     has_value TEXT NOT NULL,
-    has_text_value TEXT,
+    has_value_text TEXT,
     type TEXT NOT NULL,
     FOREIGN KEY (address_pid) REFERENCES addresses (pid),
     FOREIGN KEY (type) REFERENCES addresses_components_types (pid)

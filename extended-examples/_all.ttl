@@ -26,7 +26,7 @@ ex:double a addr:Address ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/locality/loc9e0bb59f8df8> ],
         [ dcterms:type isov1:administrativeArea ;
             addr:hasValueText "Queensland" ;
-            addr:hasValue <https://linked.data.gov.au/dataset/asgs/STE/3> ],
+            addr:hasValue <https://linked.data.gov.au/dataset/asgsed3/STE/3> ],
         [ dcterms:type isov1:postcode ;
             addr:hasValueText "4879" ;
             addr:hasValue 4879 ] ;
@@ -140,7 +140,7 @@ a:GAQLD720211887 a addr:Address ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/locality/locbf2ab9bc6c4c> ],
         [ dcterms:type isov1:administrativeArea ;
             addr:hasValueText "Queensland" ;
-            addr:hasValue <https://linked.data.gov.au/dataset/asgs/STE/3> ],
+            addr:hasValue <https://linked.data.gov.au/dataset/asgsed3/STE/3> ],
         [ dcterms:type isov1:postcode ;
             addr:hasValueText "4000" ;
             addr:hasValue 4000 ] ;
@@ -172,7 +172,7 @@ a:GAQLD720211887-proposed a addr:Address ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/locality/locbf2ab9bc6c4c> ],
         [ dcterms:type isov1:administrativeArea ;
             addr:hasValueText "Queensland" ;
-            addr:hasValue <https://linked.data.gov.au/dataset/asgs/STE/3> ],
+            addr:hasValue <https://linked.data.gov.au/dataset/asgsed3/STE/3> ],
         [ dcterms:type isov1:postcode ;
             addr:hasValueText "4000" ;
             addr:hasValue 4000 ] ;
@@ -192,7 +192,7 @@ ex:oxford a addr:Address ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/locality/loc38f189794e03> ],
         [ dcterms:type isov1:administrativeArea ;
             addr:hasValueText "Queensland" ;
-            addr:hasValue <https://linked.data.gov.au/dataset/asgs/STE/3> ],
+            addr:hasValue <https://linked.data.gov.au/dataset/asgsed3/STE/3> ],
         [ dcterms:type isov1:postcode ;
             addr:hasValueText "4017" ;
             addr:hasValue 4017 ] ;
@@ -259,7 +259,7 @@ a:GAQLD157959170 a pn:PlaceName,
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/locality/loc44125fbb0fed> ],
         [ dcterms:type isov1:administrativeArea ;
             addr:hasValueText "Queensland" ;
-            addr:hasValue <https://linked.data.gov.au/dataset/asgs/STE/3> ],
+            addr:hasValue <https://linked.data.gov.au/dataset/asgsed3/STE/3> ],
         [ dcterms:type isov1:postcode ;
             addr:hasValueText "4382" ;
             addr:hasValue 4382 ] ;
@@ -282,7 +282,7 @@ a:GAQLD161268186 a addr:Address ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/locality/loc38f189794e03> ],
         [ dcterms:type isov1:administrativeArea ;
             addr:hasValueText "Queensland" ;
-            addr:hasValue <https://linked.data.gov.au/dataset/asgs/STE/3> ],
+            addr:hasValue <https://linked.data.gov.au/dataset/asgsed3/STE/3> ],
         [ dcterms:type isov1:postcode ;
             addr:hasValueText "4017" ;
             addr:hasValue 4017 ],

@@ -13,7 +13,7 @@ INSERT INTO pids_prefixes (prefix, iri) VALUES ('cad', 'https://w3id.org/profile
 INSERT INTO pids_prefixes (prefix, iri) VALUES ('dcterms', 'http://purl.org/dc/terms/');
 INSERT INTO pids_prefixes (prefix, iri) VALUES ('ex', 'http://example.com/');
 INSERT INTO pids_prefixes (prefix, iri) VALUES ('geo', 'http://www.opengis.net/ont/geosparql#');
-INSERT INTO pids_prefixes (prefix, iri) VALUES ('isov1', 'https://w3id.org/profile/anz-address/AddressComponentType/');
+INSERT INTO pids_prefixes (prefix, iri) VALUES ('isov1', 'http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/');
 INSERT INTO pids_prefixes (prefix, iri) VALUES ('isov2', 'https://w3id.org/profile/anz-address/AddressLifecycleStageType/');
 INSERT INTO pids_prefixes (prefix, iri) VALUES ('isov3', 'https://w3id.org/profile/anz-address/AddressStatusType/');
 INSERT INTO pids_prefixes (prefix, iri) VALUES ('loc', 'https://linked.data.gov.au/dataset/gnaf/locality/');

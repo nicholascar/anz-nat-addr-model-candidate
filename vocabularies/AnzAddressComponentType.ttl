@@ -1,7 +1,6 @@
-PREFIX : <https://w3id.org/profile/anz-address/AddressComponentType/>
 PREFIX cs: <https://w3id.org/profile/anz-address/AddressComponentType>
 PREFIX isocs: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType>
-PREFIX iso: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/>
+PREFIX isov1: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -11,7 +10,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX status: <http://def.isotc211.org/iso19135/-1/2015/CoreModel/code/RE_ItemStatus/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-iso:addressedObjectIdentifier
+isov1:addressedObjectIdentifier
     a skos:Concept ;
     dcterms:identifier "addressedObjectIdentifier"^^xsd:token ;
     dcterms:provenance "Presented in the original ISO19160-1 standard's AddressComponentType codelist"@en ;
@@ -23,7 +22,7 @@ iso:addressedObjectIdentifier
     skos:topConceptOf cs: ;
 .
 
-iso:administrativeAreaName
+isov1:administrativeAreaName
     a skos:Concept ;
     dcterms:identifier "administrativeAreaName"^^xsd:token ;
     dcterms:provenance "Presented in the original ISO19160-1 standard's AddressComponentType codelist"@en ;
@@ -35,7 +34,7 @@ iso:administrativeAreaName
     skos:topConceptOf cs: ;
 .
 
-iso:countryCode
+isov1:countryCode
     a skos:Concept ;
     dcterms:identifier "countryCode"^^xsd:token ;
     dcterms:provenance "Presented in the original ISO19160-1 standard's AddressComponentType codelist"@en ;
@@ -47,7 +46,7 @@ iso:countryCode
     skos:topConceptOf cs: ;
 .
 
-iso:countryName
+isov1:countryName
     a skos:Concept ;
     dcterms:identifier "countryName"^^xsd:token ;
     dcterms:provenance "Presented in the original ISO19160-1 standard's AddressComponentType codelist"@en ;
@@ -59,7 +58,7 @@ iso:countryName
     skos:topConceptOf cs: ;
 .
 
-iso:localityName
+isov1:localityName
     a skos:Concept ;
     dcterms:identifier "localityName"^^xsd:token ;
     dcterms:provenance "Presented in the original ISO19160-1 standard's AddressComponentType codelist"@en ;
@@ -71,7 +70,7 @@ iso:localityName
     skos:topConceptOf cs: ;
 .
 
-iso:postOfficeName
+isov1:postOfficeName
     a skos:Concept ;
     dcterms:identifier "postOfficeName"^^xsd:token ;
     dcterms:provenance "Presented in the original ISO19160-1 standard's AddressComponentType codelist"@en ;
@@ -83,7 +82,7 @@ iso:postOfficeName
     skos:topConceptOf cs: ;
 .
 
-iso:postcode
+isov1:postcode
     a skos:Concept ;
     dcterms:identifier "postcode"^^xsd:token ;
     dcterms:provenance "Presented in the original ISO19160-1 standard's AddressComponentType codelist"@en ;
@@ -95,7 +94,7 @@ iso:postcode
     skos:topConceptOf cs: ;
 .
 
-iso:thoroughfareName
+isov1:thoroughfareName
     a skos:Concept ;
     dcterms:identifier "thoroughfareName"^^xsd:token ;
     dcterms:provenance "Presented in the original ISO19160-1 standard's AddressComponentType codelist"@en ;
@@ -126,13 +125,13 @@ cs:
     prov:wasDerivedFrom <http://def.isotc211.org/iso19160/-1/2015/Address#AddressComponentType> ;
     skos:definition "ANZ controlled vocabulary of Address Component Types"@en ;
     skos:hasTopConcept
-        iso:addressedObjectIdentifier ,
-        iso:administrativeAreaName ,
-        iso:countryCode ,
-        iso:countryName ,
-        iso:localityName ,
-        iso:postOfficeName ,
-        iso:postcode ,
-        iso:thoroughfareName ;
+        isov1:addressedObjectIdentifier ,
+        isov1:administrativeAreaName ,
+        isov1:countryCode ,
+        isov1:countryName ,
+        isov1:localityName ,
+        isov1:postOfficeName ,
+        isov1:postcode ,
+        isov1:thoroughfareName ;
     skos:prefLabel "ANZ Address Component Type"@en ;
 .

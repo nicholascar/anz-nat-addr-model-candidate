@@ -47,7 +47,7 @@ a:GAQLD157959170
         [
             dcterms:type isov1:administrativeArea ;
             addr:hasValueText "Queensland" ;
-            addr:hasValue <https://linked.data.gov.au/dataset/asgs/STE/3>
+            addr:hasValue <https://linked.data.gov.au/dataset/asgsed3/STE/3>
         ] ,
         [
             dcterms:type isov1:postcode ;

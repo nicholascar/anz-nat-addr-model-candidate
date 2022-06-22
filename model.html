@@ -474,9 +474,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_annex_b_extended_examples">Annex B: Extended Examples</a></li>
 <li><a href="#_annex_c_demo_implementations">Annex C: Demo Implementations</a>
 <ul class="sectlevel2">
-<li><a href="#_demo_1_rdf_database">Demo 1: RDF Database</a></li>
-<li><a href="#_demo_2_relational_database">Demo 2: Relational Database</a></li>
-<li><a href="#_demo_3_gnaf_for_queensland">Demo 3: GNAF for Queensland</a></li>
+<li><a href="#_c_1_rdf_database_demo">C.1 RDF Database Demo</a></li>
+<li><a href="#_c_2_relational_database_demo">C.2 Relational Database Demo</a></li>
+<li><a href="#_c_3_g_naf_for_queensland_demo">C.3: G-NAF for Queensland Demo</a></li>
 </ul>
 </li>
 <li><a href="#_bibliography">Bibliography</a></li>
@@ -633,7 +633,7 @@ This Model is a candidate model for Australian &amp; New Zealand address informa
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://w3id.org/profile/anz-address/AddressComponentType/" class="bare">https://w3id.org/profile/anz-address/AddressComponentType/</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/" class="bare">http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/</a></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressComponentType</code> vocabulary namespace</p></td>
 </tr>
 <tr>
@@ -2695,7 +2695,7 @@ The representations of vocabularies here do not contain full vocabulary informat
 <p>Several demonstration implementations of this Address model are given in the code repository containing its content.</p>
 </div>
 <div class="sect2">
-<h3 id="_demo_1_rdf_database"><a class="anchor" href="#_demo_1_rdf_database"></a>Demo 1: RDF Database</h3>
+<h3 id="_c_1_rdf_database_demo"><a class="anchor" href="#_c_1_rdf_database_demo"></a>C.1 RDF Database Demo</h3>
 <div class="paragraph">
 <p>The 15 or so extended examples data files within the code repository (see above Annex for details) represent an implementation of this model for they are formulated in RDF data and are thus able to be loaded into an RDF database (often called a "triplestore") and queried.</p>
 </div>
@@ -2706,19 +2706,396 @@ The representations of vocabularies here do not contain full vocabulary informat
 <p>Once loaded into a triplestore, <a href="https://www.w3.org/TR/sparql11-query/">SPARQL</a> queries can be used to interrogate the data similarly to how SQL queries are used for relational databases. Some example SPARQL queries for the examples data are:</p>
 </div>
 <div class="sect3">
-<h4 id="_ordered_address_components"><a class="anchor" href="#_ordered_address_components"></a>Ordered Address Components</h4>
+<h4 id="_c_1_1_ordered_address_components"><a class="anchor" href="#_c_1_1_ordered_address_components"></a>C.1.1 Ordered Address Components</h4>
 <div class="paragraph">
-<p>For those Addresses that have components - not all in the example data - order the components as per Queensland norms, including the new Property Name type component at the start.</p>
+<p>For those Addresses that have components - not all in the example data - this query orders the components as per Queensland norms, including the new Property Name type component at the start.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sparql" data-lang="sparql">PREFIX addr: &lt;https://w3id.org/profile/anz-address/&gt;
+PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+PREFIX isov1: &lt;http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/&gt;
+
+SELECT ?a ?ac_type ?val ?val_text
+WHERE {
+    VALUES (?ac_type ?ac_order) {
+        (isov1:buildingName 1)
+        (isov1:propertyName 2)
+        (isov1:traditionalPlaceName 3)
+        (isov1:flatTypeCode 4)
+        (isov1:flatNumber 5)
+        (isov1:numberFirst 6)
+        (isov1:streetLocality 7)
+        (isov1:locality 8)
+        (isov1:postcode 9)
+        (isov1:administrativeArea 10)
+    }
+    ?a a addr:Address ;
+        addr:hasAddressComponent [
+            dcterms:type ?ac_type ;
+            addr:hasValue ?val ;
+            addr:hasValueText ?val_text
+        ]
+}
+ORDER BY ?a ?ac_order</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This query selects only Address Components of the types given in the <code>VALUES</code> list and orders them as per the integer numbering given. Results for the example address 2/18 Oxford Place (see extended-examples/oxford-place.ttl) are:</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">?a</th>
+<th class="tableblock halign-left valign-top">?ac_type</th>
+<th class="tableblock halign-left valign-top">?val</th>
+<th class="tableblock halign-left valign-top">?val_text</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>a:GAQLD161268186</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:flatNumber</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"2"^^xsd:integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"2"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>a:GAQLD161268186</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:numberFirst</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"18"^^xsd:integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"18"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>a:GAQLD161268186</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:streetLocality</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sl:QLD140492</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"Oxford Place"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>a:GAQLD161268186</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:locality</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>l:loc38f189794e03</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"Shorncliffe"</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p><code>l</code> : <code><a href="https://linked.data.gov.au/dataset/gnaf/locality/" class="bare">https://linked.data.gov.au/dataset/gnaf/locality/</a></code></p>
+</li>
+<li>
+<p><code>sl</code> : <code><a href="https://linked.data.gov.au/dataset/gnaf/streetLocality/" class="bare">https://linked.data.gov.au/dataset/gnaf/streetLocality/</a></code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_1_2_selecting_addresses_by_geocode_type_and_in_an_area"><a class="anchor" href="#_c_1_2_selecting_addresses_by_geocode_type_and_in_an_area"></a>C.1.2 Selecting addresses by geocode type and in an area</h4>
+<div class="paragraph">
+<p>The following query selects addresses from the examples that have a Geocode of type Property Access Point (PAP) and that are within the Bounding Box of 154 -27, 154 -28, 153 -28, 153 -27, 154 -27.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sparql" data-lang="sparql">PREFIX addr: &lt;https://w3id.org/profile/anz-address/&gt;
+PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+PREFIX geo: &lt;http://www.opengis.net/ont/geosparql#&gt;
+PREFIX geof: &lt;http://www.opengis.net/def/function/geosparql/&gt;
+PREFIX gct: &lt;https://linked.data.gov.au/dataset/gnaf/code/geocodeType/&gt;
+
+SELECT ?a ?wkt
+WHERE {
+    ?a a addr:Address ;
+        addr:hasGeocode [
+            dcterms:type gct:PAP ;
+            geo:asWKT ?wkt ;
+        ] .
+
+    FILTER (geof:sfWithin(?wkt, "POLYGON ((154 -27, 154 -28, 153 -28, 153 -27, 154 -27))"))
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The results from this query are:</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">?a</th>
+<th class="tableblock halign-left valign-top">?wkt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>a:GAQLD161337673</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"POINT(153.157220 -27.624450)"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>a:GAQLD155231408</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"POINT(153.157220 -27.624450)"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>a:GAQLD161294216</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"POINT(153.045546 -27.341745)"</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Two of the results have the same geocode location. This is due to <code>a:GAQLD155231408</code> being a primary address with <code>a:GAQLD161337673</code> being a secondary and sharing a Property Access Point location (geocode).</p>
+</div>
+<div class="paragraph">
+<p>Without the spatial bounding box filter, we would also get one more result:</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">?a</th>
+<th class="tableblock halign-left valign-top">?wkt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>a:GAQLD157959170</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"POINT(151.95179638 -28.82625239)"</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Removing the geocode type filter, we get all of the Addresses that have Geocodes, and the Geocodes' values, in the extended examples: there are 19.</p>
+</div>
+<div class="paragraph">
+<p>So SPARQL queries can filter results on type and also using spatial relations, such as <em>within</em> a given area.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_1_3_selecting_addresses_in_relation_to_an_object"><a class="anchor" href="#_c_1_3_selecting_addresses_in_relation_to_an_object"></a>C.1.3 Selecting Addresses in relation to an object</h4>
+<div class="paragraph">
+<p>SPARQL queries can select Addresses based on Address Component values which may either be literal values (numbers/strings) or complex objects.</p>
+</div>
+<div class="paragraph">
+<p>To get all the example Addresses within the Queensland locality of Shorncliffe:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sparql" data-lang="sparql">PREFIX addr: &lt;https://w3id.org/profile/anz-address/&gt;
+PREFIX loc: &lt;https://linked.data.gov.au/dataset/gnaf/locality/&gt;
+
+SELECT ?a ?val ?val_text
+WHERE {
+  ?a addr:hasAddressComponent/addr:hasValue loc:loc38f189794e03
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This query finds two results (the oxford-place examples) since they indicate they have Shorncliffe as an Address Component of type <code>isov1:locality</code> by reference to the GNAF Locality PID <code><a href="https://linked.data.gov.au/dataset/gnaf/locality/loc38f189794e03" class="bare">https://linked.data.gov.au/dataset/gnaf/locality/loc38f189794e03</a></code>.</p>
+</div>
+<div class="paragraph">
+<p>To find all of the Addresses in Queensland we could use the PID of Queensland given by the <a href="https://asgs.linked.fsdf.org.au/">Australian Statistical Geography Standard</a> since that&#8217;s the object ID related to in this examples data</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sparql" data-lang="sparql">PREFIX addr: &lt;https://w3id.org/profile/anz-address/&gt;
+PREFIX loc: &lt;https://linked.data.gov.au/dataset/gnaf/locality/&gt;
+
+SELECT ?a ?val ?val_text
+WHERE {
+  ?a addr:hasAddressComponent/addr:hasValue &lt;https://linked.data.gov.au/dataset/asgsed3/STE/3&gt;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that the PID for Queensland is external to this model but resolves, online to the ASGS Queensland object:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://linked.data.gov.au/dataset/asgsed3/STE/3" class="bare">https://linked.data.gov.au/dataset/asgsed3/STE/3</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_demo_2_relational_database"><a class="anchor" href="#_demo_2_relational_database"></a>Demo 2: Relational Database</h3>
-
+<h3 id="_c_2_relational_database_demo"><a class="anchor" href="#_c_2_relational_database_demo"></a>C.2 Relational Database Demo</h3>
+<div class="paragraph">
+<p>The 15 or so extended examples within the code repository (see above Annex for details) have been stored in an <a href="https://www.sqlite.org">SQLite</a> Database also within this code repository.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+To be fully functional, the <a href="https://www.gaia-gis.it/fossil/libspatialite/index">SpatiaLite</a> extension to SQLite need to be enabled so spatial functions may be performed. This extension is <em>NOT</em> enabled for this demonstration database to keep the geometry data human-readable (text) rather than implementing it as binary data types.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/nicholascar/anz-nat-addr-model-candidate/tree/main/implementations/relational/qld-scenarios">Source SQL files and loaded .sqlite database</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The database consists of 21 tables that together store:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the primary data of the examples</p>
+<div class="ulist">
+<ul>
+<li>
+<p>the Addresses in table <em>addresses</em>, Address Components in <em>address_components</em> etc.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>the codelists/vocabularies listed in <a href="#_supporting_vocabularies">Supporting Vocabularies</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>as lookups</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>an IRI prefixes table</p>
+<div class="ulist">
+<ul>
+<li>
+<p>mapping short form IRIs to complete IRIs</p>
+</li>
+<li>
+<p>as per <a href="#_namespaces">Namespaces</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These tables fully represent the content of the examples and the database schema used is therefore a complete relational implementation of this model.</p>
+</div>
+<div class="paragraph">
+<p>To show equivalence to the <a href="#_c_1_rdf_database_demo">RDF Database Demo</a>, the three SPARQL queries shown there are reimplemented as SQLite SQL queries next.</p>
+</div>
+<div class="sect3">
+<h4 id="_c_2_1_ordered_address_components"><a class="anchor" href="#_c_2_1_ordered_address_components"></a>C.2.1 Ordered Address Components</h4>
+<div class="paragraph">
+<p>The following query yields identical results to that in <a href="#_c_1_1_ordered_address_components">C.1.1 Ordered Address Components</a>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sql" data-lang="sql">SELECT *
+FROM addresses_components
+ORDER BY
+  address_pid,
+  CASE type
+    WHEN 'isov1:buildingName' THEN 0
+    WHEN 'isov1:propertyName' THEN 1
+    WHEN 'isov1:traditionalPlaceName' THEN 2
+    WHEN 'isov1:flatTypeCode' THEN 3
+    WHEN 'isov1:flatNumber' THEN 4
+    WHEN 'isov1:numberFirst' THEN 5
+    WHEN 'isov1:streetLocality' THEN 6
+    WHEN 'isov1:locality' THEN 7
+    WHEN 'isov1:postcode' THEN 8
+    WHEN 'isov1:administrativeArea' THEN 9
+  END</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_2_2_selecting_addresses_by_geocode_type_and_in_an_area"><a class="anchor" href="#_c_2_2_selecting_addresses_by_geocode_type_and_in_an_area"></a>C.2.2 Selecting addresses by geocode type and in an area</h4>
+<div class="paragraph">
+<p>To make an SQL query equivalence to the sPARQL query in <a href="#_c_1_2_selecting_addresses_by_geocode_type_and_in_an_area">C.1.2 Selecting addresses by geocode type and in an area</a>, an SQL join between the <em>addresses</em> and <em>geocodes</em> tables must be performed:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sql" data-lang="sql">SELECT pid, geometry
+FROM addresses
+JOIN geocodes
+ON addresses.pid = geocodes.address_pid
+WHERE type = 'gt:PAP'
+AND MBRWithin(
+        GeomFromText('POLYGON ((154 -27, 154 -28, 153 -28, 153 -27, 154 -27))'),
+        geometry
+    );</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Results from this query are the same as those in <a href="#_c_1_2_selecting_addresses_by_geocode_type_and_in_an_area">C.1.2 Selecting addresses by geocode type and in an area</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+For true operations, the function <code>MBRWithin</code> requires a <code>GEOMETRY</code> data field to operate on, not text as this example <code>geometry</code> field is. This example uses text so the values can be read. Removing the <code>MBRWithin</code> clause from the query above results in 4 results from the SQLite database, as per the reduces SPARQL query example above.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_2_3_selecting_addresses_in_relation_to_an_object"><a class="anchor" href="#_c_2_3_selecting_addresses_in_relation_to_an_object"></a>C.2.3 Selecting Addresses in relation to an object</h4>
+<div class="paragraph">
+<p>The following SQL query performs equivalently to the first query in <a href="#_c_1_3_selecting_addresses_in_relation_to_an_object">C.1.3 Selecting Addresses in relation to an object</a>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sql" data-lang="sql">SELECT address_pid, has_value, has_value_text
+FROM addresses_components
+WHERE has_value = 'loc:loc38f189794e03'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Results for this query are the same as the equivalent SPARQL query.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+To match on a full IRI for 'loc:loc38f189794e03', which the equivalent SPARQL query above does with use of the prefix statement <code>PREFIX loc: <a href="https://linked.data.gov.au/dataset/gnaf/locality/" class="bare">https://linked.data.gov.au/dataset/gnaf/locality/</a></code>, the SQLite table <em>pid_prefixes</em> can be consulted to interpret 'loc:' in the query below.
+</td>
+</tr>
+</table>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_demo_3_gnaf_for_queensland"><a class="anchor" href="#_demo_3_gnaf_for_queensland"></a>Demo 3: GNAF for Queensland</h3>
-
+<h3 id="_c_3_g_naf_for_queensland_demo"><a class="anchor" href="#_c_3_g_naf_for_queensland_demo"></a>C.3: G-NAF for Queensland Demo</h3>
+<div class="paragraph">
+<p>The entire contents of the Geocoded National Address File (G-NAF) for Queensland have been converted into this model&#8217;s relational form as per the SQLite implementation described above in <a href="#_c_2_relational_database_demo">C.2 Relational Database Demo</a>.</p>
+</div>
+<div class="paragraph">
+<p>This complete conversion demonstrates this model&#8217;s ability to represent the entire content of the G-NAF for Queensland but it is too large to include in this model&#8217;s code repository. It may be obtained on request from this model&#8217;s author.</p>
+</div>
 </div>
 </div>
 </div>
@@ -2764,7 +3141,7 @@ The representations of vocabularies here do not contain full vocabulary informat
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-06-22 08:41:52 UTC
+Last updated 2022-06-22 13:10:15 UTC
 </div>
 </div>
 </body>

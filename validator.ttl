@@ -68,7 +68,7 @@ addr:validator
             sh:message "An addr:Address must indicate at least one addr:Geocode that is an IRI or Blank Node with the property addr:hasGeocode." ;
             sh:minCount 1 ;
             sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:path addr:hasAddressComponent
+            sh:path addr:hasGeocode
         ] ;
 .
 

@@ -471,8 +471,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="#AnnexA">Annex A: Validator</a></li>
-<li><a href="#_annex_b_examples">Annex B: Examples</a></li>
-<li><a href="#_annex_c_demo_implementations">Annex C: Demo Implementations</a></li>
+<li><a href="#_annex_b_extended_examples">Annex B: Extended Examples</a></li>
+<li><a href="#_annex_c_demo_implementations">Annex C: Demo Implementations</a>
+<ul class="sectlevel2">
+<li><a href="#_demo_1_rdf_database">Demo 1: RDF Database</a></li>
+<li><a href="#_demo_2_relational_database">Demo 2: Relational Database</a></li>
+<li><a href="#_demo_3_gnaf_for_queensland">Demo 3: GNAF for Queensland</a></li>
+</ul>
+</li>
 <li><a href="#_bibliography">Bibliography</a></li>
 </ul>
 </div>
@@ -755,7 +761,7 @@ flexibility" - things for Strategy implementers to aim for - "Guiding Principles
 <td class="tableblock halign-left valign-top"><p class="tableblock">The machine-readable validator file used to validate data claiming conformance to this model</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_annex_b_examples">Annex B: Examples</a> &amp; <a href="https://github.com/nicholascar/anz-nat-addr-model-candidate/tree/main/example">Example data files</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Annex B: Examples">[Annex B: Examples]</a> &amp; <a href="https://github.com/nicholascar/anz-nat-addr-model-candidate/tree/main/example">Example data files</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>Example</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Examples of data conforming, and some not conforming, to this model</p></td>
 </tr>
@@ -880,7 +886,7 @@ flexibility" - things for Strategy implementers to aim for - "Guiding Principles
     [
       addr:hasValue &lt;LGA2021/1234&gt; ;
       addr:hasValueText "Shorncliffe" ;
-      addr:hasComponentType addrct:localityName ;
+      addr:hasComponentType addrct:locality ;
     ] ,
     [
       addr:hasValue &lt;STE2021/6&gt; ;
@@ -1015,7 +1021,7 @@ ex:addre-2 addr:isAddressFor ex:admin-area-z .</code></pre>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#hasValue">[hasValue]</a>, <a href="#hasValueText">[hasValueText]</a>, <a href="#hasComponentType">[hasComponentType]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#hasValue">has value</a>, <a href="#hasValueText">has value text</a>, <a href="#hasComponentType">[hasComponentType]</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
@@ -1039,7 +1045,7 @@ ex:addre-2 addr:isAddressFor ex:admin-area-z .</code></pre>
       addr:hasValue &lt;http://example.com/lga/1234&gt; ;
       # textual value of complex object
       addr:hasValueText "Shorncliffe" ;
-      addr:hasComponentType addrct:localityName ;
+      addr:hasComponentType addrct:locality ;
     ] ,
     ...</code></pre>
 </div>
@@ -1117,7 +1123,7 @@ ex:addre-2 addr:isAddressFor ex:admin-area-z .</code></pre>
       addr:hasValue &lt;http://example.com/lga/1234&gt; ;
       # textual value of complex object
       addr:hasValueText "Shorncliffe" ;
-      addr:hasComponentType addrct:localityName ;
+      addr:hasComponentType addrct:locality ;
     ] ,
     ...</code></pre>
 </div>
@@ -1496,6 +1502,12 @@ ex:addr-1
 </li>
 <li>
 <p><a href="#hasLifecycleStage">has lifecycle stage </a></p>
+</li>
+<li>
+<p><a href="#hasValue">has value</a></p>
+</li>
+<li>
+<p><a href="#hasValueText">has value text</a></p>
 </li>
 </ul>
 </div>
@@ -1942,6 +1954,158 @@ ex:addr-1
     dcterms:type addrls:current ;
   ] ,
 .</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="hasValue"><a class="anchor" href="#hasValue"></a>4.2.8. has value</h4>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addr:hasValue</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">has value</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the value of an Address Component</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/profile/anz-address">ANZ National Address Model</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s AddressComponent object&#8217;s properties</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#AddressComponent">Address Component</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Range</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#Resource"><code>rdfs:Resource</code></a> (IRI or literal)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">ex:addr-1
+  a addr:Address ;
+  addr:hasAddressComponent
+    [
+      # "StreetNumber" type
+      addr:hasValue 20 ;
+      addr:hasComponentType addrct:streetNumber ;
+    ] ,
+    [
+      # "StreetName" type
+      addr:hasValue "Oxford" ;
+      addr:hasComponentType addrct:thoroughfareName ;
+    ] ,
+    [
+      # "Locality" type
+      addr:hasValue &lt;http://example.com/lga/1234&gt; ;
+      # textual value of complex object
+      addr:hasValueText "Shorncliffe" ;
+      addr:hasComponentType addrct:locality ;
+    ] ,
+    ...</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="hasValueText"><a class="anchor" href="#hasValueText"></a>4.2.9. has value text</h4>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addr:hasValueText</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">has value</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the textual rendering of an Address Component</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This property is to be used to represent the textual value of Address Components that are literals and also complex objects. For a literal, the same value will be present for hasValue and hasValueText, e.g. a street number of 20 or a property name of "Bonnie Doon", however for a complex object, e.g. the locality <code><a href="http://example.com/lga/1234" class="bare">http://example.com/lga/1234</a></code>, a textual representation of it must be selected. Likely a simple name for the object will do, i.e. a Locality name or a Street Locality name.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/profile/anz-address">ANZ National Address Model</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s AddressComponent object&#8217;s properties</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#AddressComponent">Address Component</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Range</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2001/XMLSchema#string"><code>xsd:string</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">ex:addr-1
+  a addr:Address ;
+  addr:hasAddressComponent
+    [
+      # "StreetNumber" type
+      addr:hasValue 20 ;
+      addr:hasValueText "20" ;
+      addr:hasComponentType addrct:streetNumber ;
+    ] ,
+    [
+      # "StreetName" type
+      addr:hasValue "Oxford" ;
+      addr:hasValueText "Oxford" ;
+      addr:hasComponentType addrct:thoroughfareName ;
+    ] ,
+    [
+      # "Locality" type
+      addr:hasValue &lt;http://example.com/lga/1234&gt; ;
+      # textual value of complex object
+      addr:hasValueText "Shorncliffe" ;
+      addr:hasComponentType addrct:locality ;
+    ] ,
+    ...</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -2491,7 +2655,7 @@ The representations of vocabularies here do not contain full vocabulary informat
 </div>
 </div>
 <div class="sect1">
-<h2 id="_annex_b_examples"><a class="anchor" href="#_annex_b_examples"></a>Annex B: Examples</h2>
+<h2 id="_annex_b_extended_examples"><a class="anchor" href="#_annex_b_extended_examples"></a>Annex B: Extended Examples</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The extended examples for this model are a series of data files stored in this model&#8217;s online code repository:</p>
@@ -2527,7 +2691,35 @@ The representations of vocabularies here do not contain full vocabulary informat
 <div class="sect1">
 <h2 id="_annex_c_demo_implementations"><a class="anchor" href="#_annex_c_demo_implementations"></a>Annex C: Demo Implementations</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Several demonstration implementations of this Address model are given in the code repository containing its content.</p>
+</div>
+<div class="sect2">
+<h3 id="_demo_1_rdf_database"><a class="anchor" href="#_demo_1_rdf_database"></a>Demo 1: RDF Database</h3>
+<div class="paragraph">
+<p>The 15 or so extended examples data files within the code repository (see above Annex for details) represent an implementation of this model for they are formulated in RDF data and are thus able to be loaded into an RDF database (often called a "triplestore") and queried.</p>
+</div>
+<div class="paragraph">
+<p>To demonstrate this, the multiple example files can be loaded directly into such tools as Apache&#8217;s <a href="https://jena.apache.org/documentation/fuseki2/">Fuseki</a> database. They can also be combined into one file using RDF tooling and that uploaded. The script <code>_compound_example.py</code> in the examples directory compounds all the examples into the single file <a href="https://github.com/nicholascar/anz-nat-addr-model-candidate/blob/main/extended-examples/_all.ttl">_all.ttl</a>.</p>
+</div>
+<div class="paragraph">
+<p>Once loaded into a triplestore, <a href="https://www.w3.org/TR/sparql11-query/">SPARQL</a> queries can be used to interrogate the data similarly to how SQL queries are used for relational databases. Some example SPARQL queries for the examples data are:</p>
+</div>
+<div class="sect3">
+<h4 id="_ordered_address_components"><a class="anchor" href="#_ordered_address_components"></a>Ordered Address Components</h4>
+<div class="paragraph">
+<p>For those Addresses that have components - not all in the example data - order the components as per Queensland norms, including the new Property Name type component at the start.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_demo_2_relational_database"><a class="anchor" href="#_demo_2_relational_database"></a>Demo 2: Relational Database</h3>
 
+</div>
+<div class="sect2">
+<h3 id="_demo_3_gnaf_for_queensland"><a class="anchor" href="#_demo_3_gnaf_for_queensland"></a>Demo 3: GNAF for Queensland</h3>
+
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -2572,7 +2764,7 @@ The representations of vocabularies here do not contain full vocabulary informat
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-06-22 04:50:29 UTC
+Last updated 2022-06-22 08:41:52 UTC
 </div>
 </div>
 </body>

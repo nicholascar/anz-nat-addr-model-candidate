@@ -470,7 +470,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_address_status_types_vocabulary">5.4. Address Status Types Vocabulary</a></li>
 </ul>
 </li>
-<li><a href="#AnnexA">Annex A: Validators</a></li>
+<li><a href="#AnnexA">Annex A: Validators</a>
+<ul class="sectlevel2">
+<li><a href="#_a_1_description">A.1 Description</a></li>
+<li><a href="#_a_2_use">A.2 Use</a></li>
+</ul>
+</li>
 <li><a href="#_annex_b_extended_examples">Annex B: Extended Examples</a></li>
 <li><a href="#_annex_c_demo_implementations">Annex C: Demo Implementations</a>
 <ul class="sectlevel2">
@@ -2613,27 +2618,19 @@ The representations of vocabularies here do not contain full vocabulary informat
 <div class="sect1">
 <h2 id="AnnexA"><a class="anchor" href="#AnnexA"></a>Annex A: Validators</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_a_1_description"><a class="anchor" href="#_a_1_description"></a>A.1 Description</h3>
 <div class="paragraph">
-<p>Two validators to test data claiming conformance to this model are provided as resources within this profile.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>machine-readable form: <a href="https://w3id.org/profile/anz-address/validator" class="bare">https://w3id.org/profile/anz-address/validator</a></p>
-</li>
-</ul>
+<p>Two validators to test data claiming conformance to this model are provided as resources within this profile. The first, <a href="https://github.com/nicholascar/anz-nat-addr-model-candidate/blob/main/validator.ttl">validator.ttl</a> is the canonical validator for this model. The second, <a href="https://github.com/nicholascar/anz-nat-addr-model-candidate/blob/main/validator-qld.ttl">validator-qld.ttl</a> is a demonstration validator for Queensland that includes extended validator rules building on validator.ttl.</p>
 </div>
 <div class="paragraph">
-<p>A summary of the validator&#8217;s elements is given in <a href="#tbl-shapes">Table 1</a>.</p>
-</div>
-<div class="paragraph">
-<p><mark>TODO: Complete this listing of the Validator&#8217;s Shapes</mark></p>
+<p>A summary of the canonical validator&#8217;s elements ("shapes") is given in <a href="#tbl-shapes">Table 1</a>.</p>
 </div>
 <table id="tbl-shapes" class="tableblock frame-all grid-all stripes-even stretch">
-<caption class="title">Table 1. Shapes within the Validator</caption>
+<caption class="title">Table 1. Shapes within the Canonical Validator</caption>
 <colgroup>
-<col style="width: 12.5%;">
-<col style="width: 87.5%;">
+<col style="width: 22.2222%;">
+<col style="width: 77.7778%;">
 </colgroup>
 <thead>
 <tr>
@@ -2643,15 +2640,89 @@ The representations of vocabularies here do not contain full vocabulary informat
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/profile/anz-address/validator/sh-01">sh01</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Address Components' types must be indicated by an IRI (of a Concept from a vocabulary)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>val:address-mandatory-properties</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Checks the mandatory properties of <code>Address</code> instances: <code>addr:isAddressFor</code> (1), <code>addr:hasAddressComponent</code> (1+), <code>addr:hasGeocode</code> (1+)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/profile/anz-address/validator/sh-02">sh02</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The hasValue property of an AddressComponent with addressComponentType isov1:locality must indicate an IRI (of a Concept from a vocabulary), not text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>val:address-component-properties</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Checks the mandatory properties of <code>AddressConponet</code> instances: <code>dcterms:type</code> (1), <code>addr:hasValue</code> (1), <code>addr:hasValueText</code> (1, and that it&#8217;s a string literal)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>val:address-geocode-properties</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Checks the mandatory properties of <code>Geocode</code> instances: <code>dcterms:type</code> (1), at least one of <code>geo:asWKT</code>, <code>geo:asGeoJSON</code> or <code>geo:asGML</code> must be present</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>val:address-lifecycle-stage-properties</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Checks the mandatory properties of <code>LifecycleStage</code> instances: <code>dcterms:type</code> (1), <code>time:hasTime</code> (1)</p></td>
 </tr>
 </tbody>
 </table>
+<div class="ulist">
+<ul>
+<li>
+<p><code>val</code> : <code><a href="https://w3id.org/profile/anz-address/validator/" class="bare">https://w3id.org/profile/anz-address/validator/</a></code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The canonical validator&#8217;s list of elements will almost certainly grow as use of this model fleshes out model element needs.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_a_2_use"><a class="anchor" href="#_a_2_use"></a>A.2 Use</h3>
+<div class="paragraph">
+<p>These validators are implemented using the Shapes Constraint Language (SHACL) and any tool that support SHACL validation may be used to apply them to data to be validated.</p>
+</div>
+<div class="paragraph">
+<p>Some examples of such tools are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://pypi.org/project/pyshacl/">pySHACL</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>free and open source Python SHACL validator</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="https://shacl.org/playground/">SHACL Playground</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>online Javascript-based validator</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="http://rdftools.surroundaustralia.com/validate">RDFTools Validator</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>online pySHACL-based validator</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Any of those tools may be used to apply the Canonical or Queensland validator to data and produce a report of the validity of the data.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -3201,7 +3272,7 @@ WHERE a.pid = 'ex:oxford';</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-06-22 14:49:55 UTC
+Last updated 2022-06-22 15:09:10 UTC
 </div>
 </div>
 </body>

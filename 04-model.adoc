@@ -59,7 +59,7 @@ ex:addr-1
     [
       addr:hasValue <LGA2021/1234> ;
       addr:hasValueText "Shorncliffe" ;
-      addr:hasComponentType addrct:localityName ;
+      addr:hasComponentType addrct:locality ;
     ] ,
     [
       addr:hasValue <STE2021/6> ;
@@ -151,7 +151,7 @@ ex:addr-1
       addr:hasValue <http://example.com/lga/1234> ;
       # textual value of complex object
       addr:hasValueText "Shorncliffe" ;
-      addr:hasComponentType addrct:localityName ;
+      addr:hasComponentType addrct:locality ;
     ] ,
     ... 
 ----
@@ -195,7 +195,7 @@ ex:addr-1
       addr:hasValue <http://example.com/lga/1234> ;
       # textual value of complex object
       addr:hasValueText "Shorncliffe" ;
-      addr:hasComponentType addrct:localityName ;
+      addr:hasComponentType addrct:locality ;
     ] ,
     ... 
 ----
@@ -391,6 +391,8 @@ ex:addr-1
 * <<hasAddressRole, has address role>>
 * <<hasGeocode, has geocode>>
 * <<hasLifecycleStage, has lifecycle stage >>
+* <<hasValue, has value>>
+* <<hasValueText, has value text>>
 
 [[isAddressFor]]
 ==== is address for
@@ -602,5 +604,90 @@ ex:addr-1
     dcterms:type addrls:current ;
   ] ,  
 .
+----
+|===
+
+[[hasValue]]
+==== has value
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `addr:hasValue`
+| Preferred Label | has value
+| Definition | Indicates the value of an Address Component
+| Is Defined By | https://w3id.org/profile/anz-address[ANZ National Address Model]
+| Provenance | Derived from <<ISO19160-1>>'s AddressComponent object's properties
+| Domain | <<AddressComponent, Address Component>>
+| Range | http://www.w3.org/2000/01/rdf-schema#Resource[`rdfs:Resource`] (IRI or literal)
+| Example
+a| [source,turtle]
+----
+ex:addr-1
+  a addr:Address ;
+  addr:hasAddressComponent
+    [
+      # "StreetNumber" type
+      addr:hasValue 20 ;
+      addr:hasComponentType addrct:streetNumber ;
+    ] ,
+    [
+      # "StreetName" type
+      addr:hasValue "Oxford" ;
+      addr:hasComponentType addrct:thoroughfareName ;
+    ] ,
+    [
+      # "Locality" type
+      addr:hasValue <http://example.com/lga/1234> ;
+      # textual value of complex object
+      addr:hasValueText "Shorncliffe" ;
+      addr:hasComponentType addrct:locality ;
+    ] ,
+    ...
+----
+|===
+
+[[hasValueText]]
+==== has value text
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `addr:hasValueText`
+| Preferred Label | has value
+| Definition | Indicates the textual rendering of an Address Component
+| Scope note | This property is to be used to represent the textual value of Address Components that are literals and also complex objects. For a literal, the same value will be present for hasValue and hasValueText, e.g. a street number of 20 or a property name of "Bonnie Doon", however for a complex object, e.g. the locality `<http://example.com/lga/1234>`, a textual representation of it must be selected. Likely a simple name for the object will do, i.e. a Locality name or a Street Locality name.
+| Is Defined By | https://w3id.org/profile/anz-address[ANZ National Address Model]
+| Provenance | Derived from <<ISO19160-1>>'s AddressComponent object's properties
+| Domain | <<AddressComponent, Address Component>>
+| Range | http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Example
+a| [source,turtle]
+----
+ex:addr-1
+  a addr:Address ;
+  addr:hasAddressComponent
+    [
+      # "StreetNumber" type
+      addr:hasValue 20 ;
+      addr:hasValueText "20" ;
+      addr:hasComponentType addrct:streetNumber ;
+    ] ,
+    [
+      # "StreetName" type
+      addr:hasValue "Oxford" ;
+      addr:hasValueText "Oxford" ;
+      addr:hasComponentType addrct:thoroughfareName ;
+    ] ,
+    [
+      # "Locality" type
+      addr:hasValue <http://example.com/lga/1234> ;
+      # textual value of complex object
+      addr:hasValueText "Shorncliffe" ;
+      addr:hasComponentType addrct:locality ;
+    ] ,
+    ...
 ----
 |===

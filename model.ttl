@@ -22,8 +22,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sdo:copyrightNotice "(c) Nicholas J. Car, 2022" ;
     sdo:creator <https://orcid.org/0000-0002-8742-7730> ;
     sdo:dateCreated "2021-12-16"^^xsd:date ;
-    sdo:dateIssued "2000-00-00"^^xsd:date ;
-    sdo:dateModified "2022-05-15"^^xsd:date ;
+    sdo:dateIssued "2000-01-01"^^xsd:date ;
+    sdo:dateModified "2022-06-22"^^xsd:date ;
     sdo:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
     sdo:publisher <https://orcid.org/0000-0002-8742-7730> ;
 .
@@ -42,8 +42,8 @@ addr:Address
     skos:example """ex:addr-1
   a addr:Address ;
   addr:isAddressFor <some-external-object> ;
-  addr:hasAddressComponent 
-    [   
+  addr:hasAddressComponent
+    [
       addr:hasValue 20 ;
       dcterms:type addrct:streetNumber ;
     ] ,
@@ -108,7 +108,7 @@ addr:AddressComponent
     skos:definition """A component that is a constituent part of an address"""@en ;
     skos:example """ex:addr-1
   a addr:Address ;
-  addr:hasAddressComponent 
+  addr:hasAddressComponent
     [
       # a simple numerical literal - street number
       addr:hasValue 20 ;
@@ -128,7 +128,7 @@ addr:AddressComponent
     ] ,
     ..."""@en ;
     skos:prefLabel "Address Component"@en ;
-    skos:scopeNote """Address Components can be literals - numbers, words etc. - or complex ojects - Localities, districtes etc. If the Address Component is a complex object, a textual representation of it must be provided when a textual rendering of all of an Addresses' component are required, for example for letter printing. 
+    skos:scopeNote """Address Components can be literals - numbers, words etc. - or complex ojects - Localities, districtes etc. If the Address Component is a complex object, a textual representation of it must be provided when a textual rendering of all of an Addresses' component are required, for example for letter printing.
 
 Complex objects are preferred for use over literals when the object referred to has independent identity.
 
@@ -143,7 +143,7 @@ addr:AddressComponentType
     skos:definition "Code that specifies the kind of address component"@en ;
     skos:example """ex:addr-1
   a addr:Address ;
-  addr:hasAddressComponent 
+  addr:hasAddressComponent
     [
       # "StreetNumber" type
       addr:hasValue 20 ;
@@ -163,7 +163,7 @@ addr:AddressComponentType
     ] ,
     ...""" ;
     skos:prefLabel "Address Component Type"@en ;
-    skos:scopeNote """An Address Component's type should be indicated with values from a controlled vocabulary - a code list. 
+    skos:scopeNote """An Address Component's type should be indicated with values from a controlled vocabulary - a code list.
 
 A SKOS vocabulary of Address Component Types is suplied with this ontology."""@en ;
 .
@@ -181,17 +181,17 @@ ex:addr-1
     # this Stage has ceased
     time:hasTime [
       time:hasBeginning [ time:inXSDDate "1982-02-10"^^xsd:date ] ;
-      time:hasEnd [ time:inXSDDate "1982-05-11"^^xsd:date ] ;      
+      time:hasEnd [ time:inXSDDate "1982-05-11"^^xsd:date ] ;
     ] ;
     addr:hasLifeCycleStageType addrls:proposed ;
   ] ,
   [
     # this Stage is still in effect - no hasEnd given
     time:hasTime [
-      time:hasBeginning [ time:inXSDDate "1982-05-11"^^xsd:date ] ;        
+      time:hasBeginning [ time:inXSDDate "1982-05-11"^^xsd:date ] ;
     ] ;
     addr:hasLifeCycleStageType addrls:current ;
-  ] ,  
+  ] ,
 .
 
 # The Address Lifecycle Stage 'proposed'
@@ -203,7 +203,7 @@ addrls:proposed
     skos:prefLabel "Proposed" ;
 ."""@en ;
     skos:prefLabel "Address Lifecycle Stage"@en ;
-    skos:scopeNote """An Address Lifecycle Stage's type should be indicated with values from a controlled vocabulary - a code list. 
+    skos:scopeNote """An Address Lifecycle Stage's type should be indicated with values from a controlled vocabulary - a code list.
 
 A SKOS vocabulary of Address Lifecycle Stages is suplied with this ontology.
 
@@ -226,7 +226,7 @@ ex:addr-1
   ] ;
   ..."""@en ;
     skos:prefLabel "Address Lifecycle Stage Type"@en ;
-    skos:usageNote """An Address Address Lifecycle Stage's type should be indicated with values from a controlled vocabulary - a code list. 
+    skos:usageNote """An Address Address Lifecycle Stage's type should be indicated with values from a controlled vocabulary - a code list.
 
 A SKOS vocabulary of Address Lifecycle Stage Types is suplied with this ontology."""@en ;
 .
@@ -240,7 +240,7 @@ addr:AddressRole
     skos:example """# An Address with two roles
 ex:addr-1
   a addr:Address ;
-  addr:hasAddressRole 
+  addr:hasAddressRole
     ex:emergencyAccess ,
     buildingAccessPoint ;
     ..."""@en ;
@@ -272,7 +272,7 @@ addr:hasAddress
     dcterms:provenance "Derived from ISO19160-1's object relations"@en ;
     skos:definition "Indicates an Address has been allocated for an Addressable Object"@en ;
     skos:example """# the addr:AddressableObject, some-addressable-object,
-# indicates an address with addr:hasAddress 
+# indicates an address with addr:hasAddress
 <some-addressable-object>
   a addr:AddressableObject ;
   addr:hasAddress ex:addr-1 ;
@@ -331,7 +331,7 @@ addr:hasAddressRole
     skos:example """# An Address with two roles
 ex:addr-1
   a addr:Address ;
-  addr:hasAddressRole 
+  addr:hasAddressRole
     ex:emergencyAccess ,
     buildingAccessPoint ;
     ...""" ;
@@ -363,7 +363,7 @@ ex:addr-1
       time:hasBeginning [ time:inXSDDate "1982-05-11"^^xsd:date ] ;
     ] ;
     dcterms:type addrls:current ;
-  ] ,  
+  ] ,
 .""" ;
     skos:prefLabel "has lifecycle stage"@en ;
 .
@@ -381,9 +381,72 @@ addr:hasGeocode
   a addr:Address ;
     addr:hasGeocode [
       dcterms:type geocodeType:DF ;  # Driveway Frontage
-      geo:hasGeometry "POINT (152.01 -35.03)"^^geo:wktLiteral ; 
+      geo:hasGeometry "POINT (152.01 -35.03)"^^geo:wktLiteral ;
     ] ;
     addre:hasRole addr:buildingAccessPoint ;
     ...""" ;
     skos:prefLabel "has geocode"@en ;
-.    
+.
+
+addr:hasValue
+    a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/profile/anz-address> ;
+    rdfs:domain addr:AddressComponent ;
+    rdfs:range rdfs:Resource ;
+    dcterms:provenance "Derived from ISO19160-1's AddressComponent object's properties"@en ;
+    skos:definition "Indicates the value of an Address Component"@en ;
+    skos:example """ex:addr-1
+  a addr:Address ;
+  addr:hasAddressComponent
+    [
+      # "StreetNumber" type
+      addr:hasValue 20 ;
+      addr:hasComponentType addrct:streetNumber ;
+    ] ,
+    [
+      # "StreetName" type
+      addr:hasValue "Oxford" ;
+      addr:hasComponentType addrct:thoroughfareName ;
+    ] ,
+    [
+      # "Locality" type
+      addr:hasValue <http://example.com/lga/1234> ;
+      # textual value of complex object
+      addr:hasValueText "Shorncliffe" ;
+      addr:hasComponentType addrct:locality ;
+    ] ,
+    ...""" ;
+    skos:prefLabel "has value"@en ;
+.
+
+addr:hasValueText
+    a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/profile/anz-address> ;
+    rdfs:domain addr:AddressComponent ;
+    rdfs:range xsd:string ;
+    dcterms:provenance "Derived from ISO19160-1's AddressComponent object's properties"@en ;
+    skos:definition "Indicates the value of an Address Component"@en ;
+    skos:example """ex:addr-1
+  a addr:Address ;
+  addr:hasAddressComponent
+    [
+      # "StreetNumber" type
+      addr:hasValue 20 ;
+      addr:hasComponentType addrct:streetNumber ;
+    ] ,
+    [
+      # "StreetName" type
+      addr:hasValue "Oxford" ;
+      addr:hasComponentType addrct:thoroughfareName ;
+    ] ,
+    [
+      # "Locality" type
+      addr:hasValue <http://example.com/lga/1234> ;
+      # textual value of complex object
+      addr:hasValueText "Shorncliffe" ;
+      addr:hasComponentType addrct:locality ;
+    ] ,
+    ...""" ;
+    skos:prefLabel "has value text"@en ;
+    skos:scopeNote "This property is to be used to represent the textual value of Address Components that are literals and also complex objects. For a literal, the same value will be present for hasValue and hasValueText, e.g. a street number of 20 or a property name of 'Bonnie Doon', however for a complex object, e.g. the locality <http://example.com/lga/1234>, a textual representation of it must be selected. Likely a simple name for the object will do, i.e. a Locality name or a Street Locality name."@en ;
+.

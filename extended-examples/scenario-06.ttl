@@ -8,15 +8,6 @@
 # · Addresses for access points and visitor centre
 # · Associated geocodes for addresses
 
-# Giraween NP - PYRAMIDS RD GIRRAWEEN QLD (GIRRAWEEN NATIONAL PARK)
-# ADDRESS_DETAIL_PID|DATE_CREATED|DATE_LAST_MODIFIED|DATE_RETIRED|BUILDING_NAME|LOT_NUMBER_PREFIX|LOT_NUMBER|LOT_NUMBER_SUFFIX|FLAT_TYPE_CODE|FLAT_NUMBER_PREFIX|FLAT_NUMBER|FLAT_NUMBER_SUFFIX|LEVEL_TYPE_CODE|LEVEL_NUMBER_PREFIX|LEVEL_NUMBER|LEVEL_NUMBER_SUFFIX|NUMBER_FIRST_PREFIX|NUMBER_FIRST|NUMBER_FIRST_SUFFIX|NUMBER_LAST_PREFIX|NUMBER_LAST|NUMBER_LAST_SUFFIX|STREET_LOCALITY_PID|LOCATION_DESCRIPTION|LOCALITY_PID|ALIAS_PRINCIPAL|POSTCODE|PRIVATE_STREET|LEGAL_PARCEL_ID|CONFIDENCE|ADDRESS_SITE_PID|LEVEL_GEOCODED_CODE|PROPERTY_PID|GNAF_PROPERTY_PID|PRIMARY_SECONDARY
-# GAQLD157959170|2004-05-09|2021-08-13||GIRRAWEEN NATIONAL PARK|||||||||||||1486|||||QLD2213217||loc44125fbb0fed|P|4382|||1|157942023|6|||
-# GAQLD160693079|2004-06-22|2021-08-13||GIRRAWEEN NATIONAL PARK|||||||||||||1689|||||QLD2213217||loc44125fbb0fed|P|4382|||1|160662496|6|||
-# GAQLD719444059|2017-07-27|2021-08-13||GIRRAWEEN NATIONAL PARK||29||||||||||||||||QLD2213217||loc44125fbb0fed|P|4382||29/NPW638|0|714829076|7||3413491|
-# 7415168|2021-08-10||GAQLD157959170|STL|151.95179638|-28.82625239
-# 7527608|2021-08-10||GAQLD160693079|STL|151.95179638|-28.82625239
-# 3008899433|2021-02-04||GAQLD719444059|PC|151.95137227|-28.85355218
-
 PREFIX a: <https://linked.data.gov.au/dataset/gnaf/address/>
 PREFIX as: <https://linked.data.gov.au/dataset/gnaf/addressSite/>
 PREFIX addr: <https://w3id.org/profile/anz-address/>
@@ -30,35 +21,37 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sdo: <https://schema.org/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-
-a:GAQLD158836591
+# An address for a property called Girraween National Park
+# Two different Geocodes are given - Property Centroid & Property Access Point
+# No street number is relevant
+a:GAQLD157959170
     a addr:Address ;
     addr:isAddressFor as:157942023 ;
     addr:hasAddressComponent
         # no relevant street number
         [
             dcterms:type isov1:propertyName ;
-            addr:hasTextValue "Girraween National Park" ;
+            addr:hasValueText "Girraween National Park" ;
             addr:hasValue "Girraween National Park"
         ] ,
         [
             dcterms:type isov1:streetLocality ;
-            addr:hasTextValue "Pyramids Road" ;
+            addr:hasValueText "Pyramids Road" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/streetLocality/QLD2213217>
         ] ,
         [
             dcterms:type isov1:locality ;
-            addr:hasTextValue "Girraween" ;
+            addr:hasValueText "Girraween" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/locality/loc44125fbb0fed>
         ] ,
         [
             dcterms:type isov1:administrativeArea ;
-            addr:hasTextValue "Queensland" ;
+            addr:hasValueText "Queensland" ;
             addr:hasValue <https://linked.data.gov.au/dataset/asgs/STE/3>
         ] ,
         [
             dcterms:type isov1:postcode ;
-            addr:hasTextValue "4382" ;
+            addr:hasValueText "4382" ;
             addr:hasValue 4382
         ] ;
     addr:hasGeocode
@@ -72,16 +65,8 @@ a:GAQLD158836591
         ] ;
 .
 
-
-as:157942023
-    a pn:Place ;
-    pn:hasPlaceName a:GAQLD158836591 ;
-    geo:sfContains <http://example.com/subplace-1> ;
-    # or
-    dcterms:hasPart <http://example.com/subplace-1> ;
-.
-
-a:GAQLD158836591
+# Here the Address is declared a PlaceName
+a:GAQLD157959170
     a pn:PlaceName ;
     pn:name "Girraween National Park" ;
     dcterms:provenance "Named and bounded by the Minister for Natural Resources 15 December 2000. Regazetted by the Minister for Minister for Natural Resources, Mines and Energy and Minister for Trade on the 21 August 2009 due to the council amalgamations under the Local Government Reform Implementation Act 2007."@en ;
@@ -92,12 +77,23 @@ a:GAQLD158836591
     pn:hasPronunciation "/gɪrɑwiːn/"^^<http://example.com/MacquariePronunciation> ;
 .
 
+# The Addressable Object of the Address, which is also the Place of the Place Name
+# is indicate as relating to a subplace in two ways - spatial contains and logical part
+as:157942023
+    a pn:Place ;
+    pn:hasPlaceName a:GAQLD157959170 ;
+    geo:sfContains <http://example.com/subplace-1> ;
+    # or
+    dcterms:hasPart <http://example.com/subplace-1> ;
+.
+
 <https://linked.data.gov.au/org/qld>
     a pn:PlaceNamingAuthority , sdo:Organization ;
     sdo:name "Government of Queensland" ;
     sdo:url "https://www.qld.gov.au"^^xsd:anyURI ;
 .
 
+# Here the subplace of the Place is defined as another Place
 <http://example.com/subplace-1>
     a pn:Place ;
     geo:sfWithin as:157942023 ;
@@ -110,6 +106,8 @@ a:GAQLD158836591
     ] ;
 .
 
+# Here the subplace, also a regular Place, is allocated a Place Name
+# It could also be allocated an Address
 <http://example.com/subplace-1-placename>
     a pn:PlaceName ;
     pn:name "The Pyramids" ;

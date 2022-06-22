@@ -19,27 +19,27 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     addr:hasAddressComponent
         [
             dcterms:type isov1:numberFirst ;
-            addr:hasTextValue "20" ;
+            addr:hasValueText "20" ;
             addr:hasValue 20
         ] ,
         [
             dcterms:type isov1:streetLocality ;
-            addr:hasTextValue "Oxford Place" ;
+            addr:hasValueText "Oxford Place" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/streetLocality/QLD140492>
         ] ,
         [
             dcterms:type isov1:locality ;
-            addr:hasTextValue "Shorncliffe" ;
+            addr:hasValueText "Shorncliffe" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/locality/loc38f189794e03>
         ] ,
         [
             dcterms:type isov1:administrativeArea ;
-            addr:hasTextValue "Queensland" ;
+            addr:hasValueText "Queensland" ;
             addr:hasValue <https://linked.data.gov.au/dataset/asgs/STE/3>
         ] ,
         [
             dcterms:type isov1:postcode ;
-            addr:hasTextValue "4017" ;
+            addr:hasValueText "4017" ;
             addr:hasValue 4017
         ] ;
     addr:hasGeocode [
@@ -59,32 +59,32 @@ a:GAQLD161268186
     addr:hasAddressComponent
         [
             dcterms:type isov1:flatNumber ;
-            addr:hasTextValue "2" ;
+            addr:hasValueText "2" ;
             addr:hasValue 2
         ] ,
         [
             dcterms:type isov1:numberFirst ;
-            addr:hasTextValue "18" ;
+            addr:hasValueText "18" ;
             addr:hasValue 18
         ] ,
         [
             dcterms:type isov1:streetLocality ;
-            addr:hasTextValue "Oxford Place" ;
+            addr:hasValueText "Oxford Place" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/streetLocality/QLD140492>
         ] ,
         [
             dcterms:type isov1:locality ;
-            addr:hasTextValue "Shorncliffe" ;
+            addr:hasValueText "Shorncliffe" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/locality/loc38f189794e03>
         ] ,
         [
             dcterms:type isov1:administrativeArea ;
-            addr:hasTextValue "Queensland" ;
+            addr:hasValueText "Queensland" ;
             addr:hasValue <https://linked.data.gov.au/dataset/asgs/STE/3>
         ] ,
         [
             dcterms:type isov1:postcode ;
-            addr:hasTextValue "4017" ;
+            addr:hasValueText "4017" ;
             addr:hasValue 4017
         ] ;
     addr:hasGeocode [

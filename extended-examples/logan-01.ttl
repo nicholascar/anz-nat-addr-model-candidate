@@ -18,21 +18,21 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 # 714 Stockleigh Road Stockleigh QLD
 a:GAQLD155864743
     a addr:Address ;
-    addr:isAddressFor <https://example.com/property/5ed9d572-f965-48e2-b06a-a8011ffdabcd> ;
+    addr:isAddressFor <http://example.com/property/5ed9d572-f965-48e2-b06a-a8011ffdabcd> ;
 .
 
 # from the cadastral system
-<https://example.com/property/5ed9d572-f965-48e2-b06a-a8011ffdabcd>
+<http://example.com/property/5ed9d572-f965-48e2-b06a-a8011ffdabcd>
     a cad:Property ;
     rdfs:member
-        <https://example.com/parcel/57RP38148> ,
-        <https://example.com/parcel/57RP38148> ;
+        <http://example.com/parcel/57RP38148> ,
+        <http://example.com/parcel/57RP38148> ;
 .
 
 # 38 - 40 Augustus Street Kingston
 a:GAQLD156735947
     a addr:Address ;
-    addr:isAddressFor <https://example.com/property/5ed9d572-f965-48e2-b06a-a8011ffd5378> ;
+    addr:isAddressFor <http://example.com/property/5ed9d572-f965-48e2-b06a-a8011ffd5378> ;
 .
 
 # 38 Augustus Street Kingston
@@ -44,10 +44,10 @@ a:GAQLD158172597
 # 40 Augustus Street Kingston
 <http://example.com/40augustus>
     a addr:Address ;
-    addr:isAddressFor <https://example.com/property/5ed9d572-f965-48e2-b06a-a8011ffd5378> ;
+    addr:isAddressFor <http://example.com/property/5ed9d572-f965-48e2-b06a-a8011ffd5378> ;
 .
 
-<https://example.com/property/5ed9d572-f965-48e2-b06a-a8011ffd5378>
+<http://example.com/property/5ed9d572-f965-48e2-b06a-a8011ffd5378>
     a cad:Property ;
     rdfs:member
         as:156719338 ,

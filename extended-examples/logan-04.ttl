@@ -21,7 +21,7 @@ a:GAQLD162713140
     addr:hasAddressComponent
         [
             dcterms:type isov1:propertyName ;
-            addr:hasTextValue "Greenbank Gardens" ;
+            addr:hasValueText "Greenbank Gardens" ;
             addr:hasValue "Greenbank Gardens"
         ] ;
     addr:isAddressFor <http://example.com/property/8SP213685> ;  # the complex as a whole
@@ -34,12 +34,12 @@ a:GAQLD163023823
     addr:hasAddressComponent
         [
             dcterms:type isov1:propertyName ;
-            addr:hasTextValue "Greenbank Gardens" ;
+            addr:hasValueText "Greenbank Gardens" ;
             addr:hasValue "Greenbank Gardens"
         ] ,
         [
             dcterms:type isov1:flatNumber ;
-            addr:hasTextValue "139" ;
+            addr:hasValueText "139" ;
             addr:hasValue 139
         ] ;
     addr:hasPrimary a:GAQLD162713140 ;
@@ -55,11 +55,11 @@ a:GAQLD163023823
 # These two addresses are now Secondary addresses and indicate the individual SPs as further Addressable Objects
 # Further Secondary Addresses for the units
 # with Primary Addresses
-<https://example.com/property/5ed9d572-f965-48e2-b06a-a8011ffaaaa>
+<http://example.com/property/5ed9d572-f965-48e2-b06a-a8011ffaaaa>
     a cad:Property ;
     rdfs:member
-        <https://example.com/parcel/40SP174298> ,  # GAQLD161808345
-        <https://example.com/parcel/35SP196304> ;  # GAQLD158831217
+        <http://example.com/parcel/40SP174298> ,  # GAQLD161808345
+        <http://example.com/parcel/35SP196304> ;  # GAQLD158831217
 .
 
 

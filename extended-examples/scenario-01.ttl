@@ -22,14 +22,14 @@ a:GAQLD157826156
             dcterms:type <https://linked.data.gov.au/dataset/gnaf/code/geocodeType/PC> ;  # Property Centroid
             geo:asWKT "POINT(153.13036687 -26.77284087)"^^geo:wktLiteral
         ] ;
-    addr:isAddressFor <https://example.com/property/5ed9d572-f965-48e2-b06a-a8011ffdc3d2> ;
+    addr:isAddressFor <http://example.com/property/5ed9d572-f965-48e2-b06a-a8011ffdc3d2> ;
 .
 
 # from the cadastral system
-<https://example.com/property/5ed9d572-f965-48e2-b06a-a8011ffdc3d2>
+<http://example.com/property/5ed9d572-f965-48e2-b06a-a8011ffdc3d2>
     a cad:Property ;
     rdfs:member
-        <https://example.com/parcel/462C92812> ,
-        <https://example.com/parcel/490C92815> ,
-        <https://example.com/parcel/491C92812> ;
+        <http://example.com/parcel/462C92812> ,
+        <http://example.com/parcel/490C92815> ,
+        <http://example.com/parcel/491C92812> ;
 .

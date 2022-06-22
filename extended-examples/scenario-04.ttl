@@ -29,7 +29,7 @@ a:GAQLD162432045
     addr:hasAddressComponent
         [
             dcterms:type isov1:propertyName ;
-            addr:hasTextValue "Halcyon Waters" ;
+            addr:hasValueText "Halcyon Waters" ;
             addr:hasValue "Halcyon Waters"
         ] ;
     addr:hasGeocode [
@@ -45,7 +45,7 @@ a:GAQLD162469253
     addr:hasAddressComponent
         [
             dcterms:type isov1:propertyName ;
-            addr:hasTextValue "Halcyon Waters" ;
+            addr:hasValueText "Halcyon Waters" ;
             addr:hasValue "Halcyon Waters"
         ] ;
     addr:hasGeocode [
@@ -62,7 +62,7 @@ a:GAQLD161294216
     addr:hasAddressComponent
         [
             dcterms:type isov1:propertyName ;
-            addr:hasTextValue "The Village" ;
+            addr:hasValueText "The Village" ;
             addr:hasValue "The Village"
         ] ;
     # addr:hasGeocode [
@@ -82,7 +82,7 @@ a:GAQLD720181124
     addr:hasAddressComponent
         [
             dcterms:type isov1:propertyName ;
-            addr:hasTextValue "The Village" ;
+            addr:hasValueText "The Village" ;
             addr:hasValue "The Village"
         ] ;
     # addr:hasGeocode [

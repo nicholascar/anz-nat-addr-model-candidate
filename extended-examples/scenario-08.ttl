@@ -18,37 +18,37 @@ PREFIX isov1: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComp
 
 
 # A Single Property - Addressable Object - declared for the whole Conservation Park
-<https://example.com/parcel/23456789>
+<http://example.com/parcel/23456789>
     a cad:Parcel ;
 .
 
 # An Address is allocated to the Parcel
 # With as many Address Components as possible and a Geocode
-# Use complexName for whole Island
+# Use propertyName for whole Island or any named part
 # Since the Geocode is absolute, AS4189 methods used to generate the Address
 # (seemingly not followed here - no number) are irrelevant
-a:GAQLD155231408
+<http://example.com/double>
     a addr:Address ;
-    addr:isAddressFor <https://example.com/parcel/23456789> ;
+    addr:isAddressFor <http://example.com/parcel/23456789> ;
     addr:hasAddressComponent
         [
             dcterms:type isov1:propertyName ;
-            addr:hasTextValue "Double Island" ;
+            addr:hasValueText "Double Island" ;
             addr:hasValue "Double Island"
         ] ,
         [
             dcterms:type isov1:locality ;
-            addr:hasTextValue "Ellis Beach" ;
+            addr:hasValueText "Ellis Beach" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/locality/loc9e0bb59f8df8>
         ] ,
         [
             dcterms:type isov1:administrativeArea ;
-            addr:hasTextValue "Queensland" ;
+            addr:hasValueText "Queensland" ;
             addr:hasValue <https://linked.data.gov.au/dataset/asgs/STE/3>
         ] ,
         [
             dcterms:type isov1:postcode ;
-            addr:hasTextValue "4879" ;
+            addr:hasValueText "4879" ;
             addr:hasValue 4879
         ] ;
     addr:hasGeocode [

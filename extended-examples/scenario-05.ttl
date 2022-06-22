@@ -25,11 +25,11 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # 22 Sugarloaf Road Westwood
 a:GAQLD158836591
     a addr:Address ;
-    addr:isAddressFor <https://example.com/property/5ed9d572-f965-48e2-b06a-a8011ff12345> ;
+    addr:isAddressFor <http://example.com/property/5ed9d572-f965-48e2-b06a-a8011ff12345> ;
     addr:hasAddressComponent
         [
             dcterms:type isov1:propertyName ;
-            addr:hasTextValue "Lornevale" ;
+            addr:hasValueText "Lornevale" ;
             addr:hasValue "Lornevale"
         ] ;
     addr:hasGeocode [
@@ -44,11 +44,11 @@ a:GAQLD158836591
 
 
 # from the cadastral system
-<https://example.com/property/5ed9d572-f965-48e2-b06a-a8011ff12345>
+<http://example.com/property/5ed9d572-f965-48e2-b06a-a8011ff12345>
     a cad:Property ;
     rdfs:member
-        <https://example.com/parcel/462C92811> ,
-        <https://example.com/parcel/490C92812> ,
+        <http://example.com/parcel/462C92811> ,
+        <http://example.com/parcel/490C92812> ,
         # ...
-        <https://example.com/parcel/491C92813> ;
+        <http://example.com/parcel/491C92813> ;
 .

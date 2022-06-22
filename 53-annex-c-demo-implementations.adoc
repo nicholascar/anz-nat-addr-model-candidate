@@ -1,2 +1,23 @@
 == Annex C: Demo Implementations
 
+Several demonstration implementations of this Address model are given in the code repository containing its content.
+
+=== Demo 1: RDF Database
+
+The 15 or so extended examples data files within the code repository (see above Annex for details) represent an implementation of this model for they are formulated in RDF data and are thus able to be loaded into an RDF database (often called a "triplestore") and queried.
+
+To demonstrate this, the multiple example files can be loaded directly into such tools as Apache's https://jena.apache.org/documentation/fuseki2/[Fuseki] database. They can also be combined into one file using RDF tooling and that uploaded. The script `_compound_example.py` in the examples directory compounds all the examples into the single file https://github.com/nicholascar/anz-nat-addr-model-candidate/blob/main/extended-examples/_all.ttl[_all.ttl].
+
+Once loaded into a triplestore, https://www.w3.org/TR/sparql11-query/[SPARQL] queries can be used to interrogate the data similarly to how SQL queries are used for relational databases. Some example SPARQL queries for the examples data are:
+
+==== Ordered Address Components
+
+For those Addresses that have components - not all in the example data - order the components as per Queensland norms, including the new Property Name type component at the start.
+
+
+
+
+
+=== Demo 2: Relational Database
+
+=== Demo 3: GNAF for Queensland

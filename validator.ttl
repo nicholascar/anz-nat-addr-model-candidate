@@ -88,10 +88,10 @@ addr:validator
         [
             skos:prefLabel "has text value" ;
             sh:maxCount 1 ;
-            sh:message "An addr:AddressComponent MUST indicate exactly one text value that is an xsd:string with the property addr:hasTextValue" ;
+            sh:message "An addr:AddressComponent MUST indicate exactly one text value that is an xsd:string with the property addr:hasValueText" ;
             sh:minCount 1 ;
             sh:datatype xsd:string ;
-            sh:path addr:hasTextValue ;
+            sh:path addr:hasValueText ;
         ] ;
 .
 

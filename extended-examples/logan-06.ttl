@@ -12,19 +12,19 @@ PREFIX geocodeType: <https://linked.data.gov.au/dataset/gnaf/code/geocodeType/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 # A Single Property - Addressable Object - declared for the whole Conservation Park
-<https://example.com/property/5ed9d572-f965-48e2-b06a-a8011ffbccc>
+<http://example.com/property/5ed9d572-f965-48e2-b06a-a8011ffbccc>
     a cad:Property ;
     rdfs:member
-        <https://example.com/parcel/28RP173044> ,
-        <https://example.com/parcel/552NPW752> ,
-        <https://example.com/parcel/501SP217936> ;
+        <http://example.com/parcel/28RP173044> ,
+        <http://example.com/parcel/552NPW752> ,
+        <http://example.com/parcel/501SP217936> ;
 .
 
 # A Primary Address is indicated with a Geocode of type Property Access Point
 # 253 Daisy Hill Rd, Daisy Hill QLD 4127
 a:GAQLD155231408
     a addr:Address ;
-    addr:isAddressFor <https://example.com/property/5ed9d572-f965-48e2-b06a-a8011ffbccc> ;
+    addr:isAddressFor <http://example.com/property/5ed9d572-f965-48e2-b06a-a8011ffbccc> ;
     addr:hasGeocode
         [
             dcterms:type geocodeType:PAP ;  # Property Access Point
@@ -36,7 +36,7 @@ a:GAQLD155231408
 # 859-893 Underwood Rd, Priestdale QLD 4127
 a:GAQLD161337673
     a addr:Address ;
-    addr:isAddressFor <https://example.com/property/5ed9d572-f965-48e2-b06a-a8011ffbccc> ;
+    addr:isAddressFor <http://example.com/property/5ed9d572-f965-48e2-b06a-a8011ffbccc> ;
     addr:hasGeocode
         [
             dcterms:type geocodeType:PAP ;  # Property Access Point

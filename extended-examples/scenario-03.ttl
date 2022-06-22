@@ -32,47 +32,47 @@ a:GAQLD720211887
     addr:hasAddressComponent
         [
             dcterms:type isov1:buildingName ;
-            addr:hasTextValue "Craigston" ;
+            addr:hasValueText "Craigston" ;
             addr:hasValue "Craigston"
         ] ,
         [
             dcterms:type isov1:flatTypeCode ;
-            addr:hasTextValue "Studio" ;
+            addr:hasValueText "Studio" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/code/flatType/STU>
         ] ,
         [
             dcterms:type isov1:flatNumberPrefix ;
-            addr:hasTextValue "B" ;
+            addr:hasValueText "B" ;
             addr:hasValue "B"
         ] ,
         [
             dcterms:type isov1:flatNumber ;
-            addr:hasTextValue "1" ;
+            addr:hasValueText "1" ;
             addr:hasValue 1
         ] ,
         [
             dcterms:type isov1:numberFirst ;
-            addr:hasTextValue "217" ;
+            addr:hasValueText "217" ;
             addr:hasValue 217
         ] ,
         [
             dcterms:type isov1:streetLocality ;
-            addr:hasTextValue "Wickham Terrace" ;
+            addr:hasValueText "Wickham Terrace" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/streetLocality/QLD143175>
         ] ,
         [
             dcterms:type isov1:locality ;
-            addr:hasTextValue "Spring Hill" ;
+            addr:hasValueText "Spring Hill" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/locality/locbf2ab9bc6c4c>
         ] ,
         [
             dcterms:type isov1:administrativeArea ;
-            addr:hasTextValue "Queensland" ;
+            addr:hasValueText "Queensland" ;
             addr:hasValue <https://linked.data.gov.au/dataset/asgs/STE/3>
         ] ,
         [
             dcterms:type isov1:postcode ;
-            addr:hasTextValue "4000" ;
+            addr:hasValueText "4000" ;
             addr:hasValue 4000
         ] ;
     addr:hasGeocode [
@@ -88,49 +88,49 @@ a:GAQLD720211887-proposed
     addr:hasAddressComponent
         [
             dcterms:type isov1:buildingName ;
-            addr:hasTextValue "Craigston" ;
+            addr:hasValueText "Craigston" ;
             addr:hasValue "Craigston"
         ] ,
         # levelTypeCode should be used, not flatNumberPrefix for 'B'
         # levelTypeCode can be ordered to print before flatTypeCode
         [
             dcterms:type isov1:levelTypeCode ;
-            addr:hasTextValue "Basement" ;
+            addr:hasValueText "Basement" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/code/levelType/B>
         ] ,
         [
             dcterms:type isov1:flatTypeCode ;
-            addr:hasTextValue "Studio" ;
+            addr:hasValueText "Studio" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/code/flatType/STU>
         ] ,
         [
             dcterms:type isov1:flatNumber ;
-            addr:hasTextValue "1" ;
+            addr:hasValueText "1" ;
             addr:hasValue 1
         ] ,
         [
             dcterms:type isov1:numberFirst ;
-            addr:hasTextValue "217" ;
+            addr:hasValueText "217" ;
             addr:hasValue 217
         ] ,
         [
             dcterms:type isov1:streetLocality ;
-            addr:hasTextValue "Wickham Terrace" ;
+            addr:hasValueText "Wickham Terrace" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/streetLocality/QLD143175>
         ] ,
         [
             dcterms:type isov1:locality ;
-            addr:hasTextValue "Spring Hill" ;
+            addr:hasValueText "Spring Hill" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/locality/locbf2ab9bc6c4c>
         ] ,
         [
             dcterms:type isov1:administrativeArea ;
-            addr:hasTextValue "Queensland" ;
+            addr:hasValueText "Queensland" ;
             addr:hasValue <https://linked.data.gov.au/dataset/asgs/STE/3>
         ] ,
         [
             dcterms:type isov1:postcode ;
-            addr:hasTextValue "4000" ;
+            addr:hasValueText "4000" ;
             addr:hasValue 4000
         ] ;
     # Z value added

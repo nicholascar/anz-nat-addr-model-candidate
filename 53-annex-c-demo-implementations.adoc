@@ -162,6 +162,8 @@ These tables fully represent the content of the examples and the database schema
 
 To show equivalence to the <<C.1 RDF Database Demo, RDF Database Demo>>, the three SPARQL queries shown there are reimplemented as SQLite SQL queries next.
 
+Additionally, <<C.2.4 Converting relational to RDF data>> demonstrates how to convert some of the content from this relational implementation to RDF so it may be validated using the validators in <<Annex A: Validators>>.
+
 ==== C.2.1 Ordered Address Components
 
 The following query yields identical results to that in <<C.1.1 Ordered Address Components>>:
@@ -217,6 +219,42 @@ WHERE has_value = 'loc:loc38f189794e03'
 Results for this query are the same as the equivalent SPARQL query.
 
 NOTE: To match on a full IRI for 'loc:loc38f189794e03', which the equivalent SPARQL query above does with use of the prefix statement `PREFIX loc: <https://linked.data.gov.au/dataset/gnaf/locality/>`, the SQLite table _pid_prefixes_ can be consulted to interpret 'loc:' in the query below.
+
+==== C.2.4 Converting relational to RDF data
+
+Since content according to this model can only be canonically represented in RDF, it is necessary that all other forms of content claiming conformance to this model show they can be converted to RDF for canonical data validation using the validators in <<Annex A: Validators>>.
+
+The following SQL query obtains all the information necessary to formulate RDF for the valid example address `<http://example.com/oxford>` in the file extended-examples/oxford-place.ttl:
+
+```sql
+SELECT
+    a.pid, a.is_address_for,
+    ac.type, ac.has_value, ac.has_value_text,
+    g.geometry, g.type,
+    aa.address_pid
+FROM addresses a
+JOIN addresses_components ac
+ON a.pid = ac.address_pid
+JOIN geocodes g
+ON a.pid = g.address_pid
+JOIN address_aliases aa
+ON a.pid = aa.alias_pid
+WHERE a.pid = 'ex:oxford';
+```
+
+In the query above, a 4-table join is performed to obtain Address, Address Component, Address Geocode and Address Alias data.
+
+A simple string templating function in a programming language such as Python may be used to convert those results into RDF or an RDF toolkit, such as Python's https://pypi.org/project/rdflib/[RDFLib] or Java's https://jena.apache.org/[Jena], may be used.
+
+The file https://github.com/nicholascar/anz-nat-addr-model-candidate/tree/main/implementations/relational/qld-scenarios/rdf_converter.py[rdf_converter.py] is a Python script that:
+
+* reads the Relational Database Demo file
+* utilises the _pid_prefixes_ to map prefixed data to full IRIs
+* extracts all the elements of the `<http://example.com/oxford>` using the query above
+* adds all elements ton an RDF graph
+* prints the graph to text
+
+The resultant graph is valid according to both of the validators files in <<Annex A: Validators>>, just as the original in the extended-examples folder is.
 
 === C.3: G-NAF for Queensland Demo
 

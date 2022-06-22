@@ -1,7 +1,7 @@
 [[AnnexA]]
-== Annex A: Validator
+== Annex A: Validators
 
-A validator to test data claiming conformance to this model is one of the resources within this profile.
+Two validators to test data claiming conformance to this model are provided as resources within this profile.
 
 * machine-readable form: https://w3id.org/profile/anz-address/validator
 

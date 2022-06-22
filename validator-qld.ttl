@@ -42,18 +42,5 @@ addr:validator-qld
         sh:path addr:hasAddressComponent ;
         sh:minCount 2;
     ] ;
-    # sh:ask
-    #     """
-    #     PREFIX addr: <https://w3id.org/profile/anz-address/>
-    #     ASK
-    #     WHERE {
-    #       ?a addr:hasAddressComponent ?ac .
-    #       ?ac dcterms:type isov1:postcode .
-    #       ?ac addr:hasValue ?pc .
-    #
-    #       FILTER ( datatype(?pc) = xsd:integer )
-    #
-    #     }
-    #     """ ;
 .
 

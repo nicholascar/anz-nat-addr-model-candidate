@@ -14,7 +14,7 @@ addr:validator
     dcterms:provenance "This model validator was made for the Queensland Department of Resources, Spatial Information unit to assist with future Address database design."@en ;
     owl:versionIRI addr:0.0.1 ;
     owl:versionInfo "0.0.1" ;
-    skos:definition "This validator is a Shapes Constraint Language (SHACL) reesource that can be used to check the conformance of RDF data to the ANZ National Address Model (<https://w3id.org/profile/anz-address>)."@en ;
+    skos:definition "This validator is a Shapes Constraint Language (SHACL) resource that can be used to check the conformance of RDF data to the ANZ National Address Model (<https://w3id.org/profile/anz-address>)."@en ;
     skos:prefLabel "ANZ National Address Model Validator"@en ;
     sdo:codeRespository "https://github.com/nicholascar/anz-nat-addr-model-candidate/"^^xsd:anyURI ;
     sdo:copyrightHolder <https://orcid.org/0000-0002-8742-7730> ;
@@ -58,16 +58,16 @@ addr:validator
         ] ,
         [
             skos:prefLabel "has address component" ;
-            sh:message "An addr:Address must indicate at least one addr:AddressComponent that is an IRI with the property addr:hasAddressComponent." ;
+            sh:message "An addr:Address must indicate at least one addr:AddressComponent that is an IRI or a Blank Node with the property addr:hasAddressComponent." ;
             sh:minCount 1 ;
-            sh:nodeKind sh:IRI ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
             sh:path addr:hasAddressComponent
         ] ,
         [
             skos:prefLabel "has geocode" ;
-            sh:message "An addr:Address must indicate at least one addr:Geocode that is an IRI with the property addr:hasGeocode." ;
+            sh:message "An addr:Address must indicate at least one addr:Geocode that is an IRI or Blank Node with the property addr:hasGeocode." ;
             sh:minCount 1 ;
-            sh:nodeKind sh:IRI ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
             sh:path addr:hasAddressComponent
         ] ;
 .
@@ -102,11 +102,11 @@ addr:validator
     sh:property
         :soft-type ,
         [
-            skos:prefLabel "has geometry" ;
+            skos:prefLabel "has geometry representation" ;
             sh:maxCount 1 ;
-            sh:message "An addr:Geocode MUST indicate exactly one geometry resource with the property geo:hasGeometry" ;
+            sh:message "An addr:Geocode MUST indicate exactly one geometry representation the property geo:asWKT or geo:asGeoJSON or geo:asGML" ;
             sh:minCount 1 ;
-            sh:path geo:hasGeometry ;
+            sh:path [ sh:alternativePath ( geo:asWKT geo:asGeoJSON geo:asGML ) ] ;
         ] ;
 .
 

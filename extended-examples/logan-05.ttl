@@ -1,4 +1,6 @@
-# Logan 5 -  Rural / Remote Property None Found
+# Logan 5
+# Rural / Remote Property
+# 
 
 PREFIX a: <https://linked.data.gov.au/dataset/gnaf/address/>
 PREFIX cad: <https://w3id.org/profile/cad/>

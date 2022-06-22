@@ -239,9 +239,6 @@ a:GAQLD158836591 a pn:PlaceName,
     pn:status pn:gazetted ;
     pn:wasNamedBy <https://linked.data.gov.au/org/qld> ;
     addr:hasAddressComponent [ dcterms:type isov1:propertyName ;
-            addr:hasTextValue "Lornevale" ;
-            addr:hasValue "Lornevale" ],
-        [ dcterms:type isov1:propertyName ;
             addr:hasTextValue "Girraween National Park" ;
             addr:hasValue "Girraween National Park" ],
         [ dcterms:type isov1:streetLocality ;
@@ -255,15 +252,18 @@ a:GAQLD158836591 a pn:PlaceName,
             addr:hasValue <https://linked.data.gov.au/dataset/asgs/STE/3> ],
         [ dcterms:type isov1:postcode ;
             addr:hasTextValue "4382" ;
-            addr:hasValue 4382 ] ;
-    addr:hasGeocode [ dcterms:type geocodeType:PC ;
-            geo:asWKT "POINT(150.15238343 -23.58026583)"^^geo:wktLiteral ],
-        [ dcterms:type geocodeType:DF ;
-            geo:asWKT "POINT(150.144797 -23.576749)"^^geo:wktLiteral ],
-        [ dcterms:type geocodeType:DF ;
+            addr:hasValue 4382 ],
+        [ dcterms:type isov1:propertyName ;
+            addr:hasTextValue "Lornevale" ;
+            addr:hasValue "Lornevale" ] ;
+    addr:hasGeocode [ dcterms:type geocodeType:PAP ;
             geo:asWKT "POINT(151.95179638 -28.82625239)"^^geo:wktLiteral ],
         [ dcterms:type geocodeType:PC ;
-            geo:asWKT "POINT(151.95137227 -28.85355218)"^^geo:wktLiteral ] ;
+            geo:asWKT "POINT(151.95137227 -28.85355218)"^^geo:wktLiteral ],
+        [ dcterms:type geocodeType:PC ;
+            geo:asWKT "POINT(150.15238343 -23.58026583)"^^geo:wktLiteral ],
+        [ dcterms:type geocodeType:DF ;
+            geo:asWKT "POINT(150.144797 -23.576749)"^^geo:wktLiteral ] ;
     addr:isAddressFor <https://example.com/property/5ed9d572-f965-48e2-b06a-a8011ff12345>,
         as:157942023 .
 

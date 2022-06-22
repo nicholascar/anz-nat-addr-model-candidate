@@ -1,4 +1,6 @@
-# 3. Urban multi-storey building with multiple unit and floor types (AS/NZS 4819:2011, Section 5.11)
+# Scenario 3
+# Urban Multi-Storey Building
+#
 # · Craigston 217 Wickham Terrace, Spring Hill (2RP10197)
 # · Hotel style numbering over multiple floors including basement (unit B01 etc.) current address example;
 #  i. Level type and number: Basement

@@ -1,4 +1,6 @@
-# Logan 6 - National Park
+# Logan 6
+# Place Naming within Addressing
+#
 # Daisy Hill Conservation Park, multiple access points (Ford Road, Dennis Road) multiple potential geocodes across multiple lots 28RP173044, 552NPW752, 501SP217936
 
 PREFIX a: <https://linked.data.gov.au/dataset/gnaf/address/>

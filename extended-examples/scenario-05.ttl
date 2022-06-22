@@ -1,5 +1,7 @@
-# Rural/ Remote
-# 1. Rural Property (“LORNEVALE” 5306SP287760)
+# Scenario 5
+# Rural / Remote Property
+# 
+# 1. Rural Property ("LORNEVALE" 5306SP287760)
 # · 1 property name
 # · Multiple non-contiguous parcels (may be the same lot with disparate parts, or multiple lots)
 # · >1 site

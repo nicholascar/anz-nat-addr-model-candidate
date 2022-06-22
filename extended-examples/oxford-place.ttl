@@ -1,3 +1,8 @@
+# Oxford Place
+# A standard suburban address - all address components modelled - with an unofficial aliased
+#
+# 20 Oxford Place Shorncliffe, QLD is an alias of 2/18 Oxford Place Shorncliffe, QLD
+
 PREFIX a: <https://linked.data.gov.au/dataset/gnaf/address/>
 PREFIX as:  <https://linked.data.gov.au/dataset/gnaf/addressSite/>
 PREFIX addr: <https://w3id.org/profile/anz-address/>

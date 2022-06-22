@@ -1,4 +1,6 @@
-# Logan 3 - Urban Multi-Storey Building
+# Logan 3
+# Urban Multi-Storey Building
+#
 # 7SP294522 - 26-30 City Road Beenleigh QLD multiple units (but no floor types / unit types).
 
 PREFIX a: <https://linked.data.gov.au/dataset/gnaf/address/>

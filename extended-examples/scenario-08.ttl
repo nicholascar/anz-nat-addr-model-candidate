@@ -1,4 +1,6 @@
-# 8. Water address –(See AS/NZS4819:2011, Section 6.5)
+# Scenario 8
+# Water address (See AS/NZS4819:2011, Section 6.5)
+#
 # · Place name for island
 # · Address using water name not road name
 # · Address:

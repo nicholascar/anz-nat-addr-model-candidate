@@ -1,4 +1,6 @@
-# 6. National Park
+# Logan 6
+# Place Naming within Addressing
+#
 # · Giraween NP - PYRAMIDS RD GIRRAWEEN QLD (GIRRAWEEN NATIONAL PARK)
 # · Place name
 # · Related internal place names
@@ -61,7 +63,7 @@ a:GAQLD158836591
         ] ;
     addr:hasGeocode
         [
-            dcterms:type <https://linked.data.gov.au/dataset/gnaf/code/geocodeType/DF> ; # Property Access Point
+            dcterms:type <https://linked.data.gov.au/dataset/gnaf/code/geocodeType/PAP> ; # Property Access Point
             geo:asWKT "POINT(151.95179638 -28.82625239)"^^geo:wktLiteral ;
         ] ,
         [

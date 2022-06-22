@@ -470,7 +470,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_address_status_types_vocabulary">5.4. Address Status Types Vocabulary</a></li>
 </ul>
 </li>
-<li><a href="#AnnexA">Annex A: Validator</a></li>
+<li><a href="#AnnexA">Annex A: Validators</a></li>
 <li><a href="#_annex_b_extended_examples">Annex B: Extended Examples</a></li>
 <li><a href="#_annex_c_demo_implementations">Annex C: Demo Implementations</a>
 <ul class="sectlevel2">
@@ -756,7 +756,7 @@ flexibility" - things for Strategy implementers to aim for - "Guiding Principles
 <td class="tableblock halign-left valign-top"><p class="tableblock">The codelist vocabularies developed for this model and links to others  defined elsewhere but used by this model</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#AnnexA">Annex A: Validator</a> &amp; <a href="https://nicholascar.com/anz-nat-addr-model-candidate/validator.shacl.ttl">Validator</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Annex A: Validator">[Annex A: Validator]</a> &amp; <a href="https://nicholascar.com/anz-nat-addr-model-candidate/validator.shacl.ttl">Validator</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>Validation</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The machine-readable validator file used to validate data claiming conformance to this model</p></td>
 </tr>
@@ -2611,10 +2611,10 @@ The representations of vocabularies here do not contain full vocabulary informat
 </div>
 </div>
 <div class="sect1">
-<h2 id="AnnexA"><a class="anchor" href="#AnnexA"></a>Annex A: Validator</h2>
+<h2 id="AnnexA"><a class="anchor" href="#AnnexA"></a>Annex A: Validators</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A validator to test data claiming conformance to this model is one of the resources within this profile.</p>
+<p>Two validators to test data claiming conformance to this model are provided as resources within this profile.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2999,6 +2999,9 @@ To be fully functional, the <a href="https://www.gaia-gis.it/fossil/libspatialit
 <div class="paragraph">
 <p>To show equivalence to the <a href="#_c_1_rdf_database_demo">RDF Database Demo</a>, the three SPARQL queries shown there are reimplemented as SQLite SQL queries next.</p>
 </div>
+<div class="paragraph">
+<p>Additionally, <a href="#_c_2_4_converting_relational_to_rdf_data">C.2.4 Converting relational to RDF data</a> demonstrates how to convert some of the content from this relational implementation to RDF so it may be validated using the validators in <a href="#AnnexA">Annex A: Validators</a>.</p>
+</div>
 <div class="sect3">
 <h4 id="_c_2_1_ordered_address_components"><a class="anchor" href="#_c_2_1_ordered_address_components"></a>C.2.1 Ordered Address Components</h4>
 <div class="paragraph">
@@ -3087,6 +3090,63 @@ To match on a full IRI for 'loc:loc38f189794e03', which the equivalent SPARQL qu
 </table>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_c_2_4_converting_relational_to_rdf_data"><a class="anchor" href="#_c_2_4_converting_relational_to_rdf_data"></a>C.2.4 Converting relational to RDF data</h4>
+<div class="paragraph">
+<p>Since content according to this model can only be canonically represented in RDF, it is necessary that all other forms of content claiming conformance to this model show they can be converted to RDF for canonical data validation using the validators in <a href="#AnnexA">Annex A: Validators</a>.</p>
+</div>
+<div class="paragraph">
+<p>The following SQL query obtains all the information necessary to formulate RDF for the valid example address <code><a href="http://example.com/oxford" class="bare">http://example.com/oxford</a></code> in the file extended-examples/oxford-place.ttl:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sql" data-lang="sql">SELECT
+    a.pid, a.is_address_for,
+    ac.type, ac.has_value, ac.has_value_text,
+    g.geometry, g.type,
+    aa.address_pid
+FROM addresses a
+JOIN addresses_components ac
+ON a.pid = ac.address_pid
+JOIN geocodes g
+ON a.pid = g.address_pid
+JOIN address_aliases aa
+ON a.pid = aa.alias_pid
+WHERE a.pid = 'ex:oxford';</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the query above, a 4-table join is performed to obtain Address, Address Component, Address Geocode and Address Alias data.</p>
+</div>
+<div class="paragraph">
+<p>A simple string templating function in a programming language such as Python may be used to convert those results into RDF or an RDF toolkit, such as Python&#8217;s <a href="https://pypi.org/project/rdflib/">RDFLib</a> or Java&#8217;s <a href="https://jena.apache.org/">Jena</a>, may be used.</p>
+</div>
+<div class="paragraph">
+<p>The file <a href="https://github.com/nicholascar/anz-nat-addr-model-candidate/tree/main/implementations/relational/qld-scenarios/rdf_converter.py">rdf_converter.py</a> is a Python script that:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>reads the Relational Database Demo file</p>
+</li>
+<li>
+<p>utilises the <em>pid_prefixes</em> to map prefixed data to full IRIs</p>
+</li>
+<li>
+<p>extracts all the elements of the <code><a href="http://example.com/oxford" class="bare">http://example.com/oxford</a></code> using the query above</p>
+</li>
+<li>
+<p>adds all elements ton an RDF graph</p>
+</li>
+<li>
+<p>prints the graph to text</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The resultant graph is valid according to both of the validators files in <a href="#AnnexA">Annex A: Validators</a>, just as the original in the extended-examples folder is.</p>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_c_3_g_naf_for_queensland_demo"><a class="anchor" href="#_c_3_g_naf_for_queensland_demo"></a>C.3: G-NAF for Queensland Demo</h3>
@@ -3141,7 +3201,7 @@ To match on a full IRI for 'loc:loc38f189794e03', which the equivalent SPARQL qu
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-06-22 13:10:15 UTC
+Last updated 2022-06-22 14:49:55 UTC
 </div>
 </div>
 </body>

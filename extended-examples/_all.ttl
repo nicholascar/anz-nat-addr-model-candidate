@@ -7,7 +7,7 @@
 @prefix ex: <http://example.com/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix geocodeType: <https://linked.data.gov.au/dataset/gnaf/code/geocodeType/> .
-@prefix isov1: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/> .
+@prefix actiso: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/> .
 @prefix pn: <https://linked.data.gov.au/def/placenames/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -18,16 +18,16 @@ ex:40augustus a addr:Address ;
     addr:isAddressFor <http://example.com/property/5ed9d572-f965-48e2-b06a-a8011ffd5378> .
 
 ex:double a addr:Address ;
-    addr:hasAddressComponent [ dcterms:type isov1:propertyName ;
+    addr:hasAddressComponent [ dcterms:type actiso:propertyName ;
             addr:hasValueText "Double Island" ;
             addr:hasValue "Double Island" ],
-        [ dcterms:type isov1:locality ;
+        [ dcterms:type actiso:locality ;
             addr:hasValueText "Ellis Beach" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/locality/loc9e0bb59f8df8> ],
-        [ dcterms:type isov1:administrativeArea ;
+        [ dcterms:type actiso:administrativeArea ;
             addr:hasValueText "Queensland" ;
             addr:hasValue <https://linked.data.gov.au/dataset/asgsed3/STE/3> ],
-        [ dcterms:type isov1:postcode ;
+        [ dcterms:type actiso:postcode ;
             addr:hasValueText "4879" ;
             addr:hasValue 4879 ] ;
     addr:hasGeocode [ dcterms:type geocodeType:PC ;
@@ -70,7 +70,7 @@ a:GAQLD158172597 a addr:Address ;
     addr:isAddressFor as:158154046 .
 
 a:GAQLD158836591 a addr:Address ;
-    addr:hasAddressComponent [ dcterms:type isov1:propertyName ;
+    addr:hasAddressComponent [ dcterms:type actiso:propertyName ;
             addr:hasValueText "Lornevale" ;
             addr:hasValue "Lornevale" ] ;
     addr:hasGeocode [ dcterms:type geocodeType:PC ;
@@ -86,17 +86,17 @@ a:GAQLD161337673 a addr:Address ;
     addr:isAddressFor <http://example.com/property/5ed9d572-f965-48e2-b06a-a8011ffbccc> .
 
 a:GAQLD162861329 a addr:Address ;
-    addr:hasAddressComponent [ dcterms:type isov1:buildingName ;
+    addr:hasAddressComponent [ dcterms:type actiso:buildingName ;
             addr:hasValueText "Springlands Park" ;
             addr:hasValue "Springlands Park" ] ;
     addr:hasAlias [ dcterms:type aat:SYN ;
             rdf:value a:GAQLD720871566 ] .
 
 a:GAQLD163023823 a addr:Address ;
-    addr:hasAddressComponent [ dcterms:type isov1:propertyName ;
+    addr:hasAddressComponent [ dcterms:type actiso:propertyName ;
             addr:hasValueText "Greenbank Gardens" ;
             addr:hasValue "Greenbank Gardens" ],
-        [ dcterms:type isov1:flatNumber ;
+        [ dcterms:type actiso:flatNumber ;
             addr:hasValueText "139" ;
             addr:hasValue 139 ] ;
     addr:hasPrimary a:GAQLD162713140 .
@@ -117,31 +117,31 @@ a:GAQLD720201913 addr:hasPrimary a:GAQLD156784285 .
 a:GAQLD720210580 addr:hasPrimary a:GAQLD162885717 .
 
 a:GAQLD720211887 a addr:Address ;
-    addr:hasAddressComponent [ dcterms:type isov1:buildingName ;
+    addr:hasAddressComponent [ dcterms:type actiso:buildingName ;
             addr:hasValueText "Craigston" ;
             addr:hasValue "Craigston" ],
-        [ dcterms:type isov1:flatTypeCode ;
+        [ dcterms:type actiso:flatTypeCode ;
             addr:hasValueText "Studio" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/code/flatType/STU> ],
-        [ dcterms:type isov1:flatNumberPrefix ;
+        [ dcterms:type actiso:flatNumberPrefix ;
             addr:hasValueText "B" ;
             addr:hasValue "B" ],
-        [ dcterms:type isov1:flatNumber ;
+        [ dcterms:type actiso:flatNumber ;
             addr:hasValueText "1" ;
             addr:hasValue 1 ],
-        [ dcterms:type isov1:numberFirst ;
+        [ dcterms:type actiso:numberFirst ;
             addr:hasValueText "217" ;
             addr:hasValue 217 ],
-        [ dcterms:type isov1:streetLocality ;
+        [ dcterms:type actiso:streetLocality ;
             addr:hasValueText "Wickham Terrace" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/streetLocality/QLD143175> ],
-        [ dcterms:type isov1:locality ;
+        [ dcterms:type actiso:locality ;
             addr:hasValueText "Spring Hill" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/locality/locbf2ab9bc6c4c> ],
-        [ dcterms:type isov1:administrativeArea ;
+        [ dcterms:type actiso:administrativeArea ;
             addr:hasValueText "Queensland" ;
             addr:hasValue <https://linked.data.gov.au/dataset/asgsed3/STE/3> ],
-        [ dcterms:type isov1:postcode ;
+        [ dcterms:type actiso:postcode ;
             addr:hasValueText "4000" ;
             addr:hasValue 4000 ] ;
     addr:hasGeocode [ dcterms:type geocodeType:PC ;
@@ -149,31 +149,31 @@ a:GAQLD720211887 a addr:Address ;
     addr:isAddressFor as:715596948 .
 
 a:GAQLD720211887-proposed a addr:Address ;
-    addr:hasAddressComponent [ dcterms:type isov1:buildingName ;
+    addr:hasAddressComponent [ dcterms:type actiso:buildingName ;
             addr:hasValueText "Craigston" ;
             addr:hasValue "Craigston" ],
-        [ dcterms:type isov1:levelTypeCode ;
+        [ dcterms:type actiso:levelTypeCode ;
             addr:hasValueText "Basement" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/code/levelType/B> ],
-        [ dcterms:type isov1:flatTypeCode ;
+        [ dcterms:type actiso:flatTypeCode ;
             addr:hasValueText "Studio" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/code/flatType/STU> ],
-        [ dcterms:type isov1:flatNumber ;
+        [ dcterms:type actiso:flatNumber ;
             addr:hasValueText "1" ;
             addr:hasValue 1 ],
-        [ dcterms:type isov1:numberFirst ;
+        [ dcterms:type actiso:numberFirst ;
             addr:hasValueText "217" ;
             addr:hasValue 217 ],
-        [ dcterms:type isov1:streetLocality ;
+        [ dcterms:type actiso:streetLocality ;
             addr:hasValueText "Wickham Terrace" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/streetLocality/QLD143175> ],
-        [ dcterms:type isov1:locality ;
+        [ dcterms:type actiso:locality ;
             addr:hasValueText "Spring Hill" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/locality/locbf2ab9bc6c4c> ],
-        [ dcterms:type isov1:administrativeArea ;
+        [ dcterms:type actiso:administrativeArea ;
             addr:hasValueText "Queensland" ;
             addr:hasValue <https://linked.data.gov.au/dataset/asgsed3/STE/3> ],
-        [ dcterms:type isov1:postcode ;
+        [ dcterms:type actiso:postcode ;
             addr:hasValueText "4000" ;
             addr:hasValue 4000 ] ;
     addr:hasGeocode [ dcterms:type geocodeType:PC ;
@@ -181,19 +181,19 @@ a:GAQLD720211887-proposed a addr:Address ;
     addr:isAddressFor as:715596948 .
 
 ex:oxford a addr:Address ;
-    addr:hasAddressComponent [ dcterms:type isov1:numberFirst ;
+    addr:hasAddressComponent [ dcterms:type actiso:numberFirst ;
             addr:hasValueText "20" ;
             addr:hasValue 20 ],
-        [ dcterms:type isov1:streetLocality ;
+        [ dcterms:type actiso:streetLocality ;
             addr:hasValueText "Oxford Place" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/streetLocality/QLD140492> ],
-        [ dcterms:type isov1:locality ;
+        [ dcterms:type actiso:locality ;
             addr:hasValueText "Shorncliffe" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/locality/loc38f189794e03> ],
-        [ dcterms:type isov1:administrativeArea ;
+        [ dcterms:type actiso:administrativeArea ;
             addr:hasValueText "Queensland" ;
             addr:hasValue <https://linked.data.gov.au/dataset/asgsed3/STE/3> ],
-        [ dcterms:type isov1:postcode ;
+        [ dcterms:type actiso:postcode ;
             addr:hasValueText "4017" ;
             addr:hasValue 4017 ] ;
     addr:hasGeocode [ dcterms:type geocodeType:PC ;
@@ -235,7 +235,7 @@ a:GAQLD156784285 a addr:Address ;
     addr:hasAlias [ dcterms:type aat:SYN ;
             rdf:value a:GAQLD162885717 ] .
 
-a:GAQLD157309481 addr:hasAddressComponent [ dcterms:type isov1:propertyName ;
+a:GAQLD157309481 addr:hasAddressComponent [ dcterms:type actiso:propertyName ;
             addr:hasValueText "Waterford Heights" ;
             addr:hasValue "Waterford Heights" ] .
 
@@ -248,19 +248,19 @@ a:GAQLD157959170 a pn:PlaceName,
     pn:placeNameOf as:157942023 ;
     pn:status pn:gazetted ;
     pn:wasNamedBy <https://linked.data.gov.au/org/qld> ;
-    addr:hasAddressComponent [ dcterms:type isov1:propertyName ;
+    addr:hasAddressComponent [ dcterms:type actiso:propertyName ;
             addr:hasValueText "Girraween National Park" ;
             addr:hasValue "Girraween National Park" ],
-        [ dcterms:type isov1:streetLocality ;
+        [ dcterms:type actiso:streetLocality ;
             addr:hasValueText "Pyramids Road" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/streetLocality/QLD2213217> ],
-        [ dcterms:type isov1:locality ;
+        [ dcterms:type actiso:locality ;
             addr:hasValueText "Girraween" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/locality/loc44125fbb0fed> ],
-        [ dcterms:type isov1:administrativeArea ;
+        [ dcterms:type actiso:administrativeArea ;
             addr:hasValueText "Queensland" ;
             addr:hasValue <https://linked.data.gov.au/dataset/asgsed3/STE/3> ],
-        [ dcterms:type isov1:postcode ;
+        [ dcterms:type actiso:postcode ;
             addr:hasValueText "4382" ;
             addr:hasValue 4382 ] ;
     addr:hasGeocode [ dcterms:type geocodeType:PAP ;
@@ -274,22 +274,22 @@ a:GAQLD158826402 a addr:Address .
 a:GAQLD159419299 addr:hasAlias a:GAQLD157309481 .
 
 a:GAQLD161268186 a addr:Address ;
-    addr:hasAddressComponent [ dcterms:type isov1:streetLocality ;
+    addr:hasAddressComponent [ dcterms:type actiso:streetLocality ;
             addr:hasValueText "Oxford Place" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/streetLocality/QLD140492> ],
-        [ dcterms:type isov1:locality ;
+        [ dcterms:type actiso:locality ;
             addr:hasValueText "Shorncliffe" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/locality/loc38f189794e03> ],
-        [ dcterms:type isov1:administrativeArea ;
+        [ dcterms:type actiso:administrativeArea ;
             addr:hasValueText "Queensland" ;
             addr:hasValue <https://linked.data.gov.au/dataset/asgsed3/STE/3> ],
-        [ dcterms:type isov1:postcode ;
+        [ dcterms:type actiso:postcode ;
             addr:hasValueText "4017" ;
             addr:hasValue 4017 ],
-        [ dcterms:type isov1:flatNumber ;
+        [ dcterms:type actiso:flatNumber ;
             addr:hasValueText "2" ;
             addr:hasValue 2 ],
-        [ dcterms:type isov1:numberFirst ;
+        [ dcterms:type actiso:numberFirst ;
             addr:hasValueText "18" ;
             addr:hasValue 18 ] ;
     addr:hasAlias [ dcterms:type aat:SYN ;
@@ -299,7 +299,7 @@ a:GAQLD161268186 a addr:Address ;
     addr:isAddressFor as:161162441 .
 
 a:GAQLD161294216 a addr:Address ;
-    addr:hasAddressComponent [ dcterms:type isov1:propertyName ;
+    addr:hasAddressComponent [ dcterms:type actiso:propertyName ;
             addr:hasValueText "The Village" ;
             addr:hasValue "The Village" ] ;
     addr:hasGeocode [ dcterms:type geocodeType:PAP ;
@@ -307,7 +307,7 @@ a:GAQLD161294216 a addr:Address ;
     addr:hasSecondary a:GAQLD720181124 .
 
 a:GAQLD162432045 a addr:Address ;
-    addr:hasAddressComponent [ dcterms:type isov1:propertyName ;
+    addr:hasAddressComponent [ dcterms:type actiso:propertyName ;
             addr:hasValueText "Halcyon Waters" ;
             addr:hasValue "Halcyon Waters" ] ;
     addr:hasGeocode [ dcterms:type geocodeType:PC ;
@@ -315,7 +315,7 @@ a:GAQLD162432045 a addr:Address ;
     addr:hasSecondary a:GAQLD162469253 .
 
 a:GAQLD162469253 a addr:Address ;
-    addr:hasAddressComponent [ dcterms:type isov1:propertyName ;
+    addr:hasAddressComponent [ dcterms:type actiso:propertyName ;
             addr:hasValueText "Halcyon Waters" ;
             addr:hasValue "Halcyon Waters" ] ;
     addr:hasGeocode [ dcterms:type geocodeType:BC ;
@@ -323,7 +323,7 @@ a:GAQLD162469253 a addr:Address ;
     addr:hasPrimary a:GAQLD162432045 .
 
 a:GAQLD162713140 a addr:Address ;
-    addr:hasAddressComponent [ dcterms:type isov1:propertyName ;
+    addr:hasAddressComponent [ dcterms:type actiso:propertyName ;
             addr:hasValueText "Greenbank Gardens" ;
             addr:hasValue "Greenbank Gardens" ] ;
     addr:isAddressFor <http://example.com/property/8SP213685> .
@@ -334,7 +334,7 @@ a:GAQLD719931625 a addr:Address ;
     addr:hasPrimary a:GAQLD163304422 .
 
 a:GAQLD720181124 a addr:Address ;
-    addr:hasAddressComponent [ dcterms:type isov1:propertyName ;
+    addr:hasAddressComponent [ dcterms:type actiso:propertyName ;
             addr:hasValueText "The Village" ;
             addr:hasValue "The Village" ] ;
     addr:hasGeocode [ dcterms:type geocodeType:BC ;
@@ -349,7 +349,7 @@ a:GAQLD720868711 a addr:Address ;
     addr:hasPrimary a:GAQLD159419153 .
 
 a:GAQLD720871566 a addr:Address ;
-    addr:hasAddressComponent [ dcterms:type isov1:buildingName ;
+    addr:hasAddressComponent [ dcterms:type actiso:buildingName ;
             addr:hasValueText "Springlands Park" ;
             addr:hasValue "Springlands Park" ] .
 

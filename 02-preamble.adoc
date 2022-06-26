@@ -15,22 +15,25 @@ This model is built on a small set of well-regarded Semantic Web models which us
 |===
 |Prefix | Namespace | Description
 
-| `*addr:*` | `*https://w3id.org/profile/anz-address/*` | *Placeholder namespace for this model*
-| `role:` | `https://w3id.org/profile/anz-address/AddressRoleType/` | Placeholder for the Address Roles Vocabulary
-| `asgsed3:` | `http://linked.data.gov.au/dataset/asgsed3/` | Australian Statistical Geographies Standard Dataset, Release 3
-| `dcterms:` | `http://purl.org/dc/terms/` | Dublin Core Terms vocabulary namespace
-| `ex:` | `http://example.com/thing` | Generic examples namespace
-| `geo:` | `http://www.opengis.net/ont/geosparql#` | OGC GeoSPARQL
-| `isov1:` | `http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/` | <<ISO19160-1>>'s `AddressComponentType` vocabulary namespace
-| `isov2:` | `https://w3id.org/profile/anz-address/AddressLifecycleStageType/` | <<ISO19160-1>>'s `AddressLifecycleStage` vocabulary namespace
-| `isov3:` | `https://w3id.org/profile/anz-address/AddressStatusType/` | <<ISO19160-1>>'s `AddressStatus` vocabulary namespace
-| `owl:` | `http://www.w3.org/2002/07/owl#` | Web Ontology Language ontology namespace
-| `rdfs:` | `http://www.w3.org/2000/01/rdf-schema#` | RDF Schema ontology namespace
-| `sosa:` | `http://www.w3.org/ns/sosa/` | Sensor, Observation, Sample, and Actuator ontology namespace
-| `skos:` | `http://www.w3.org/2004/02/skos/core#` | Simple Knowledge Organization System (SKOS) ontology namespace
-| `time:` | `http://www.w3.org/2006/time#` | Time Ontology in OWL namespace
-| `void:` | `http://rdfs.org/ns/void#` | Vocabulary of Interlinked Data (VoID) ontology namespace
-| `xsd:` | `http://www.w3.org/2001/XMLSchema#` | XML Schema Definitions ontology namespace
+| `*addr*` | `*https://w3id.org/profile/anz-address/*` | *Placeholder namespace for this model*
+| `role` | `https://w3id.org/profile/anz-address/AddressRoleType/` | Placeholder for the Address Roles Vocabulary
+| `asgsed3` | `http://linked.data.gov.au/dataset/asgsed3/` | Australian Statistical Geographies Standard Dataset, Release 3
+| `dcterms` | `http://purl.org/dc/terms/` | Dublin Core Terms vocabulary namespace
+| `ex` | `http://example.com/thing` | Generic examples namespace
+| `geo` | `http://www.opengis.net/ont/geosparql#` | OGC GeoSPARQL
+| `act` | `https://w3id.org/profile/anz-address/AddressComponentType/` | This model's `AddressComponentType` vocabulary namespace
+| `actiso` | `http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/` | <<ISO19160-1>>'s `AddressComponentType` vocabulary namespace
+| `als` | `https://w3id.org/profile/anz-address/AddressLifecycleStageType/` | This model's `AddressLifecycleStageType` vocabulary namespace
+| `alsiso` | `http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressLifecycleStageType/` | <<ISO19160-1>>'s `AddressLifecycleStageType` vocabulary namespace
+| `ast` | `https://w3id.org/profile/anz-address/AddressStatusType/` | This model's `AddressStatusType` vocabulary namespace
+| `astiso` | `http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressStatusType/` | <<ISO19160-1>>'s `AddressStatusType` vocabulary namespace
+| `owl` | `http://www.w3.org/2002/07/owl#` | Web Ontology Language ontology namespace
+| `rdfs` | `http://www.w3.org/2000/01/rdf-schema#` | RDF Schema ontology namespace
+| `sosa` | `http://www.w3.org/ns/sosa/` | Sensor, Observation, Sample, and Actuator ontology namespace
+| `skos` | `http://www.w3.org/2004/02/skos/core#` | Simple Knowledge Organization System (SKOS) ontology namespace
+| `time` | `http://www.w3.org/2006/time#` | Time Ontology in OWL namespace
+| `void` | `http://rdfs.org/ns/void#` | Vocabulary of Interlinked Data (VoID) ontology namespace
+| `xsd` | `http://www.w3.org/2001/XMLSchema#` | XML Schema Definitions ontology namespace
 |===
 
 === Conformance

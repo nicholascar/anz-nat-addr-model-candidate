@@ -15,7 +15,7 @@ PREFIX cad: <https://w3id.org/profile/cad/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX ex: <http://example.com/>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-PREFIX isov1: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/>
+PREFIX actiso: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/>
 PREFIX pn: <https://linked.data.gov.au/def/placenames/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sdo: <https://schema.org/>
@@ -30,27 +30,27 @@ a:GAQLD157959170
     addr:hasAddressComponent
         # no relevant street number
         [
-            dcterms:type isov1:propertyName ;
+            dcterms:type actiso:propertyName ;
             addr:hasValueText "Girraween National Park" ;
             addr:hasValue "Girraween National Park"
         ] ,
         [
-            dcterms:type isov1:streetLocality ;
+            dcterms:type actiso:streetLocality ;
             addr:hasValueText "Pyramids Road" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/streetLocality/QLD2213217>
         ] ,
         [
-            dcterms:type isov1:locality ;
+            dcterms:type actiso:locality ;
             addr:hasValueText "Girraween" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/locality/loc44125fbb0fed>
         ] ,
         [
-            dcterms:type isov1:administrativeArea ;
+            dcterms:type actiso:administrativeArea ;
             addr:hasValueText "Queensland" ;
             addr:hasValue <https://linked.data.gov.au/dataset/asgsed3/STE/3>
         ] ,
         [
-            dcterms:type isov1:postcode ;
+            dcterms:type actiso:postcode ;
             addr:hasValueText "4382" ;
             addr:hasValue 4382
         ] ;

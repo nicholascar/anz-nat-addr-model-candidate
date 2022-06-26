@@ -6,7 +6,7 @@
 PREFIX a: <https://linked.data.gov.au/dataset/gnaf/address/>
 PREFIX addr: <https://w3id.org/profile/anz-address/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX isov1: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/>
+PREFIX actiso: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
 
@@ -36,7 +36,7 @@ a:GAQLD159419299 addr:hasAlias a:GAQLD157309481 .
 a:GAQLD157309481
     addr:hasAddressComponent
         [
-            dcterms:type isov1:propertyName ;
+            dcterms:type actiso:propertyName ;
             addr:hasValueText "Waterford Heights" ;
             addr:hasValue "Waterford Heights"
         ] ;
@@ -70,7 +70,7 @@ a:GAQLD162861329
 a:GAQLD162861329
     addr:hasAddressComponent
         [
-            dcterms:type isov1:buildingName ;
+            dcterms:type actiso:buildingName ;
             addr:hasValueText "Springlands Park" ;
             addr:hasValue "Springlands Park"
         ] ;
@@ -79,7 +79,7 @@ a:GAQLD162861329
 a:GAQLD720871566
     addr:hasAddressComponent
         [
-            dcterms:type isov1:buildingName ;
+            dcterms:type actiso:buildingName ;
             addr:hasValueText "Springlands Park" ;
             addr:hasValue "Springlands Park"
         ] ;

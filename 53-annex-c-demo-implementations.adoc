@@ -17,21 +17,21 @@ For those Addresses that have components - not all in the example data - this qu
 ```sparql
 PREFIX addr: <https://w3id.org/profile/anz-address/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX isov1: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/>
+PREFIX actiso: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/>
 
 SELECT ?a ?ac_type ?val ?val_text
 WHERE {
     VALUES (?ac_type ?ac_order) {
-        (isov1:buildingName 1)
-        (isov1:propertyName 2)
-        (isov1:traditionalPlaceName 3)
-        (isov1:flatTypeCode 4)
-        (isov1:flatNumber 5)
-        (isov1:numberFirst 6)
-        (isov1:streetLocality 7)
-        (isov1:locality 8)
-        (isov1:postcode 9)
-        (isov1:administrativeArea 10)
+        (actiso:buildingName 1)
+        (actiso:propertyName 2)
+        (actiso:indigenousPlaceName 3)
+        (actiso:flatTypeCode 4)
+        (actiso:flatNumber 5)
+        (actiso:numberFirst 6)
+        (actiso:streetLocality 7)
+        (actiso:locality 8)
+        (actiso:postcode 9)
+        (actiso:administrativeArea 10)
     }
     ?a a addr:Address ;
         addr:hasAddressComponent [
@@ -48,10 +48,10 @@ This query selects only Address Components of the types given in the `VALUES` li
 |===
 | ?a | ?ac_type | ?val | ?val_text
 
-|`a:GAQLD161268186` | `isov1:flatNumber` | "2"^^xsd:integer | "2"
-|`a:GAQLD161268186` | `isov1:numberFirst` | "18"^^xsd:integer | "18"
-|`a:GAQLD161268186` | `isov1:streetLocality` | `sl:QLD140492` | "Oxford Place"
-|`a:GAQLD161268186` | `isov1:locality` | `l:loc38f189794e03` | "Shorncliffe"
+|`a:GAQLD161268186` | `actiso:flatNumber` | "2"^^xsd:integer | "2"
+|`a:GAQLD161268186` | `actiso:numberFirst` | "18"^^xsd:integer | "18"
+|`a:GAQLD161268186` | `actiso:streetLocality` | `sl:QLD140492` | "Oxford Place"
+|`a:GAQLD161268186` | `actiso:locality` | `l:loc38f189794e03` | "Shorncliffe"
 |===
 
 * `l` : `https://linked.data.gov.au/dataset/gnaf/locality/`
@@ -120,7 +120,7 @@ WHERE {
 }
 ```
 
-This query finds two results (the oxford-place examples) since they indicate they have Shorncliffe as an Address Component of type `isov1:locality` by reference to the GNAF Locality PID `<https://linked.data.gov.au/dataset/gnaf/locality/loc38f189794e03>`.
+This query finds two results (the oxford-place examples) since they indicate they have Shorncliffe as an Address Component of type `actiso:locality` by reference to the GNAF Locality PID `<https://linked.data.gov.au/dataset/gnaf/locality/loc38f189794e03>`.
 
 To find all of the Addresses in Queensland we could use the PID of Queensland given by the https://asgs.linked.fsdf.org.au/[Australian Statistical Geography Standard] since that's the object ID related to in this examples data
 
@@ -174,16 +174,16 @@ FROM addresses_components
 ORDER BY
   address_pid,
   CASE type
-    WHEN 'isov1:buildingName' THEN 0
-    WHEN 'isov1:propertyName' THEN 1
-    WHEN 'isov1:traditionalPlaceName' THEN 2
-    WHEN 'isov1:flatTypeCode' THEN 3
-    WHEN 'isov1:flatNumber' THEN 4
-    WHEN 'isov1:numberFirst' THEN 5
-    WHEN 'isov1:streetLocality' THEN 6
-    WHEN 'isov1:locality' THEN 7
-    WHEN 'isov1:postcode' THEN 8
-    WHEN 'isov1:administrativeArea' THEN 9
+    WHEN 'actiso:buildingName' THEN 0
+    WHEN 'actiso:propertyName' THEN 1
+    WHEN 'actiso:indigenousPlaceName' THEN 2
+    WHEN 'actiso:flatTypeCode' THEN 3
+    WHEN 'actiso:flatNumber' THEN 4
+    WHEN 'actiso:numberFirst' THEN 5
+    WHEN 'actiso:streetLocality' THEN 6
+    WHEN 'actiso:locality' THEN 7
+    WHEN 'actiso:postcode' THEN 8
+    WHEN 'actiso:administrativeArea' THEN 9
   END
 ```
 

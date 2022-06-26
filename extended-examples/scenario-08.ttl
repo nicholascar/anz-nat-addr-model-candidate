@@ -14,7 +14,7 @@ PREFIX cad: <https://w3id.org/profile/cad/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX geocodeType: <https://linked.data.gov.au/dataset/gnaf/code/geocodeType/>
-PREFIX isov1: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/>
+PREFIX actiso: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/>
 
 
 # A Single Property - Addressable Object - declared for the whole Conservation Park
@@ -32,22 +32,22 @@ PREFIX isov1: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComp
     addr:isAddressFor <http://example.com/parcel/23456789> ;
     addr:hasAddressComponent
         [
-            dcterms:type isov1:propertyName ;
+            dcterms:type actiso:propertyName ;
             addr:hasValueText "Double Island" ;
             addr:hasValue "Double Island"
         ] ,
         [
-            dcterms:type isov1:locality ;
+            dcterms:type actiso:locality ;
             addr:hasValueText "Ellis Beach" ;
             addr:hasValue <https://linked.data.gov.au/dataset/gnaf/locality/loc9e0bb59f8df8>
         ] ,
         [
-            dcterms:type isov1:administrativeArea ;
+            dcterms:type actiso:administrativeArea ;
             addr:hasValueText "Queensland" ;
             addr:hasValue <https://linked.data.gov.au/dataset/asgsed3/STE/3>
         ] ,
         [
-            dcterms:type isov1:postcode ;
+            dcterms:type actiso:postcode ;
             addr:hasValueText "4879" ;
             addr:hasValue 4879
         ] ;

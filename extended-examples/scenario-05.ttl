@@ -18,7 +18,7 @@ PREFIX addr: <https://w3id.org/profile/anz-address/>
 PREFIX cad: <https://w3id.org/profile/cad/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-PREFIX isov1: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/>
+PREFIX actiso: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 
@@ -28,7 +28,7 @@ a:GAQLD158836591
     addr:isAddressFor <http://example.com/property/5ed9d572-f965-48e2-b06a-a8011ff12345> ;
     addr:hasAddressComponent
         [
-            dcterms:type isov1:propertyName ;
+            dcterms:type actiso:propertyName ;
             addr:hasValueText "Lornevale" ;
             addr:hasValue "Lornevale"
         ] ;

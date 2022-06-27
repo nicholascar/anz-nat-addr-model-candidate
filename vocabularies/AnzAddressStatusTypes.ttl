@@ -1,7 +1,7 @@
-PREFIX ast: <https://w3id.org/profile/anz-address/AddressStatusTypes/>
-PREFIX cs: <https://w3id.org/profile/anz-address/AddressStatusTypes>
-PREFIX astiso: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressStatusTypes/>
-PREFIX astisocs: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressStatusTypes>
+PREFIX ast: <https://w3id.org/profile/anz-address/AnzAddressStatusTypes/>
+PREFIX cs: <https://w3id.org/profile/anz-address/AnzAddressStatusTypes>
+PREFIX astiso: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressStatusTypes/>
+PREFIX astisocs: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressStatusTypes>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -16,13 +16,13 @@ cs:
     a skos:ConceptScheme ;
     dcterms:created "2022-05-11"^^xsd:date ;
     dcterms:creator <https://orcid.org/0000-0002-8742-7730> ;
-    dcterms:identifier "AddressStatusTypes"^^xsd:token ;
+    dcterms:identifier "AnzAddressStatusTypes"^^xsd:token ;
     dcterms:issued "2000-01-01"^^xsd:date ;
     dcterms:modified "2022-06-126"^^xsd:date ;
     dcterms:provenance "Derived from the ISO19160-1 AddressStatus codelist vocabulary"@en ;
     dcterms:publisher <https://linked.data.gov.au/def/icsm> ;
     prov:wasDerivedFrom astisocs: ;
-    skos:definition "ANZ vocabulary of Address Status Types"@en ;
+    skos:definition "ANZ vocabulary of Address Status Types that convey the authority of the Address"@en ;
     skos:hasTopConcept
         astiso:official ,
         astiso:unknown ,

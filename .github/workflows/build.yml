@@ -27,6 +27,11 @@ jobs:
         cp model.ttl docs/             
         echo "Add images to docs/"
         cp -r img docs/
+        echo "Add vocabularies to docs/"
+        asciidoctor vocabularies/AnzAddressComponentTypes.adoc -o docs/AnzAddressComponentTypes.html
+        asciidoctor vocabularies/AnzAddressLifecycleStageTypes.adoc -o docs/AnzAddressLifecycleStageTypes.html
+        asciidoctor vocabularies/AnzAddressRoleTypes.adoc -o docs/AnzAddressRoleTypes.html
+        asciidoctor vocabularies/AnzAddressStatusTypes.adoc -o docs/AnzAddressStatusTypes.html
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:

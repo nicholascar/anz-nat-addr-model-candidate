@@ -1,7 +1,7 @@
-PREFIX act: <https://w3id.org/profile/anz-address/AddressComponentType/>
-PREFIX cs: <https://w3id.org/profile/anz-address/AddressComponentType>
-PREFIX actiso: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/>
-PREFIX actisocs: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType>
+PREFIX act: <https://w3id.org/profile/anz-address/AnzAddressComponentTypes/>
+PREFIX cs: <https://w3id.org/profile/anz-address/AnzAddressComponentTypes>
+PREFIX actiso: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressComponentTypes/>
+PREFIX actisocs: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressComponentTypes>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX reg: <http://purl.org/linked-data/registry#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -13,13 +13,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 cs:
     a skos:ConceptScheme ;
-    dcterms:identifier "AddressComponentType"^^xsd:token ;
+    dcterms:identifier "AnzAddressComponentTypes"^^xsd:token ;
     dcterms:created "2022-05-04"^^xsd:date ;
     dcterms:creator <https://orcid.org/0000-0002-8742-7730> ;
     dcterms:modified "2022-06-26"^^xsd:date ;
     dcterms:publisher <https://orcid.org/0000-0002-8742-7730> ;
     dcterms:rights "Copyright 2022, Nicholas J. Car" ;
-    dcterms:provenance "Developed for the ANZ National Address Model using the codelist AddressComponentType from ISO19160-1 and Address Detail fields from the G-NAF data model as a partial sources" ;
+    dcterms:provenance "Developed for the ANZ National Address Model using the codelist AnzAddressComponentTypes from ISO19160-1 and Address Detail fields from the G-NAF data model as a partial sources" ;
     skos:definition "Address Component Types are kinds of Address Components. The kind is used to validate Address Component values and to order Address Components for address printing."@en ;
     skos:hasTopConcept
         actiso:addressedObjectIdentifier ,

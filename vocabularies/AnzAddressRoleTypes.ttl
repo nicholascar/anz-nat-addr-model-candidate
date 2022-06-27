@@ -1,5 +1,5 @@
-PREFIX role: <https://w3id.org/profile/anz-address/AddressRoleTypes/>
-PREFIX cs: <https://w3id.org/profile/anz-address/AddressRoleTypes>
+PREFIX role: <https://w3id.org/profile/anz-address/AnzAddressRoleTypes/>
+PREFIX cs: <https://w3id.org/profile/anz-address/AnzAddressRoleTypes>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -14,7 +14,7 @@ cs:
     a skos:ConceptScheme ;
     dcterms:created "2022-05-11"^^xsd:date ;
     dcterms:creator <https://orcid.org/0000-0002-8742-7730> ;
-    dcterms:identifier "AddressRoleTypes"^^xsd:token ;
+    dcterms:identifier "AnzAddressRoleTypes"^^xsd:token ;
     dcterms:issued "2000-01-01"^^xsd:date ;
     dcterms:modified "2022-06-26"^^xsd:date ;
     dcterms:provenance "Derived from the ISO19160-1 AddressPositionType codelist vocabulary"@en ;

@@ -1,4 +1,4 @@
-= ANZ Address Component Types
+= ANZ Address Lifecycle Stage Types
 :toc: left
 :toclevels: 2
 :table-stripes: even
@@ -12,8 +12,8 @@ Address Component Types are kinds of Address Components. The kind is used to val
 
 [cols="1,3"]
 |===
-| IRI | `+https://w3id.org/profile/anz-address/AddressLifecycleStageTypes+`
-| identifier | AddressLifecycleStageTypes
+| IRI | `+https://w3id.org/profile/anz-address/AnzAddressLifecycleStageTypes+`
+| identifier | AnzAddressLifecycleStageTypes
 | preferred label | ANZ Address Lifecycle Stage Types
 | definition | Address Lifecycle Stages types are the types of Lifecycle Stage that an Address proceeds through from the moment of proposal through to its retirement
 | created | 2022-05-04
@@ -26,7 +26,7 @@ _to be changed when accepted by a standards body_
 | license | https://creativecommons.org/licenses/by/4.0/[Creative Commons BY 4.0]
 | rights | &copy; Nicholas J. Car, 2022
 | provenance | Developed for the ANZ National Address Model using the table AddressLifecycleStage from ISO19160-1 as a partial source
-| version IRI | https://w3id.org/profile/anz-address/AddressLifecycleStageTypes/1.0.0
+| version IRI | https://w3id.org/profile/anz-address/AnzAddressLifecycleStageTypes/1.0.0
 | version info | 1.0.0 - first issue
 |===
 
@@ -46,11 +46,11 @@ _to be changed when accepted by a standards body_
 
 [cols="1,3"]
 |===
-| IRI | `+http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressLifecycleStageTypes/current+`
+| IRI | `+http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressLifecycleStageTypes/current+`
 | identifier | current
 | preferred label | current
 | definition | The address is currently in use
-| is defined by | http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressLifecycleStageTypes[ISO19160-1's AddressLifecycleStateTypes codelist]
+| is defined by | http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressLifecycleStageTypes[ISO19160-1's AddressLifecycleStateTypes codelist]
 | scope note | Use unless superseded
 | status | http://def.isotc211.org/iso19135/-1/2015/CoreModel/code/RE_ItemStatus/original[original]
 | provenance | Presented in the original ISO19160-1 standard's codelist
@@ -61,11 +61,11 @@ _to be changed when accepted by a standards body_
 
 [cols="1,3"]
 |===
-| IRI | `+http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressLifecycleStageTypes/proposed+`
+| IRI | `+http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressLifecycleStageTypes/proposed+`
 | identifier | proposed
 | preferred label | proposed
 | definition | The address has been proposed, i.e. the relevant authority has initiated approval procedures for the use of the address or address component
-| is defined by | http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressLifecycleStageTypes[ISO19160-1's AddressLifecycleStateTypes codelist]
+| is defined by | http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressLifecycleStageTypes[ISO19160-1's AddressLifecycleStateTypes codelist]
 | scope note | Use unless superseded
 | status | http://def.isotc211.org/iso19135/-1/2015/CoreModel/code/RE_ItemStatus/original[original]
 | provenance | Presented in the original ISO19160-1 standard's codelist
@@ -76,11 +76,11 @@ _to be changed when accepted by a standards body_
 
 [cols="1,3"]
 |===
-| IRI | `+http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressLifecycleStageTypes/rejected+`
+| IRI | `+http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressLifecycleStageTypes/rejected+`
 | identifier | rejected
 | preferred label | rejected
 | definition | The address was proposed but rejected
-| is defined by | http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressLifecycleStageTypes[ISO19160-1's AddressLifecycleStateTypes codelist]
+| is defined by | http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressLifecycleStageTypes[ISO19160-1's AddressLifecycleStateTypes codelist]
 | scope note | Use unless superseded
 | status | http://def.isotc211.org/iso19135/-1/2015/CoreModel/code/RE_ItemStatus/original[original]
 | provenance | Presented in the original ISO19160-1 standard's codelist
@@ -91,11 +91,11 @@ _to be changed when accepted by a standards body_
 
 [cols="1,3"]
 |===
-| IRI | `+http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressLifecycleStageTypes/reserved+`
+| IRI | `+http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressLifecycleStageTypes/reserved+`
 | identifier | reserved
 | preferred label | reserved
 | definition | The address has been reserved for future use
-| is defined by | http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressLifecycleStageTypes[ISO19160-1's AddressLifecycleStateTypes codelist]
+| is defined by | http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressLifecycleStageTypes[ISO19160-1's AddressLifecycleStateTypes codelist]
 | scope note | Use unless superseded
 | status | http://def.isotc211.org/iso19135/-1/2015/CoreModel/code/RE_ItemStatus/original[original]
 | provenance | Presented in the original ISO19160-1 standard's codelist
@@ -106,11 +106,11 @@ _to be changed when accepted by a standards body_
 
 [cols="1,3"]
 |===
-| IRI | `+http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressLifecycleStageTypes/retired+`
+| IRI | `+http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressLifecycleStageTypes/retired+`
 | identifier | retired
 | preferred label | retired
 | definition | The address was in use at some stage, but not anymore
-| is defined by | http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressLifecycleStageTypes[ISO19160-1's AddressLifecycleStateTypes codelist]
+| is defined by | http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressLifecycleStageTypes[ISO19160-1's AddressLifecycleStateTypes codelist]
 | scope note | Use unless superseded
 | status | http://def.isotc211.org/iso19135/-1/2015/CoreModel/code/RE_ItemStatus/original[original]
 | provenance | Presented in the original ISO19160-1 standard's codelist
@@ -121,11 +121,11 @@ _to be changed when accepted by a standards body_
 
 [cols="1,3"]
 |===
-| IRI | `+http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressLifecycleStageTypes/unknown+`
+| IRI | `+http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressLifecycleStageTypes/unknown+`
 | identifier | unknown
 | preferred label | unknown
 | definition | The lifecycle stage of the address is unknown
-| is defined by | http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressLifecycleStageTypes[ISO19160-1's AddressLifecycleStateTypes codelist]
+| is defined by | http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressLifecycleStageTypes[ISO19160-1's AddressLifecycleStateTypes codelist]
 | scope note | Use unless superseded
 | status | http://def.isotc211.org/iso19135/-1/2015/CoreModel/code/RE_ItemStatus/original[original]
 | provenance | Presented in the original ISO19160-1 standard's codelist

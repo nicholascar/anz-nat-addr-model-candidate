@@ -1,6 +1,6 @@
-PREFIX als: <https://w3id.org/profile/anz-address/AddressLifecycleStageTypes/>
-PREFIX alsoiso: <https://w3id.org/profile/anz-address/AddressLifecycleStageTypes/>
-PREFIX cs: <https://w3id.org/profile/anz-address/AddressLifecycleStageTypes>
+PREFIX als: <https://w3id.org/profile/anz-address/AnzAddressLifecycleStageTypes/>
+PREFIX alsoiso: <https://w3id.org/profile/anz-address/AnzAddressLifecycleStageTypes/>
+PREFIX cs: <https://w3id.org/profile/anz-address/AnzAddressLifecycleStageTypes>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX reg: <http://purl.org/linked-data/registry#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -12,7 +12,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 cs:
     a skos:ConceptScheme ;
-    dcterms:identifier "AddressLifecycleStageTypes"^^xsd:token ;
+    dcterms:identifier "AnzAddressLifecycleStageTypes"^^xsd:token ;
     dcterms:created "2022-05-04"^^xsd:date ;
     dcterms:creator <https://orcid.org/0000-0002-8742-7730> ;
     dcterms:modified "2022-06-26"^^xsd:date ;

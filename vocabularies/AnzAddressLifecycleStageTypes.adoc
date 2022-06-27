@@ -6,7 +6,7 @@
 :sectids:
 :sectanchors:
 
-Address Component Types are kinds of Address Components. The kind is used to validate Address Component values and to order Address Components for address printing.
+Address Lifecycle Stages types are the types of Lifecycle Stage that an Address proceeds through from the moment of proposal through to its retirement
 
 == Vocabulary metadata
 

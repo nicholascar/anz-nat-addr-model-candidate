@@ -1,4 +1,4 @@
-= ANZ Address Component Types
+= ANZ Address Role Types
 :toc: left
 :toclevels: 2
 :table-stripes: even
@@ -6,7 +6,7 @@
 :sectids:
 :sectanchors:
 
-Address Component Types are kinds of Address Components. The kind is used to validate Address Component values and to order Address Components for address printing.
+ANZ vocabulary of the roles that Addresses may play
 
 == Vocabulary metadata
 

@@ -6,7 +6,7 @@
 :sectids:
 :sectanchors:
 
-Address Component Types are kinds of Address Components. The kind is used to validate Address Component values and to order Address Components for address printing.
+ANZ vocabulary of Address Status Types that convey the authority of the Address
 
 == Vocabulary metadata
 

@@ -32,6 +32,7 @@ jobs:
         asciidoctor vocabularies/AnzAddressLifecycleStageTypes.adoc -o docs/AnzAddressLifecycleStageTypes.html
         asciidoctor vocabularies/AnzAddressRoleTypes.adoc -o docs/AnzAddressRoleTypes.html
         asciidoctor vocabularies/AnzAddressStatusTypes.adoc -o docs/AnzAddressStatusTypes.html
+        cp vocabularies/*.ttl docs/
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:

@@ -453,7 +453,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_introduction">3. Introduction</a>
 <ul class="sectlevel2">
-<li><a href="#_model_resources">3.1. Model resources</a></li>
+<li><a href="#_address_spatial_object_principle">3.1. Address / Spatial object principle</a></li>
+<li><a href="#_model_resources">3.2. Model resources</a></li>
 </ul>
 </li>
 <li><a href="#_model">4. Model</a>
@@ -741,13 +742,37 @@ flexibility" - things for Strategy implementers to aim for - "Guiding Principles
 <p>This model is created with alignment to the Addressing 2035 Strategy as a high priority, so it&#8217;s use aims to address Pain Points identified in the Strategy.</p>
 </div>
 <div class="paragraph">
-<p>The model is mostly an based on the structures of International Addressing standard, ISO19160-1, but this model is expressed in Semantic Web form. Unlike ISO19160-1, this model also re-uses elements from other, well-known, Semantic Web models, as is the Semantic Web norm.</p>
+<p>The model is mostly based on the structures of International Addressing standard, ISO19160-1, but this model is expressed in Semantic Web form. Unlike ISO19160-1, this model also re-uses elements from other, well-known, Semantic Web models, as is the Semantic Web norm.</p>
 </div>
 <div class="paragraph">
-<p>This model does not model <em>all</em> of address data managers' concerns: it leaves things like the detailed modellign os spatial information to other models or extensions to this model. Also, by reusing elements from well-known Semantic Web models, this model has many "pick-up" points that can be used to join other information on to. For example, the <code>Resource</code> indicated as an <code>Address Component</code> value, may be a locally-defined simple value type - a number or string - but it may also be a complex object defined elsewhere, such as a <code>Locality</code>.</p>
+<p>This model does not model <em>all</em> of address data managers' concerns: it leaves things like the detailed modelling of spatial information to other models or extensions to this model. Also, by reusing elements from well-known Semantic Web models, this model has many "pick-up" points that can be used to join other information on to. For example, the <code>Resource</code> indicated as an <code>Address Component</code> value, may be a locally-defined simple value type - a number or string - but it may also be a complex object defined elsewhere, such as a <code>Locality</code>.</p>
 </div>
 <div class="sect2">
-<h3 id="_model_resources"><a class="anchor" href="#_model_resources"></a>3.1. Model resources</h3>
+<h3 id="_address_spatial_object_principle"><a class="anchor" href="#_address_spatial_object_principle"></a>3.1. Address / Spatial object principle</h3>
+<div class="paragraph">
+<p>This model details the elements of an <em>address</em> but not details of the spatial objects that addresses are assigned to. The general conceptual split of address/spatial object follows the Address/AddressableObject split in ISO19160-1 <a href="#ISO19160-1">[ISO19160-1]</a> with some further integration of the AddressableObject concpet with general-purpose spatial models, in particular GeoSPARQL <a href="#GEO">[GEO]</a>.</p>
+</div>
+<div class="paragraph">
+<p>The following figure overviews this model&#8217;s address / spatial object split.</p>
+</div>
+<div id="fig-address-spatial" class="imageblock">
+<div class="content">
+<img src="https://nicholascar.com/anz-nat-addr-model-candidate/img/address-spatial.png" alt="address spatial">
+</div>
+<div class="title">Figure 2. Address / spatial object relation overview</div>
+</div>
+<div class="paragraph">
+<p>In the figure above, the spatial object that is the target of an address, an <em>addressable object</em>, is a subclass of (special type of) the GeoSPARQL model&#8217;s <code>Feature</code> class, which is really any geospatial feature. Spatial relations between addresses and other objects and spatial projects of objects (their geometries) are then modelled as spatial concerns within GeoSPARQL&#8217;s general spatial modelling.</p>
+</div>
+<div class="paragraph">
+<p>The only exception to this are addresses' geocodes which are modeled as direct properties of (related geometries of) addresses. This is because while an address might be for a spatial object with a certain geometry, the geocode for the address might not be directly inherited from that spatial object but might be manually or otherwise defined.</p>
+</div>
+<div class="paragraph">
+<p>For example, an emergency services access address for a hospital might need a more precise location than the footprint of the hospital property with might be large. In this case, an address with the <em>emergency access</em> role may be defined for the hospital with a precise point geocode which will likely be on or close to the hospital building&#8217;s boundary.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_model_resources"><a class="anchor" href="#_model_resources"></a>3.2. Model resources</h3>
 <div class="paragraph">
 <p>This document is this model&#8217;s "Specification" which is its authoratitive, human-readable, definition document. This model also contains other resources with other roles:</p>
 </div>
@@ -776,12 +801,14 @@ flexibility" - things for Strategy implementers to aim for - "Guiding Principles
 <td class="tableblock halign-left valign-top"><p class="tableblock">The codelist vocabularies developed for this model and links to others  defined elsewhere but used by this model</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Annex A: Validator">[Annex A: Validator]</a> &amp; <a href="https://nicholascar.com/anz-nat-addr-model-candidate/validator.shacl.ttl">Validator</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#AnnexA">Annex A: Validators</a> &amp; <a href="https://nicholascar.com/anz-nat-addr-model-candidate/validator.shacl.ttl">Validator</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>Validation</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The machine-readable validator file used to validate data claiming conformance to this model</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Annex B: Examples">[Annex B: Examples]</a> &amp; <a href="https://github.com/nicholascar/anz-nat-addr-model-candidate/tree/main/example">Example data files</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_annex_b_extended_examples">Annex B: Extended Examples</a>
+&amp;
+<a href="https://github.com/nicholascar/anz-nat-addr-model-candidate/tree/main/extended-examples">Extended example data files</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>Example</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Examples of data conforming, and some not conforming, to this model</p></td>
 </tr>
@@ -808,13 +835,13 @@ flexibility" - things for Strategy implementers to aim for - "Guiding Principles
 <div class="content">
 <img src="https://nicholascar.com/anz-nat-addr-model-candidate/img/overview.png" alt="overview">
 </div>
-<div class="title">Figure 2. An informal Model Overview diagram showing the major elements of this model</div>
+<div class="title">Figure 3. An informal Model Overview diagram showing the major elements of this model</div>
 </div>
 <div id="fig-upper-classes" class="imageblock">
 <div class="content">
 <img src="https://nicholascar.com/anz-nat-addr-model-candidate/img/upper-classes.png" alt="upper classes">
 </div>
-<div class="title">Figure 3. Mapping of the main model classes to common Semantic Web classes</div>
+<div class="title">Figure 4. Mapping of the main model classes to common Semantic Web classes</div>
 </div>
 <div class="sect2">
 <h3 id="Classes"><a class="anchor" href="#Classes"></a>4.1. Classes</h3>
@@ -1158,7 +1185,7 @@ ex:addre-2 addr:isAddressFor ex:admin-area-z .</code></pre>
 <div class="content">
 <img src="https://nicholascar.com/anz-nat-addr-model-candidate/img/lifecycle-stages.png" alt="lifecycle stages">
 </div>
-<div class="title">Figure 4. An example Address, <code>QLD186906</code>, with Lifecycle Stages</div>
+<div class="title">Figure 5. An example Address, <code>QLD186906</code>, with Lifecycle Stages</div>
 </div>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
@@ -3248,7 +3275,7 @@ WHERE a.pid = 'ex:oxford';</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-06-27 03:10:38 UTC
+Last updated 2022-06-27 03:31:40 UTC
 </div>
 </div>
 </body>

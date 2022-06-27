@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<title>ANZ National Address Model Candidate</title>
+<title>ANZ Address Component Types</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -436,60 +436,298 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 </head>
-<body class="article">
+<body class="article toc2 toc-left">
 <div id="header">
-<h1>ANZ National Address Model Candidate</h1>
+<h1>ANZ Address Component Types</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_vocabulary_metadata">1. Vocabulary metadata</a></li>
+<li><a href="#_concept_hierarchy">2. Concept Hierarchy</a></li>
+<li><a href="#_concepts">3. Concepts</a>
+<ul class="sectlevel2">
+<li><a href="#deliveries">3.1. deliveries</a></li>
+<li><a href="#emergencyAccess">3.2. emergency access</a></li>
+<li><a href="#serviceConnectionPoint">3.3. service connection point</a></li>
+<li><a href="#siteOffice">3.4. site office</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>This Model is a candidate model for Australian &amp; New Zealand addresses. It is an unofficial model that is made to highlight potential aspects of a real model for discussion.</p>
+<p>Address Component Types are kinds of Address Components. The kind is used to validate Address Component values and to order Address Components for address printing.</p>
 </div>
-<div class="paragraph">
-<p>This model&#8217;s document is auto-built from the source file <code>model.adoc</code> and viewable online at:</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_vocabulary_metadata"><a class="anchor" href="#_vocabulary_metadata"></a>1. Vocabulary metadata</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>https://w3id.org/profile/anz-address/AnzAddressRoleTypes</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AnzAddressRoleTypes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">preferred label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ANZ Address Role Types</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ANZ vocabulary of the roles that Addresses may play</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">created</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-05-04</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">modified</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-06-26</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">issued</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0000-00-00</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">publisher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://orcid.org/0000-0002-8742-7730">Nicholas J. Car</a></p>
+<p class="tableblock"><em>to be changed when accepted by a standards body</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">creator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://orcid.org/0000-0002-8742-7730">Nicholas J. Car</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">license</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons BY 4.0</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rights</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&copy; Nicholas J. Car, 2022</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">provenance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from the ISO19160-1 AddressPositionType codelist vocabular</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">version IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/profile/anz-address/AnzAddressRoleTypes/1.0.0" class="bare">https://w3id.org/profile/anz-address/AnzAddressRoleTypes/1.0.0</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">version info</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.0 - first issue</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_concept_hierarchy"><a class="anchor" href="#_concept_hierarchy"></a>2. Concept Hierarchy</h2>
+<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://nicholascar.com/anz-nat-addr-model-candidate/model.html" class="bare">https://nicholascar.com/anz-nat-addr-model-candidate/model.html</a></p>
+<p><a href="#deliveries">deliveries</a></p>
 </li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The repository is at:</p>
-</div>
-<div class="ulist">
-<ul>
 <li>
-<p><a href="https://github.com/nicholascar/anz-nat-addr-model-candidate/" class="bare">https://github.com/nicholascar/anz-nat-addr-model-candidate/</a></p>
+<p><a href="#emergencyAccess">emergency access</a></p>
+</li>
+<li>
+<p><a href="#serviceConnectionPoint">service connection point</a></p>
+</li>
+<li>
+<p><a href="#siteOffice">site office</a></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_license_rights">License &amp; Rights</h2>
+<h2 id="_concepts"><a class="anchor" href="#_concepts"></a>3. Concepts</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>The contents of this repository is licensed under Creative Commons 4.0 International. See the LICENSE file in the repository for details.</p>
+<div class="sect2">
+<h3 id="deliveries"><a class="anchor" href="#deliveries"></a>3.1. deliveries</h3>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressRoleTypes/deliveries</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">deliveries</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">preferred label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">deliveries</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An address to use for deliveries</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">is defined by</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressRoleTypes">ISO19160-1&#8217;s AddressLifecycleStateTypes codelist</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">scope note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://def.isotc211.org/iso19135/-1/2015/CoreModel/code/RE_ItemStatus/original">original</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">provenance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defined for the ANZ Address Model</p></td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="paragraph">
-<p>&copy; Nicholas J. Car, 2021</p>
+<div class="sect2">
+<h3 id="emergencyAccess"><a class="anchor" href="#emergencyAccess"></a>3.2. emergency access</h3>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressRoleTypes/emergencyAccess</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">emergencyAccess</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">preferred label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">emergency access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An address to use for emergency services' access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">is defined by</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressRoleTypes">ISO19160-1&#8217;s AddressLifecycleStateTypes codelist</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">scope note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://def.isotc211.org/iso19135/-1/2015/CoreModel/code/RE_ItemStatus/original">original</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">provenance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defined for the ANZ Address Model</p></td>
+</tr>
+</tbody>
+</table>
 </div>
+<div class="sect2">
+<h3 id="serviceConnectionPoint"><a class="anchor" href="#serviceConnectionPoint"></a>3.3. service connection point</h3>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressRoleTypes/serviceConnectionPoint</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">serviceConnectionPoint</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">preferred label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">service connection point</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An address at which utility services are connected</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">is defined by</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressRoleTypes">ISO19160-1&#8217;s AddressLifecycleStateTypes codelist</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">scope note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://def.isotc211.org/iso19135/-1/2015/CoreModel/code/RE_ItemStatus/original">original</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">provenance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defined for the ANZ Address Model</p></td>
+</tr>
+</tbody>
+</table>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_contacts">Contacts</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Initial development of this work is being undertaken by the following, for Geoscience Australia:</p>
-</div>
-<div class="paragraph">
-<p><strong>Nicholas J. Car</strong><br>
-<strong>Semantic Modeller</strong><br>
-<a href="https://kurrawong.ai">Kurrawong AI</a><br>
-&lt;<a href="mailto:nick@kurrawong.net">nick@kurrawong.net</a>&gt;</p>
+<div class="sect2">
+<h3 id="siteOffice"><a class="anchor" href="#siteOffice"></a>3.4. site office</h3>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressRoleTypes/siteOffice</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">siteOffice</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">preferred label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">site office</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An address of the administrative management location of a property</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">is defined by</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressRoleTypes">ISO19160-1&#8217;s AddressLifecycleStateTypes codelist</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">scope note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://def.isotc211.org/iso19135/-1/2015/CoreModel/code/RE_ItemStatus/original">original</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">provenance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defined for the ANZ Address Model</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>

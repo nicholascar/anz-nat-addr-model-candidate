@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<title>ANZ National Address Model Candidate</title>
+<title>ANZ Address Lifecycle Stage Types</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -436,60 +436,392 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 </head>
-<body class="article">
+<body class="article toc2 toc-left">
 <div id="header">
-<h1>ANZ National Address Model Candidate</h1>
+<h1>ANZ Address Lifecycle Stage Types</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_vocabulary_metadata">1. Vocabulary metadata</a></li>
+<li><a href="#_concept_hierarchy">2. Concept Hierarchy</a></li>
+<li><a href="#_concepts">3. Concepts</a>
+<ul class="sectlevel2">
+<li><a href="#current">3.1. current</a></li>
+<li><a href="#proposed">3.2. proposed</a></li>
+<li><a href="#rejected">3.3. rejected</a></li>
+<li><a href="#reserved">3.4. reserved</a></li>
+<li><a href="#retired">3.5. retired</a></li>
+<li><a href="#unknown">3.6. unknown</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>This Model is a candidate model for Australian &amp; New Zealand addresses. It is an unofficial model that is made to highlight potential aspects of a real model for discussion.</p>
+<p>Address Component Types are kinds of Address Components. The kind is used to validate Address Component values and to order Address Components for address printing.</p>
 </div>
-<div class="paragraph">
-<p>This model&#8217;s document is auto-built from the source file <code>model.adoc</code> and viewable online at:</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_vocabulary_metadata"><a class="anchor" href="#_vocabulary_metadata"></a>1. Vocabulary metadata</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>https://w3id.org/profile/anz-address/AnzAddressLifecycleStageTypes</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AnzAddressLifecycleStageTypes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">preferred label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ANZ Address Lifecycle Stage Types</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Address Lifecycle Stages types are the types of Lifecycle Stage that an Address proceeds through from the moment of proposal through to its retirement</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">created</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-05-04</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">modified</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-06-26</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">issued</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0000-00-00</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">publisher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://orcid.org/0000-0002-8742-7730">Nicholas J. Car</a></p>
+<p class="tableblock"><em>to be changed when accepted by a standards body</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">creator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://orcid.org/0000-0002-8742-7730">Nicholas J. Car</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">license</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons BY 4.0</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rights</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&copy; Nicholas J. Car, 2022</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">provenance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Developed for the ANZ National Address Model using the table AddressLifecycleStage from ISO19160-1 as a partial source</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">version IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/profile/anz-address/AnzAddressLifecycleStageTypes/1.0.0" class="bare">https://w3id.org/profile/anz-address/AnzAddressLifecycleStageTypes/1.0.0</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">version info</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.0 - first issue</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_concept_hierarchy"><a class="anchor" href="#_concept_hierarchy"></a>2. Concept Hierarchy</h2>
+<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://nicholascar.com/anz-nat-addr-model-candidate/model.html" class="bare">https://nicholascar.com/anz-nat-addr-model-candidate/model.html</a></p>
+<p><a href="#current">current</a></p>
 </li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The repository is at:</p>
-</div>
-<div class="ulist">
-<ul>
 <li>
-<p><a href="https://github.com/nicholascar/anz-nat-addr-model-candidate/" class="bare">https://github.com/nicholascar/anz-nat-addr-model-candidate/</a></p>
+<p><a href="#proposed">proposed</a></p>
+</li>
+<li>
+<p><a href="#rejected">rejected</a></p>
+</li>
+<li>
+<p><a href="#reserved">reserved</a></p>
+</li>
+<li>
+<p><a href="#retired">retired</a></p>
+</li>
+<li>
+<p><a href="#unknown">unknown</a></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_license_rights">License &amp; Rights</h2>
+<h2 id="_concepts"><a class="anchor" href="#_concepts"></a>3. Concepts</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>The contents of this repository is licensed under Creative Commons 4.0 International. See the LICENSE file in the repository for details.</p>
+<div class="sect2">
+<h3 id="current"><a class="anchor" href="#current"></a>3.1. current</h3>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressLifecycleStageTypes/current</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">current</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">preferred label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">current</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The address is currently in use</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">is defined by</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressLifecycleStageTypes">ISO19160-1&#8217;s AddressLifecycleStateTypes codelist</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">scope note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use unless superseded</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://def.isotc211.org/iso19135/-1/2015/CoreModel/code/RE_ItemStatus/original">original</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">provenance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Presented in the original ISO19160-1 standard&#8217;s codelist</p></td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="paragraph">
-<p>&copy; Nicholas J. Car, 2021</p>
+<div class="sect2">
+<h3 id="proposed"><a class="anchor" href="#proposed"></a>3.2. proposed</h3>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressLifecycleStageTypes/proposed</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">proposed</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">preferred label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">proposed</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The address has been proposed, i.e. the relevant authority has initiated approval procedures for the use of the address or address component</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">is defined by</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressLifecycleStageTypes">ISO19160-1&#8217;s AddressLifecycleStateTypes codelist</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">scope note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use unless superseded</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://def.isotc211.org/iso19135/-1/2015/CoreModel/code/RE_ItemStatus/original">original</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">provenance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Presented in the original ISO19160-1 standard&#8217;s codelist</p></td>
+</tr>
+</tbody>
+</table>
 </div>
+<div class="sect2">
+<h3 id="rejected"><a class="anchor" href="#rejected"></a>3.3. rejected</h3>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressLifecycleStageTypes/rejected</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">preferred label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The address was proposed but rejected</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">is defined by</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressLifecycleStageTypes">ISO19160-1&#8217;s AddressLifecycleStateTypes codelist</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">scope note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use unless superseded</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://def.isotc211.org/iso19135/-1/2015/CoreModel/code/RE_ItemStatus/original">original</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">provenance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Presented in the original ISO19160-1 standard&#8217;s codelist</p></td>
+</tr>
+</tbody>
+</table>
 </div>
+<div class="sect2">
+<h3 id="reserved"><a class="anchor" href="#reserved"></a>3.4. reserved</h3>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressLifecycleStageTypes/reserved</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">reserved</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">preferred label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">reserved</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The address has been reserved for future use</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">is defined by</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressLifecycleStageTypes">ISO19160-1&#8217;s AddressLifecycleStateTypes codelist</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">scope note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use unless superseded</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://def.isotc211.org/iso19135/-1/2015/CoreModel/code/RE_ItemStatus/original">original</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">provenance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Presented in the original ISO19160-1 standard&#8217;s codelist</p></td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="sect1">
-<h2 id="_contacts">Contacts</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Initial development of this work is being undertaken by the following, for Geoscience Australia:</p>
+<div class="sect2">
+<h3 id="retired"><a class="anchor" href="#retired"></a>3.5. retired</h3>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressLifecycleStageTypes/retired</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">retired</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">preferred label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">retired</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The address was in use at some stage, but not anymore</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">is defined by</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressLifecycleStageTypes">ISO19160-1&#8217;s AddressLifecycleStateTypes codelist</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">scope note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use unless superseded</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://def.isotc211.org/iso19135/-1/2015/CoreModel/code/RE_ItemStatus/original">original</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">provenance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Presented in the original ISO19160-1 standard&#8217;s codelist</p></td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="paragraph">
-<p><strong>Nicholas J. Car</strong><br>
-<strong>Semantic Modeller</strong><br>
-<a href="https://kurrawong.ai">Kurrawong AI</a><br>
-&lt;<a href="mailto:nick@kurrawong.net">nick@kurrawong.net</a>&gt;</p>
+<div class="sect2">
+<h3 id="unknown"><a class="anchor" href="#unknown"></a>3.6. unknown</h3>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressLifecycleStageTypes/unknown</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">unknown</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">preferred label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">unknown</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The lifecycle stage of the address is unknown</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">is defined by</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://def.isotc211.org/iso19160/-1/2015/Address/code/AnzAddressLifecycleStageTypes">ISO19160-1&#8217;s AddressLifecycleStateTypes codelist</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">scope note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use unless superseded</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://def.isotc211.org/iso19135/-1/2015/CoreModel/code/RE_ItemStatus/original">original</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">provenance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Presented in the original ISO19160-1 standard&#8217;s codelist</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>

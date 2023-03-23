@@ -1,3 +1,5 @@
+WARNING: This repository has been superceded by https://github.com/Spatial-Information-QLD/address-model
+
 = ANZ National Address Model Candidate
 
 This Model is a candidate model for Australian & New Zealand addresses. It is an unofficial model that is made to highlight potential aspects of a real model for discussion.
